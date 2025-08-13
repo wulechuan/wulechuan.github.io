@@ -30,7 +30,6 @@
 
     <style id="styles--app-fonts">
         :root {
-            --font-family: 'HarmonyOS Sans', 'Inter', sans-serif;
             font-size: 20px;
             font-weight: 400;
         }
@@ -42,6 +41,7 @@
         }
 
         #app {
+            font-family: 'HarmonyOS Sans', 'Inter', sans-serif;
             font-size: 0.9rem;
         }
     </style>
@@ -57,6 +57,30 @@
             --theme-primary-colors-vivid: 55%;
             --theme-primary-colors-lightness: 51%;
             --theme-strokes-colors-lightness: 44%;
+
+            color:            hsl(var(--theme-color-tone), 22%, 79%);
+            background-color: hsl(var(--theme-color-tone), 11%, 11%);
+        }
+
+        #app :focus-visible,
+        #app :focus {
+            outline-style: solid;
+            outline-width: 0.1rem;
+            outline-color: hsl(var(--theme-color-tone), 96%, 64%);
+        }
+        
+        #app hr {
+            background-color: transparent;
+            background-image: linear-gradient(
+                to right,
+                transparent 0%,
+                var(--hr-color) 15% 85%,
+                transparent 100%
+            );
+        }
+
+        #app a:hover {
+            color: hsl(var(--theme-color-tone), 96%, 64%);
         }
 
         .section.summary {
@@ -122,9 +146,6 @@
 
     <style id="styles--app-base">
         #app {
-            color: hsl(var(--theme-color-tone), 22%, 79%);
-            background-color: hsl(var(--theme-color-tone), 11%, 11%);
-            font-family: var(--font-family);
             line-height: 1.6;
             margin: 0 auto;
             padding: 0 0 2rem;
@@ -144,18 +165,18 @@
             min-height: 1px;
             max-height: 1px;
             flex: 0 0;
-            background-color: transparent;
-            background-image: linear-gradient(
-                to right,
-                transparent 0%,
-                var(--hr-color) 15% 85%,
-                transparent 100%
-            );
         }
 
-        #app svg use {
+        #app svg.icon use {
             stroke: currentColor;
             fill:   transparent;
+        }
+
+        #app svg.icon {
+            margin-top: 0.15em;
+            width:  1em;
+            height: 1em;
+            flex: 0 0 auto;
         }
     </style>
 
@@ -375,6 +396,7 @@
         .people-contacts a {
             color: hsl(var(--theme-color-tone), 11%, 44%);
             text-decoration: none;
+            border-radius: 0.2em;
             display: flex;
             align-items: center;
             gap: 0.25rem;
@@ -382,17 +404,6 @@
             transition: color 0.219s ease;
         }
 
-        .people-contacts a:hover {
-            color: hsl(var(--theme-color-tone), 99%, 66%);
-        }
-
-        .people-contacts svg {
-            margin-top: 0.15em;
-            width: 1em;
-            height: 1em;
-        }
-
-        .people-contacts svg,
         .people-contacts .entry-title {
             flex: 0 0 auto;
         }
@@ -534,25 +545,25 @@
 
                 <div class="people-contacts">
                     <a :href="'tel:' + resume.data.个人信息摘要.联系方式.手机号">
-                        <svg><use href="#lucide-icon-phone"></use></svg>
+                        <svg class="icon"><use href="#lucide-icon-phone"></use></svg>
                         <span class="entry-title">手机：</span>
                         <span>{{ resume.data.个人信息摘要.联系方式.手机号 }}</span>
                     </a>
 
                     <a :href="'mailto:' + resume.data.个人信息摘要.联系方式.电子邮箱">
-                        <svg><use href="#lucide-icon-mail"></use></svg>
+                        <svg class="icon"><use href="#lucide-icon-mail"></use></svg>
                         <span class="entry-title">电子邮箱：</span>
                         <span>{{ resume.data.个人信息摘要.联系方式.电子邮箱 }}</span>
                     </a>
 
                     <a :href="'tel:' + resume.data.个人信息摘要.联系方式.微信号">
-                        <svg><use href="#lucide-icon-message-circle"></use></svg>
+                        <svg class="icon"><use href="#lucide-icon-message-circle"></use></svg>
                         <span class="entry-title">微信：</span>
                         <span>{{ resume.data.个人信息摘要.联系方式.微信号 }}</span>
                     </a>
 
                     <a :href="resume.data.个人信息摘要.联系方式.代码仓库" target="_blank" rel="noopener noreferrer">
-                        <svg><use href="#lucide-icon-database"></use></svg>
+                        <svg class="icon"><use href="#lucide-icon-database"></use></svg>
                         <span class="entry-title">代码仓库：</span>
                         <span>码云</span>
                     </a>
@@ -843,5 +854,4 @@
         }).mount('#app')
     </script>
 </body>
-
 </html>
