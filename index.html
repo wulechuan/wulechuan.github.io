@@ -50,7 +50,6 @@
         #app {
             --shadow-color: rgba(0, 0, 0, 0.319);
 
-            /* --hr-color: hsl(var(--theme-color-tone), 11%, 33%, 0.33); */
             --hr-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
 
             --theme-color-tone: 222;
@@ -245,7 +244,7 @@
             border-width: 0.05rem;
             line-height: 1;
             font-size: 0.7rem;
-            padding: 0.4em 1em 0.5em;
+            padding: 0.4em 1em;
             border-radius: 50rem;
             transition-property: color, border-color, background-color, opacity, box-shadow, transform;
             transition-duration: 0.26s;
@@ -259,7 +258,6 @@
             border-color: hsl(var(--theme-color-tone), 77%, 77%);
             box-shadow: 0 0 0.5rem #0001;
         }
-
     </style>
 
     <style id="styles--component-timeline">
@@ -306,11 +304,9 @@
             .timeline-node {
                 padding-left: 0.5rem;
             }
-        }
 
-        @media screen and (max-width: 641px) {
-            .timeline-node {
-                padding-left: 0.25rem;
+            .timeline-node-content {
+                padding-inline: 1rem 0.25rem;
             }
         }
     </style>
@@ -355,6 +351,12 @@
         .section-body {
             padding: 0;
         }
+
+        @media screen and (max-width: 641px) {
+            .section {
+                padding-inline: 0.25rem;
+            }
+        }
     </style>
 
     <style id="styles--app-header">
@@ -390,7 +392,8 @@
             display: flex;
             justify-content: start;
             align-items: center;
-            gap: 2rem;
+            flex-wrap: wrap;
+            gap: 0 2rem;
         }
 
         .people-name {
@@ -416,7 +419,8 @@
         .people-contacts {
             margin-top: 0.75rem;
             display: grid;
-            grid-template-columns: repeat(2, auto);
+            grid-auto-flow: column;
+            grid-template: repeat(2, 1fr) / repeat(2, auto);
             gap: 0.25rem 2rem;
             justify-content: space-between;
             align-items: center;
@@ -448,9 +452,24 @@
             }
         }
 
-        @media screen and (max-width: 420px) {
+        @media screen and (max-width: 440px) {
+            .people-name-and-profession-title,
+            .people-contacts {
+                margin-inline: 0rem;
+            }
+
+            .people-name-and-profession-title {
+                justify-content: center;
+                text-align: center;
+            }
+
             .people-contacts {
                 display: block;
+            }
+
+            .people-contacts a {
+                justify-content: center;
+                text-align: center;
             }
         }
     </style>
@@ -476,7 +495,7 @@
         }
 
         .time-related-factor-and-the-period .the-period {
-            flex: 0 0 12rem;
+            flex: 0 0 9rem;
         }
 
         .timeline-node-content article {
@@ -556,6 +575,16 @@
         .project-tech-stack {
             margin-top: 1rem;
         }
+
+        @media screen and (max-width: 730px) {
+            .time-related-factor-and-the-period {
+                margin-left: 0;
+            }
+
+            .timeline-node-content article {
+                margin-inline: 0;
+            }
+        }
     </style>
 </head>
 
@@ -607,16 +636,16 @@
                         <span>{{ resume.data.个人信息摘要.联系方式.手机号 }}</span>
                     </a>
 
-                    <a :href="'mailto:' + resume.data.个人信息摘要.联系方式.电子邮箱">
-                        <svg class="icon"><use href="#lucide-icon-mail"></use></svg>
-                        <span class="entry-title">电子邮箱：</span>
-                        <span>{{ resume.data.个人信息摘要.联系方式.电子邮箱 }}</span>
-                    </a>
-
                     <a :href="'tel:' + resume.data.个人信息摘要.联系方式.微信号">
                         <svg class="icon"><use href="#lucide-icon-message-circle"></use></svg>
                         <span class="entry-title">微信：</span>
                         <span>{{ resume.data.个人信息摘要.联系方式.微信号 }}</span>
+                    </a>
+
+                    <a :href="'mailto:' + resume.data.个人信息摘要.联系方式.电子邮箱">
+                        <svg class="icon"><use href="#lucide-icon-mail"></use></svg>
+                        <span class="entry-title">电子邮箱：</span>
+                        <span>{{ resume.data.个人信息摘要.联系方式.电子邮箱 }}</span>
                     </a>
 
                     <a :href="resume.data.个人信息摘要.联系方式.代码仓库" target="_blank" rel="noopener noreferrer">
