@@ -267,7 +267,7 @@
 
         .timeline-node:last-child .timeline-node-content {
             border-left-color: transparent;
-            padding-bottom: 1rem;
+            /* padding-bottom: 1rem; */
         }
 
         .timeline-node-content {
@@ -314,7 +314,7 @@
     <style id="styles--component-section-card">
         .section {
             margin-bottom: 2rem;
-            padding: 1rem 1rem 2rem;
+            padding: 1rem;
             border-radius: 0.7rem;
             border: 1px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
             background-color: hsl(var(--theme-color-tone), var(--theme-bg-vivid), 16%);
@@ -441,7 +441,7 @@
             text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
         }
 
-        .people-contacts .entry-title {
+        .people-contacts a .entry-title {
             flex: 0 0 auto;
         }
 
@@ -469,7 +469,16 @@
 
             .people-contacts a {
                 justify-content: center;
-                text-align: center;
+            }
+
+            .people-contacts a .entry-title {
+                flex: 0 0 4rem;
+                text-align: right;
+                white-space: nowrap;
+            }
+
+            .people-contacts a .entry-value {
+                flex: 0 0 9rem;
             }
         }
     </style>
@@ -633,25 +642,25 @@
                     <a :href="'tel:' + resume.data.个人信息摘要.联系方式.手机号">
                         <svg class="icon"><use href="#lucide-icon-phone"></use></svg>
                         <span class="entry-title">手机：</span>
-                        <span>{{ resume.data.个人信息摘要.联系方式.手机号 }}</span>
+                        <span class="entry-value">{{ resume.data.个人信息摘要.联系方式.手机号 }}</span>
                     </a>
 
                     <a :href="'tel:' + resume.data.个人信息摘要.联系方式.微信号">
                         <svg class="icon"><use href="#lucide-icon-message-circle"></use></svg>
                         <span class="entry-title">微信：</span>
-                        <span>{{ resume.data.个人信息摘要.联系方式.微信号 }}</span>
+                        <span class="entry-value">{{ resume.data.个人信息摘要.联系方式.微信号 }}</span>
                     </a>
 
                     <a :href="'mailto:' + resume.data.个人信息摘要.联系方式.电子邮箱">
                         <svg class="icon"><use href="#lucide-icon-mail"></use></svg>
                         <span class="entry-title">电子邮箱：</span>
-                        <span>{{ resume.data.个人信息摘要.联系方式.电子邮箱 }}</span>
+                        <span class="entry-value">{{ resume.data.个人信息摘要.联系方式.电子邮箱 }}</span>
                     </a>
 
                     <a :href="resume.data.个人信息摘要.联系方式.代码仓库" target="_blank" rel="noopener noreferrer">
                         <svg class="icon"><use href="#lucide-icon-database"></use></svg>
                         <span class="entry-title">代码仓库：</span>
-                        <span>码云</span>
+                        <span class="entry-value">码云</span>
                     </a>
                 </div>
             </div>
