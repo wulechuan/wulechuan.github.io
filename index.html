@@ -42,7 +42,7 @@
 
         #app {
             font-family: 'HarmonyOS Sans', 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
     </style>
 
@@ -50,25 +50,32 @@
         #app {
             --shadow-color: rgba(0, 0, 0, 0.319);
 
-            --hr-color: hsl(var(--theme-color-tone), 11%, 33%, 0.22);
+            /* --hr-color: hsl(var(--theme-color-tone), 11%, 33%, 0.33); */
+            --hr-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
 
-            --theme-color-tone: 219;
+            --theme-color-tone: 222;
             --theme-bg-vivid: 15%;
-            --theme-primary-colors-vivid: 55%;
+            --theme-primary-colors-vivid: 66%;
             --theme-primary-colors-lightness: 51%;
+            --theme-strokes-colors-vivid: 25%;
             --theme-strokes-colors-lightness: 44%;
 
             color:            hsl(var(--theme-color-tone), 22%, 79%);
-            background-color: hsl(var(--theme-color-tone), 11%, 11%);
+            background-color: hsl(var(--theme-color-tone), 12%,  8%);
+        }
+
+        #app a {
+            outline-style: solid;
+            outline-width: 0.1rem;
+            outline-color: transparent;
         }
 
         #app :focus-visible,
         #app :focus {
-            outline-style: solid;
-            outline-width: 0.1rem;
-            outline-color: hsl(var(--theme-color-tone), 96%, 64%);
+            outline-color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+            color:         hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
         }
-        
+
         #app hr {
             background-color: transparent;
             background-image: linear-gradient(
@@ -80,72 +87,56 @@
         }
 
         #app a:hover {
-            color: hsl(var(--theme-color-tone), 96%, 64%);
+            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+        }
+
+        li,
+        p {
+            color: hsl(var(--theme-color-tone), 9%, 88%);
         }
 
         .section.summary {
-            --theme-color-tone: 144;
-            --theme-bg-vivid: 12%;
-            --theme-primary-colors-lightness: 53%;
-            transition-delay: 0.41s;
-        }
-
-        .section.summary .revealable {
-            transition-delay: 0.45s;
+            --theme-color-tone: 219;
+            --theme-bg-vivid: 19%;
+            --theme-primary-colors-vivid: 55%;
+            --theme-primary-colors-lightness: 69%;
+            --theme-strokes-colors-vivid: 33%;
+            --theme-strokes-colors-lightness: 51%;
         }
 
         .section.skills {
             --theme-color-tone: 32;
             --theme-bg-vivid: 5%;
-            --theme-primary-colors-lightness: 64%;
-            --theme-strokes-colors-lightness: 59%;
-            transition-delay: 0.45s;
+            --theme-primary-colors-lightness: 74%;
+            --theme-strokes-colors-lightness: 51%;
         }
 
-        .section.skills .revealable {
-            transition-delay: 0.515s;
-        }
-
-        .section.experiences {
-            --theme-color-tone: 219;
-            --theme-bg-vivid: 23%;
-            --theme-primary-colors-vivid: 72%;
+        .section.jobs {
+            --theme-color-tone: 141;
+            --theme-bg-vivid: 10%;
             --theme-primary-colors-lightness: 69%;
-            --theme-strokes-colors-lightness: 60%;
-            transition-delay: 0.42s;
-        }
-
-        .section.experiences .revealable {
-            transition-delay: 0.319s;
+            --theme-strokes-colors-lightness: 51%;
         }
 
         .section.projects {
             --theme-color-tone: 180;
-            --theme-bg-vivid: 16%;
-            --theme-strokes-colors-lightness: 39%;
-            transition-delay: 0.41s;
-        }
-
-        .section.projects .revealable {
-            transition-delay: 0.27s;
+            --theme-bg-vivid: 13%;
+            --theme-primary-colors-lightness: 69%;
+            --theme-strokes-colors-lightness: 46%;
         }
 
         .section.education {
-            --theme-color-tone: 111;
-            --theme-bg-vivid: 14%;
-            --theme-primary-colors-vivid: 51%;
-            --theme-primary-colors-lightness: 69%;
-            --theme-strokes-colors-lightness: 32%;
-            transition-delay: 0.3s;
-        }
-
-        .section.education .revealable {
-            transition-delay: 0.2s;
+            --theme-color-tone: 0;
+            --theme-bg-vivid: 9%;
+            --theme-primary-colors-lightness: 75%;
+            --theme-strokes-colors-vivid: 16%;
+            --theme-strokes-colors-lightness: 45%;
         }
     </style>
 
     <style id="styles--app-base">
         #app {
+            --app-content-max-width: 45rem;
             line-height: 1.6;
             margin: 0 auto;
             padding: 0 0 2rem;
@@ -188,9 +179,18 @@
             transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
+        .revealable .revealable {
+            visibility: hidden;
+            transition-delay: 0.27s;
+        }
+
         .revealable.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .revealable.visible .revealable {
+            visibility: visible;
         }
 
         .reveals-by-sliding-upwards {
@@ -205,10 +205,24 @@
     </style>
 
     <style id="styles--component-article">
+        article {
+            margin: 0.5rem;
+            border-style: solid;
+            padding: 0.1rem 0.5rem;
+            transition-property: color, border-color, background-color, opacity, box-shadow, transform;
+            transition-duration: 0.26s;
+            transition-timing-function: ease-out;
+        }
+
         article ul {
             list-style-type: disc;
+            padding-left: 0.75rem;
+            margin: 0.25rem;
+            max-width: 51rem;
+        }
+
+        article p ~ ul {
             padding-left: 1.5rem;
-            margin: 0.5rem;
         }
     </style>
 
@@ -223,22 +237,27 @@
         }
 
         .capsules-single-list .capsule {
-            color:            hsl(var(--theme-color-tone), 22%, 66%);
-            background-color: hsl(var(--theme-color-tone), 11%, 11%);
-            border: 1px solid hsl(var(--theme-color-tone), 33%, 33%);
-            line-height: 1;
-            padding: 0.3em 1em 0.4em;
-            border-radius: 50rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
             cursor: default;
+            color:            hsl(var(--theme-color-tone), 33%, 77%);
+            background-color: hsl(var(--theme-color-tone),  9%,  9%);
+            border-color:     hsl(var(--theme-color-tone), 33%, 33%);
+            border-style: solid;
+            border-width: 0.05rem;
+            line-height: 1;
+            font-size: 0.7rem;
+            padding: 0.4em 1em 0.5em;
+            border-radius: 50rem;
+            transition-property: color, border-color, background-color, opacity, box-shadow, transform;
+            transition-duration: 0.26s;
+            transition-timing-function: ease-out;
+            box-shadow: 0 0 0.15rem #0006;
         }
 
         .capsules-single-list .capsule:hover {
-            transform: translateY(-0.3em);
-            color:        hsl(var(--theme-color-tone), 11%, 99%);
-            border-color: hsl(var(--theme-color-tone), 55%, 55%);
+            /* transform: translateY(-0.3em); */
+            color:        hsl(var(--theme-color-tone),  9%, 99%);
+            border-color: hsl(var(--theme-color-tone), 77%, 77%);
+            box-shadow: 0 0 0.5rem #0001;
         }
 
     </style>
@@ -257,7 +276,7 @@
             position: relative;
             padding: 0.5rem 0.5rem 2.25rem 1.5rem;
             margin: 0 0 -1rem 0;
-            border-left: 2px solid hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-strokes-colors-lightness));
+            border-left: 2px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
         }
 
         .timeline-node-content::before {
@@ -267,9 +286,11 @@
             top:  -0.5rem;
             width:  0.8rem;
             height: 0.8rem;
+            background-color: hsl(var(--theme-color-tone), 9%, 9%);
+            border-color:     hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
+            border-width: 0.1rem;
+            border-style: solid;
             border-radius: 50%;
-            background-color: hsl(var(--theme-color-tone), 11%, 11%);
-            border: 0.1rem solid hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-strokes-colors-lightness));
         }
 
         .timeline-node-content-header {
@@ -298,32 +319,36 @@
         .section {
             margin-bottom: 2rem;
             padding: 1rem 1rem 2rem;
-            border-radius: 0.75rem;
-            border: 1px solid hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-strokes-colors-lightness));
+            border-radius: 0.7rem;
+            border: 1px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
             background-color: hsl(var(--theme-color-tone), var(--theme-bg-vivid), 16%);
             box-shadow: 0 2px 8px var(--shadow-color);
         }
 
         .section-main-title {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 200;
             color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
             padding: 0 1rem;
+            letter-spacing: 0.1em;
         }
 
         h3.section-content-title {
             color: hsl(var(--theme-color-tone), 32%, 92%);
-            font-size: 1.1rem;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            font-weight: 500;
         }
 
         h4.section-content-title {
-            font-size: 0.95rem;
-            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 80%);
+            font-size: 0.8rem;
+            /* color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 80%); */
+            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
             font-weight: 400;
         }
 
         .section > hr {
-            --hr-color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
+            --hr-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
             margin-block: 0.25rem 0.75rem;
         }
 
@@ -334,20 +359,24 @@
 
     <style id="styles--app-header">
         .app-header {
+            --theme-primary-colors-vivid: 79%;
+            --theme-primary-colors-lightness: 72%;
             position: sticky;
             top: 0;
             z-index: 10;
             padding: 0;
-            margin-bottom: 1rem;
-            backdrop-filter: blur(0.75rem);
-            background-color: hsl(var(--theme-color-tone), 11%, 11%, 0.66);
-            border-bottom: 1px solid hsl(var(--theme-color-tone), 11%, 33%, 0.44);
+            margin: 0;
             border-radius: 0;
+            border-style: none none solid none;
+            border-width: 0 0 0.05rem 0;
+            border-color:     hsl(var(--theme-color-tone), 16%, 48%, 0.64);
+            background-color: hsl(var(--theme-color-tone), 11%, 11%, 0.66);
             box-shadow: 0 4px 12px var(--shadow-color);
+            backdrop-filter: blur(0.75rem);
         }
 
         .app-header-content {
-            max-width: 51rem;
+            max-width: var(--app-content-max-width);
             margin: 0 auto;
             padding: 1rem;
         }
@@ -361,7 +390,7 @@
             display: flex;
             justify-content: start;
             align-items: center;
-            gap: 1rem;
+            gap: 2rem;
         }
 
         .people-name {
@@ -372,15 +401,16 @@
         }
 
         .people-name rt {
-            opacity: 0.515;
+            opacity: 0.75;
             letter-spacing: 0;
-            color: hsl(var(--theme-color-tone), 55%, 55%)
+            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
         }
 
-        .people-prfession-title {
-            font-size: 1rem;
+        .people-profession-title {
+            font-size: 1.2rem;
             font-weight: 400;
-            color: hsl(var(--theme-color-tone), 55%, 55%);
+            color: hsl(var(--theme-color-tone), 67%, 61%);
+            letter-spacing: 0.1em;
         }
 
         .people-contacts {
@@ -394,14 +424,17 @@
         }
 
         .people-contacts a {
-            color: hsl(var(--theme-color-tone), 11%, 44%);
             text-decoration: none;
             border-radius: 0.2em;
             display: flex;
             align-items: center;
             gap: 0.25rem;
             padding: 0.15rem 0.35rem;
-            transition: color 0.219s ease;
+            transition-property: color, outline-color, background-color;
+            transition-duration: 0.319s;
+            transition-timing-function: ease-out;
+            color:                  hsl(var(--theme-color-tone), 12%, 48%);
+            text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
         }
 
         .people-contacts .entry-title {
@@ -424,45 +457,74 @@
 
     <style id="styles--app-main">
         main {
-            max-width: 51rem;
+            max-width: var(--app-content-max-width);
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 2rem 1rem 32vh;
         }
 
-        .item-subtitle-and-date {
+        .time-related-factor-and-the-period {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: 0.25rem;
-            font-size: 0.95rem;
+            margin: 0.25rem 0 0.25rem 2rem;
+            font-size: 0.7rem;
+            /* color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness)); */
+            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 80%);
         }
 
-        .item-subtitle {
-            font-weight: 400;
-            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+        .time-related-factor-and-the-period .the-period {
+            flex: 0 0 12rem;
         }
 
-        .item-date {
-            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+        .timeline-node-content article {
+            border-radius: 0.25rem;
+            border-width: 0.05rem;
+            border-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
+            background-color: hsl(var(--theme-color-tone), 9%, 9%);
         }
 
-        .summary .section-body {
+        .timeline-node-content article:hover {
+            color:        hsl(var(--theme-color-tone),  9%, 99%);
+            border-color: hsl(var(--theme-color-tone), 77%, 77%);
+        }
+
+        .section.summary {
+            transition-delay: 0.41s;
+        }
+
+        .section.skills {
+            transition-delay: 0.65s;
+        }
+
+        .section.jobs {
+            transition-delay: 0.75s;
+        }
+
+        .section.projects {
+            transition-delay: 0.41s;
+        }
+
+        .section.education {
+            transition-delay: 0.3s;
+        }
+
+        .section.summary .section-body {
             padding: 0.5rem 1rem;
         }
 
-        .summary p {
+        .section.summary p {
             text-indent: 2ic;
             margin-bottom: 1em;
         }
 
-        .summary p:last-child {
+        .section.summary p:last-child {
             margin-bottom: 0;
         }
 
-        .skills .section-body {
+        .section.skills .section-body {
             padding: 0.5rem 1rem;
         }
 
@@ -476,11 +538,6 @@
 
         .skills-single-list:last-child {
             margin-bottom: 0;
-        }
-
-        li,
-        p {
-            color: hsl(var(--theme-color-tone), 9%, 88%);
         }
 
         .project-link {
@@ -538,7 +595,7 @@
                             <rp>）</rp>
                         </ruby>
                     </h1>
-                    <p class="people-prfession-title">{{ resume.data.个人信息摘要.职业称谓 }}</p>
+                    <p class="people-profession-title">{{ resume.data.个人信息摘要.职业称谓 }}</p>
                 </div>
 
                 <hr>
@@ -624,7 +681,7 @@
                 </div>
             </section>
 
-            <section class="section experiences revealable reveals-by-sliding-upwards">
+            <section class="section jobs revealable reveals-by-sliding-upwards">
                 <h2 class="section-main-title">工作经历</h2>
                 <hr>
                 <div class="section-body">
@@ -634,21 +691,23 @@
                             :key="loopIndex"
                             class="timeline-node revealable reveals-by-sliding-upwards"
                         >
-                            <article class="timeline-node-content">
+                            <div class="timeline-node-content">
                                 <div class="timeline-node-content-header">
                                     <h3 class="section-content-title">{{ 某职位.企业名称 }}</h3>
 
-                                    <div class="item-subtitle-and-date">
-                                        <h4 class="item-subtitle">{{ 某职位.职位名称 }}</h4>
-                                        <span class="item-date">
-                                            <span class="item-date-1">
+                                    <div class="time-related-factor-and-the-period">
+                                        <span class="the-period">
+                                            <span class="period-date-1">
                                                 <span class="date-year">{{ 某职位.时间段[0][0] }}</span>
                                                 年
                                                 <span class="date-year">{{ 某职位.时间段[0][1] }}</span>
                                                 月
                                             </span>
                                             <span class="duratin-punc"> ~ </span>
-                                            <span v-if="某职位.时间段[1]" class="item-date-2">
+                                            <span
+                                                v-if="某职位.时间段[1]"
+                                                class="period-date-2"
+                                            >
                                                 <span class="date-year">{{ 某职位.时间段[1][0] }}</span>
                                                 年
                                                 <span class="date-year">{{ 某职位.时间段[1][1] }}</span>
@@ -656,19 +715,21 @@
                                             </span>
                                             <span v-else>今</span>
                                         </span>
+
+                                        <span class="time-related-factor">{{ 某职位.职位名称 }}</span>
                                     </div>
                                 </div>
 
                                 <div class="timeline-node-content-body">
                                     <h4 class="section-content-title">岗位职责</h4>
 
-                                    <div class="responsibilities">
+                                    <article class="responsibilities">
                                         <ul>
                                             <li v-for="(某职责项, loopIndex) in 某职位.岗位职责" :key="loopIndex">{{ 某职责项 }}</li>
                                         </ul>
-                                    </div>
+                                    </article>
                                 </div>
-                            </article>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -684,20 +745,23 @@
                             :key="loopIndex"
                             class="timeline-node revealable reveals-by-sliding-upwards"
                         >
-                            <article class="timeline-node-content">
+                            <div class="timeline-node-content">
                                 <div class="timeline-node-content-header">
                                     <h3 class="section-content-title">{{ 某项目.项目名称 }}</h3>
 
-                                    <div class="item-subtitle-and-date">
-                                        <span class="item-date">
-                                            <span class="item-date-1">
+                                    <span class="time-related-factor-and-the-period">
+                                        <span class="the-period">
+                                            <span class="period-date-1">
                                                 <span class="date-year">{{ 某项目.时间段[0][0] }}</span>
                                                 年
                                                 <span class="date-year">{{ 某项目.时间段[0][1] }}</span>
                                                 月
                                             </span>
                                             <span class="duratin-punc"> ~ </span>
-                                            <span v-if="某项目.时间段[1]" class="item-date-2">
+                                            <span
+                                                v-if="某项目.时间段[1]"
+                                                class="period-date-2"
+                                            >
                                                 <span class="date-year">{{ 某项目.时间段[1][0] }}</span>
                                                 年
                                                 <span class="date-year">{{ 某项目.时间段[1][1] }}</span>
@@ -705,15 +769,17 @@
                                             </span>
                                             <span v-else>今</span>
                                         </span>
-                                    </div>
+                                    </span>
                                 </div>
 
                                 <div class="timeline-node-content-body">
                                     <h4 class="section-content-title">项目简介</h4>
 
-                                    <ul class="project-description">
-                                        <li v-for="(某自然段, loopIndex) in 某项目.项目简述" :key="loopIndex">{{ 某自然段 }}</li>
-                                    </ul>
+                                    <article class="project-description">
+                                        <ul>
+                                            <li v-for="(某自然段, loopIndex) in 某项目.项目简述" :key="loopIndex">{{ 某自然段 }}</li>
+                                        </ul>
+                                    </article>
 
                                     <div class="project-tech-stack">
                                         <div class="capsules-single-list">
@@ -734,7 +800,7 @@
                                             style="width: 16px; height: 16px; display: inline-block; vertical-align: middle;"></i>
                                     </a>
                                 </div>
-                            </article>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -750,21 +816,23 @@
                             :key="loopIndex"
                             class="timeline-node revealable reveals-by-sliding-upwards"
                         >
-                            <article class="timeline-node-content">
+                            <div class="timeline-node-content">
                                 <div class="timeline-node-content-header">
                                     <h3 class="section-content-title">{{ 某段受教育经历.教育机构 }}</h3>
 
-                                    <div class="item-subtitle-and-date">
-                                        <h4 class="item-subtitle">{{ 某段受教育经历.主修专业 }}</h4>
-                                        <span class="item-date">
-                                            <span class="item-date-1">
+                                    <span class="time-related-factor-and-the-period">
+                                        <span class="the-period">
+                                            <span class="period-date-1">
                                                 <span class="date-year">{{ 某段受教育经历.时间段[0][0] }}</span>
                                                 年
                                                 <span class="date-year">{{ 某段受教育经历.时间段[0][1] }}</span>
                                                 月
                                             </span>
                                             <span class="duratin-punc"> ~ </span>
-                                            <span v-if="某段受教育经历.时间段[1]" class="item-date-2">
+                                            <span
+                                                v-if="某段受教育经历.时间段[1]"
+                                                class="period-date-2"
+                                            >
                                                 <span class="date-year">{{ 某段受教育经历.时间段[1][0] }}</span>
                                                 年
                                                 <span class="date-year">{{ 某段受教育经历.时间段[1][1] }}</span>
@@ -772,12 +840,19 @@
                                             </span>
                                             <span v-else>今</span>
                                         </span>
-                                    </div>
+
+                                        <span class="time-related-factor">{{ 某段受教育经历.主修专业 }}</span>
+                                    </span>
                                 </div>
 
-                                <!-- <div class="timeline-node-content-body">
-                                </div> -->
-                            </article>
+                                <!--
+                                <div class="timeline-node-content-body">
+                                    <h4 class="section-content-title">小标题</h4>
+
+                                    <article></article>
+                                </div>
+                                -->
+                            </div>
                         </div>
                     </div>
                 </div>
