@@ -85,6 +85,11 @@
             );
         }
 
+        #app a {
+            color:                  hsl(var(--theme-color-tone), 12%, 48%);
+            text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
+        }
+
         #app a:hover {
             color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
         }
@@ -103,11 +108,32 @@
             --theme-strokes-colors-lightness: 51%;
         }
 
+        .section.portfolio {
+            --theme-color-tone: 51;
+            --theme-bg-vivid: 19%;
+            --theme-primary-colors-vivid: 55%;
+            --theme-primary-colors-lightness: 69%;
+            --theme-strokes-colors-vivid: 33%;
+            --theme-strokes-colors-lightness: 51%;
+        }
+
         .section.skills {
-            --theme-color-tone: 32;
-            --theme-bg-vivid: 5%;
+            --theme-color-tone: 27;
+            --theme-bg-vivid: 9%;
             --theme-primary-colors-lightness: 74%;
             --theme-strokes-colors-lightness: 51%;
+        }
+
+        .section.skills .capsules-single-list .capsule.技能掌握等级--默认 {
+            color:            hsl(var(--theme-color-tone), 22%, 44%);
+            background-color: hsl(var(--theme-color-tone), 11%, 11%);
+            border-color:     hsl(var(--theme-color-tone), 33%, 33%);
+        }
+
+        .section.skills .capsules-single-list .capsule.技能掌握等级--精通 {
+            color:            hsl(var(--theme-color-tone), 88%, 88%);
+            background-color: hsl(var(--theme-color-tone), 15%, 15%);
+            border-color:     hsl(var(--theme-color-tone), 44%, 55%);
         }
 
         .section.jobs {
@@ -168,6 +194,15 @@
             height: 1em;
             flex: 0 0 auto;
         }
+
+        #app a {
+            text-decoration-color: #fff2;
+            border-radius: 0.2em;
+            padding: 0.15rem 0.35rem;
+            transition-property: color, outline-color, background-color;
+            transition-duration: 0.319s;
+            transition-timing-function: ease-out;
+        }
     </style>
 
     <style id="styles--component-revelable">
@@ -207,21 +242,36 @@
         article {
             margin: 0.5rem;
             border-style: solid;
+            border-width: 0;
             padding: 0.1rem 0.5rem;
             transition-property: color, border-color, background-color, opacity, box-shadow, transform;
             transition-duration: 0.26s;
             transition-timing-function: ease-out;
+            max-width: 51rem;
+        }
+
+        article ol,
+        article ul {
+            margin: 0.25rem 0 1rem;
+        }
+
+        article ol {
+            padding-left: 1rem;
         }
 
         article ul {
             list-style-type: disc;
-            padding-left: 0.75rem;
-            margin: 0.25rem;
-            max-width: 51rem;
+            padding-left: 1rem;
         }
 
+        article ol > li,
+        article ul > li {
+            margin: 0 0 0.75rem;
+        }
+
+        article p ~ ol,
         article p ~ ul {
-            padding-left: 1.5rem;
+            padding-left: 2.75rem;
         }
     </style>
 
@@ -230,7 +280,7 @@
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 1rem;
             padding: 0.5rem;
             margin: 0;
         }
@@ -298,6 +348,16 @@
 
         .timeline-node-content-body {
             margin-top: 0.75rem;
+        }
+
+        .timeline-node-content-body article ol:last-child,
+        .timeline-node-content-body article ul:last-child {
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-node-content-body article ol:last-child > li,
+        .timeline-node-content-body article ul:last-child > li {
+            margin-bottom: 0;
         }
 
         @media screen and (max-width: 730px) {
@@ -429,16 +489,10 @@
 
         .people-contacts a {
             text-decoration: none;
-            border-radius: 0.2em;
             display: flex;
             align-items: center;
             gap: 0.25rem;
             padding: 0.15rem 0.35rem;
-            transition-property: color, outline-color, background-color;
-            transition-duration: 0.319s;
-            transition-timing-function: ease-out;
-            color:                  hsl(var(--theme-color-tone), 12%, 48%);
-            text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
         }
 
         .people-contacts a .entry-title {
@@ -519,7 +573,11 @@
             border-color: hsl(var(--theme-color-tone), 77%, 77%);
         }
 
-        .section.summary {
+        /* .section.summary {
+            transition-delay: 0.41s;
+        }
+
+        .section.portfolio {
             transition-delay: 0.41s;
         }
 
@@ -537,10 +595,32 @@
 
         .section.education {
             transition-delay: 0.3s;
+        } */
+
+        .section.skills .capsules-single-list .capsule.技能掌握等级--精通 {
+            position: relative;
         }
 
-        .section.summary .section-body {
-            padding: 0.5rem 1rem;
+        .section.skills .capsules-single-list .capsule.技能掌握等级--精通::after {
+            font-size: 0.8em;
+            content: '精通';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: auto;
+            right: 0;
+            bottom: auto;
+            margin: -0.5em -1em;
+            padding: 0.1em 0.5em;
+            border-radius: 10em;
+            color: black;
+            background-color: hsl(var(--theme-color-tone), 79%, 79%);
+            transform: rotate(25deg);
+        }
+
+        .section.summary   .section-body,
+        .section.portfolio .section-body {
+            padding: 0.25rem 0;
         }
 
         .section.summary p {
@@ -548,7 +628,13 @@
             margin-bottom: 1em;
         }
 
-        .section.summary p:last-child {
+        .section.portfolio p {
+            text-indent: 0;
+            margin-bottom: 1em;
+        }
+
+        .section.summary   p:last-child,
+        .section.portfolio p:last-child {
             margin-bottom: 0;
         }
 
@@ -671,10 +757,53 @@
                 <h2 class="section-main-title">个人简介</h2>
                 <hr>
                 <div class="section-body">
-                    <p
-                        v-for="(某自然段, loopIndex) in resume.data.个人信息摘要.个人简介"
-                        :key="loopIndex"
-                    >{{ 某自然段 }}</p>
+                    <article>
+                        <template
+                            v-for="(某自然段, loopIndex) in resume.data.个人信息摘要.个人简介"
+                            :key="loopIndex"
+                            v-html="某自然段"
+                        >
+                            <section v-if="某自然段 && typeof 某自然段 === 'object'">
+                                <p v-if="某自然段.文" v-html="某自然段.文"></p>
+                                <ul v-if="Array.isArray(某自然段.表) && 某自然段.表.length">
+                                    <li
+                                        v-for="(某项, 该表之循环序号) in 某自然段.表"
+                                        :key="该表之循环序号"
+                                        v-html="某项"
+                                    ></li>
+                                </ul>
+                            </section>
+
+                            <p v-else v-html="某自然段"></p>
+                        </template>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section portfolio revealable reveals-by-sliding-upwards">
+                <h2 class="section-main-title">作品集</h2>
+                <hr>
+                <div class="section-body">
+                    <article>
+                        <template
+                            v-for="(某自然段, loopIndex) in resume.data.个人信息摘要.作品集"
+                            :key="loopIndex"
+                            v-html="某自然段"
+                        >
+                            <section v-if="某自然段 && typeof 某自然段 === 'object'">
+                                <p v-if="某自然段.文" v-html="某自然段.文"></p>
+                                <ul v-if="Array.isArray(某自然段.表) && 某自然段.表.length">
+                                    <li
+                                        v-for="(某项, 该表之循环序号) in 某自然段.表"
+                                        :key="该表之循环序号"
+                                        v-html="某项"
+                                    ></li>
+                                </ul>
+                            </section>
+
+                            <p v-else v-html="某自然段"></p>
+                        </template>
+                    </article>
                 </div>
             </section>
 
@@ -690,7 +819,8 @@
                                     v-for="某技能 in resume.data.技能集.开发语言"
                                     :key="某技能"
                                     class="capsule"
-                                >{{ 某技能 }}</li>
+                                    :class="{ [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
+                                >{{ 某技能[0] }}</li>
                             </ul>
                         </div>
 
@@ -701,7 +831,8 @@
                                     v-for="某技能 in resume.data.技能集.开发框架"
                                     :key="某技能"
                                     class="capsule"
-                                >{{ 某技能 }}</li>
+                                    :class="{ [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
+                                >{{ 某技能[0] }}</li>
                             </ul>
                         </div>
 
@@ -712,7 +843,8 @@
                                     v-for="某技能 in resume.data.技能集.开发工具"
                                     :key="某技能"
                                     class="capsule"
-                                >{{ 某技能 }}</li>
+                                    :class="{ [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
+                                >{{ 某技能[0] }}</li>
                             </ul>
                         </div>
                     </div>
