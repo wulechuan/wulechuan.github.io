@@ -1,5 +1,9 @@
+function genHtmlOfAnchor (url) {
+    return `<a href="${encodeURI(url)}" target="_blank">${url}</a>`;
+}
+
 window.resumeRawData = {
-    填写该简历之年月: '2025 年 8 月',
+    填写该简历之年月: '2025 年 9 月',
     个人信息摘要: {
         姓名: '吴乐川',
         姓名拼音: [ undefined, 'lè', undefined ],
@@ -23,19 +27,49 @@ window.resumeRawData = {
                 表: [
                     [
                         '最新的工具（未发布）： ',
-                        '<a href="https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/%E4%B8%BB/%E8%B7%A8%E5%BA%94%E7%94%A8%E5%85%AC%E5%85%B1%E8%B5%84%E6%BA%90%E9%9B%86" target="_blank">https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集</a> 。',
+                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集'),
                         ' 若干工具已配文档。其余文档仍在整理。',
                     ].join(''),
-                    '较新的工具（已发布）： <a href="https://www.npmjs.com/search?q=%40xinmier" target="_blank">https://www.npmjs.com/search?q=%40xinmier</a> 。',
-                    '老旧的工具（已发布）： <a href="https://www.npmjs.com/search?q=%40wulechuan" target="_blank">https://www.npmjs.com/search?q=%40wulechuan</a> 。',
+
+                    [
+                        '较新的工具（已发布）： ',
+                        genHtmlOfAnchor('https://www.npmjs.com/search?q=%40xinmier'),
+                        '。',
+                    ].join(''),
+
+                    [
+                        '老旧的工具（已发布）： ',
+                        genHtmlOfAnchor('https://www.npmjs.com/search?q=%40wulechuan'),
+                        '。',
+                    ].join(''),
                 ],
             },
             {
                 文: '部分有特色或代表性的工具。',
                 表: [
-                    '仿真的 LED 灯珠： <a href="https://gitee.com/nanchang-wulechuan/xme--ui--led-lights" target="_blank">https://gitee.com/nanchang-wulechuan/xme--ui--led-lights</a> 。',
-                    'Fabricjs 5.x 实用多边形： <a href="https://codepen.io/wulechuan/pen/rNgpZom" target="_blank">https://codepen.io/wulechuan/pen/rNgpZom</a> 。',
-                    '老旧的 CSS 动画花瓣： <a href="https://codepen.io/wulechuan/pen/dqOpom" target="_blank">https://codepen.io/wulechuan/pen/dqOpom</a> 。',
+                    [
+                        '仿真的 LED 灯珠： ',
+                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/xme--ui--led-lights'),
+                        '。',
+                    ].join(''),
+                    
+                    [
+                        'Fabricjs 5.x 实用多边形： ',
+                        genHtmlOfAnchor('https://codepen.io/wulechuan/pen/rNgpZom'),
+                        '。',
+                    ].join(''),
+
+                    [
+                        '老旧的 CSS 动画花瓣： ',
+                        genHtmlOfAnchor('https://codepen.io/wulechuan/pen/dqOpom'),
+                        '。',
+                    ].join(''),
+
+                    [
+                        '为我犬子设计的网页小游戏《端端的超级勇士》',
+                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wulechuan-webapp-duan-duan-chao-ji-yong-shi'),
+                        '。',
+                    ].join(''),
                 ],
             },
         ],
@@ -86,8 +120,11 @@ window.resumeRawData = {
             [ 'Bash',           '精通' ],
             [ 'Vite',           '精通' ],
             [ 'Webpack',        '精通' ],
+            [ 'Gulp',           '精通' ],
             [ 'git',            '精通' ],
             [ 'npm',            '精通' ],
+            [ 'Jenkins' ],
+            [ 'CircleCI' ],
             [ 'Docker' ],
             [ 'Figma' ],
         ],
@@ -105,14 +142,67 @@ window.resumeRawData = {
             ],
         },
         {
-            企业名称: '申铁信息技术',
-            职位名称: '高级前端开发工程师',
+            企业名称: '上海申铁信息工程有限公司',
+            职位名称: '高级 WEB前端开发工程师',
             时间段: [
-                [ 2018, 6 ],
-                [ 2022, 6 ],
+                [2020, 7],
+                [2022, 7],
             ],
             岗位职责: [
-                '待详',
+                '带领前端小组，规划并完成动车组健康管理系统（PHM）第一、二阶段的前端开发任务。',
+                '独立负责《动车交路与运行状态观测和预警子系统》及《动车交路编排子系统》的美术设计、交互设计与编码实现。',
+                '进行大量前端性能优化工作，如虚拟滚动以解决大数据量渲染性能瓶颈。',
+                '负责前端技术培训、通用代码模块化及团队内推广。',
+            ],
+        },
+        {
+            企业名称: '新趣教育科技（上海）有限公司',
+            职位名称: '高级 WEB前端开发工程师 / UI/UX设计师',
+            时间段: [
+                [2020, 1],
+                [2020, 6],
+            ],
+            岗位职责: [
+                '独自完成公司旗下多款子产品的前端界面设计、交互设计、动画设计和编码实现。',
+                '采用 TypeScript 和 Vue 2.x 技术栈，设计并应用自研 npm 组件和 mock 数据机制。',
+            ],
+        },
+        {
+            企业名称: '上海天旦网络科技发展有限公司',
+            职位名称: '高级 WEB前端开发工程师 / 研发部形象设计师 / 产品技术支持',
+            时间段: [
+                [2017, 7],
+                [2019, 6],
+            ],
+            岗位职责: [
+                '参与核心产品研发，使用 React/Redux 重构旧模块，并深度定制 Ant Design 构建自有组件库。',
+                '开发基于 Nuxt.js 的公司内部 Kubernetes 管理平台。',
+                '撰写 Bash 脚本优化工作流，将故障还原周期从 2 天缩短至 2 小时。',
+                '为一线工程师提供技术支持，分析日志、定位故障、提出性能优化方案。',
+            ],
+        },
+        {
+            企业名称: '帝帆美（上海）信息科技有限公司',
+            职位名称: '高级 WEB前端开发工程师',
+            时间段: [
+                [2016, 5],
+                [2017, 6],
+            ],
+            岗位职责: [
+                '维护 Mademan、Smosh 等多个旧有网站（WordPress/Drupal），修复瑕疵并添加新功能。',
+                '参与核心网站 Break.com 的全新改版重构，与洛杉矶团队协作开发，采用 ES6、Sass、Webpack。',
+            ],
+        },
+        {
+            企业名称: '上海耘智科技有限公司',
+            职位名称: 'UI/UX设计 / WEB前端开发',
+            时间段: [
+                [2014, 11],
+                [2016, 5],
+            ],
+            岗位职责: [
+                '作为创始阶段唯一前端，从零构建产品前端，自行设计基于 mixin 机制的通用前端框架。',
+                '主导页面与交互设计，确保在移动端和桌面端的完美自适应。',
             ],
         },
     ],
@@ -137,20 +227,79 @@ window.resumeRawData = {
             项目成果地址: '',
         },
         {
-            项目名称: '铁路 PHM',
+            项目名称: '动车组健康管理系统（PHM）前端',
             时间段: [
-                [ 2018, 6 ],
-                [ 2022, 6 ],
+                [2018, 6],
+                [2022, 6],
             ],
             项目简述: [
-                '待详',
+                '参与铁道部评审的核心系统。业务逻辑与交互设计复杂。',
+                '独立完成多个关键子系统（观测预警、交路编排）的全栈式前端开发（设计+编码）。',
+                '针对 ArcGIS 进行二次开发，处理大量复杂 eCharts 图表数据。',
+                '通过虚拟滚动等技术进行深度性能优化，保障系统流畅运行。',
             ],
             所用技术栈: [
-                'Vuejs 2',
+                'Vue 2.x',
+                'TypeScript',
                 'ECharts',
-                'Element Plus',
+                'ArcGIS API',
+                'ElementUI',
             ],
-            项目成果地址: '',
+            项目成果地址: '产品涉密，外界无法访问。',
+        },
+        {
+            项目名称: '“新趣科技”旗下核心产品前端',
+            时间段: [
+                [2020, 1],
+                [2020, 6],
+            ],
+            项目简述: [
+                '独立负责多款子产品的前端全栈开发（设计+编码），不涉及后端。',
+                '项目对前端路由设计要求复杂，广泛使用 Vue Router 钩子进行统一逻辑处理。',
+                '实现全自适应布局，确保多端体验一致。',
+            ],
+            所用技术栈: [
+                'Vue 2.x',
+                'TypeScript',
+                'Vue Router',
+                '自研 npm 组件',
+            ],
+            项目成果地址: 'https://t.simplekids.cn/',
+        },
+        {
+            项目名称: '“天旦”内部 Kubernetes 管理平台',
+            时间段: [
+                [2017, 7],
+                [2019, 6],
+            ],
+            项目简述: [
+                '利用 Nuxt.js (Vue.js + Express.js) 技术栈开发的公司内部项目。',
+                '兼任界面设计师，负责项目的视觉与交互设计。',
+            ],
+            所用技术栈: [
+                'Nuxt.js',
+                'Vue.js',
+                'Express.js',
+            ],
+            项目成果地址: '产品涉密，外界无法访问。',
+        },
+        {
+            项目名称: 'Break.com 网站改版重构',
+            时间段: [
+                [2016, 5],
+                [2017, 6],
+            ],
+            项目简述: [
+                '从底层完全重构，目标是实现超高的网络与交互响应性。',
+                '与美国洛杉矶团队昼夜交替协作开发，互相评审代码。',
+                '负责页面交互逻辑实现与 Google Tag 广告块构建。',
+            ],
+            所用技术栈: [
+                'ES2015 (ES6)',
+                'Sass',
+                'Webpack',
+            ],
+            项目成果地址: '项目在本人离职时仍未上线。',
         },
     ],
 };
