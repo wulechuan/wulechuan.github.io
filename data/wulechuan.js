@@ -15,65 +15,101 @@ window.resumeRawData = {
             代码仓库: 'https://gitee.com/nanchang-wulechuan',
         },
         个人简介: [
-            '逾 12 年网页程序开发经验。推崇模块化开发技术。注重提高代码可读性。理解并推崇 RESTful 开发。具备从需求分析到项目部署的全栈能力。',
-            '注重研发流程的自动化。独立搭建了多产品线、多型号、多商务品牌的全自动【软件发行版群】构建工具。制定并恪守办法部分规范，特别是持续维护版本发行与演进文档。',
-            '善与团队协作。5 年以上技术领导经验。格外注重技术文档之编撰。',
-            '精益求精。对技术充满热情。追求极致的用户体验和代码质量。',
-            '勤奋。务实。幽默。乐观。',
-        ],
-        作品集: [
             {
-                文: '独自设计了大大小小数十款实用工具，多半已发布于 npm 仓库。',
-                表: [
-                    [
-                        '最新的工具（未发布）： ',
-                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集'),
-                        ' 若干工具已配文档。其余文档仍在整理。',
-                    ].join(''),
-
-                    [
-                        '较新的工具（已发布）： ',
-                        genHtmlOfAnchor('https://www.npmjs.com/search?q=%40xinmier'),
-                        '。',
-                    ].join(''),
-
-                    [
-                        '老旧的工具（已发布）： ',
-                        genHtmlOfAnchor('https://www.npmjs.com/search?q=%40wulechuan'),
-                        '。',
-                    ].join(''),
+                文: '主攻领域',
+                列: [
+                    '曾拥有 10 余年的三维动画与影视制作行业经验。后转型为网页程序开发员。',
+                    '逾 12 年网页程序开发经验。推崇模块化开发理念并全力实践。理解并推崇 RESTful 开发。',
+                    '有丰富的网页多线程（Worker）编程经验。',
+                    '有丰富的程序化图表绘制经验（例如 ECharts ）。有丰富的网页图形交互编程经验（例如 Fabricjs 、Konvajs ）。有较丰富的网页流媒体编程经验。',
+                    '有网页三维编程经验（例如 Threejs 、 Babylonjs ）。',
                 ],
             },
             {
-                文: '部分有特色或代表性的工具。',
-                表: [
-                    [
-                        '仿真的 LED 灯珠： ',
-                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/xme--ui--led-lights'),
-                        '。',
-                    ].join(''),
-                    
-                    [
-                        'Fabricjs 5.x 实用多边形： ',
-                        genHtmlOfAnchor('https://codepen.io/wulechuan/pen/rNgpZom'),
-                        '。',
-                    ].join(''),
-
-                    [
-                        '老旧的 CSS 动画花瓣： ',
-                        genHtmlOfAnchor('https://codepen.io/wulechuan/pen/dqOpom'),
-                        '。',
-                    ].join(''),
-
-                    [
-                        '为我犬子设计的网页小游戏《端端的超级勇士》',
-                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wulechuan-webapp-duan-duan-chao-ji-yong-shi'),
-                        '。',
-                    ].join(''),
+                文: '涉猎',
+                列: [
+                    '掌握基本且实用的服务端编程技术，含双工通信（WebSocket）服务编程。惯用 Expressjs 、Koajs 。',
+                    '具备从需求分析到项目部署的全栈能力。',
+                    '自幼爱好美术。可独立设计界面，崇尚简约风格。可独立设计人机交互细节。',
+                ],
+            },
+            {
+                文: '职业素养',
+                列: [
+                    '对技术充满热情。注重提高代码可读性。',
+                    '注重研发流程的自动化。独立搭建了多产品线、多型号、多商务品牌的全自动【软件发行版群】构建工具。制定并恪守办法部分规范，特别是持续维护版本发行与演进文档。',
+                    '积极利用人工智能体辅助编程。擅长预先拆解复杂的业务，以利交付于人工智能体。擅长撰写条理清晰、措辞精准、切中要害的需求文档，以引导和规范人工智能体之产出。',
+                    '精益求精。追求极致的用户体验和代码质量。',
+                    '善与团队协作。5 年以上技术领导经验。格外注重技术文档之编撰。',
+                ],
+            },
+            {
+                文: '为人',
+                列: [
+                    '勤奋。务实。乐观。幽默。',
                 ],
             },
         ],
     },
+    作品集: [
+        {
+            文: '独自设计了大大小小数十款实用工具，多半已发布于 npm 仓库。',
+            列: [
+                [
+                    '最新的工具（未发布）： ',
+                    genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集'),
+                    ' 若干工具已配文档。其余文档仍在整理。',
+                ].join(''),
+
+                [
+                    '较新的工具（已发布）： ',
+                    genHtmlOfAnchor('https://www.npmjs.com/search?q=%40xinmier'),
+                    '。',
+                ].join(''),
+
+                [
+                    '老旧的工具（已发布）： ',
+                    genHtmlOfAnchor('https://www.npmjs.com/search?q=%40wulechuan'),
+                    '。',
+                ].join(''),
+            ],
+        },
+        '分隔线',
+        {
+            文: '有特色或代表性的工具或项目：',
+            列: [
+                [
+                    'VSCode 插件《Markdown 文件预览（ HTML ）之配色方案》： ',
+                    genHtmlOfAnchor('https://marketplace.visualstudio.com/items?itemName=wulechuan.wulechuan-markdown-html-theme-light-1'),
+                    '。',
+                ].join(''),
+
+                [
+                    '仿真的 LED 灯珠： ',
+                    genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/xme--ui--led-lights'),
+                    '。',
+                ].join(''),
+
+                [
+                    'Fabricjs 5.x 实用多边形： ',
+                    genHtmlOfAnchor('https://codepen.io/wulechuan/pen/rNgpZom'),
+                    '。',
+                ].join(''),
+
+                [
+                    '老旧的 CSS 动画花瓣： ',
+                    genHtmlOfAnchor('https://codepen.io/wulechuan/pen/dqOpom'),
+                    '。',
+                ].join(''),
+
+                [
+                    '为我犬子设计的网页小游戏《端端的超级勇士》： ',
+                    genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wulechuan-webapp-duan-duan-chao-ji-yong-shi'),
+                    '。',
+                ].join(''),
+            ],
+        },
+    ],
     受教育经历: [
         {
             教育机构: '南京邮电学院（今南京邮电大学）',
@@ -95,7 +131,7 @@ window.resumeRawData = {
             [ 'Less',                      '精通' ],
             [ 'Stylus',                    '精通' ],
         ],
-        开发框架: [
+        技术框架技术子领域与专门工具库: [
             [ 'Vuejs 2',        '精通' ],
             [ 'Vuejs 3',        '精通' ],
             [ 'VueX',           '精通' ],
@@ -107,6 +143,8 @@ window.resumeRawData = {
             [ 'Fabricjs',       '精通' ],
             [ 'ECharts',        '精通' ],
             [ 'HighCharts',     '精通' ],
+            [ 'WebMediaStream' ],
+            [ '(Web) Workers' ],
             [ 'NuxtJS' ],
             [ 'ReactJS' ],
             [ 'Element Plus',   '精通' ],
@@ -115,7 +153,7 @@ window.resumeRawData = {
             [ 'KoaJS',          '精通' ],
             [ 'Expressjs' ],
         ],
-        开发工具: [
+        泛用工具与平台: [
             [ 'PowerShellCore', '精通' ],
             [ 'Bash',           '精通' ],
             [ 'Vite',           '精通' ],

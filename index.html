@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>前端开发工程师简历</title>
+    <title>简历</title>
 
     <script src="js/3rd-parties/vuejs-3.4.27.js"></script>
-    <!-- <script src="js/3rd-parties/lucide.js"></script> -->
 
     <style>
         *,
@@ -40,17 +39,15 @@
             }
         }
 
-        #app {
+        .app {
             font-family: 'HarmonyOS Sans', 'Inter', sans-serif;
             font-size: 0.8rem;
         }
     </style>
 
     <style id="styles--app-theming-central">
-        #app {
+        .app {
             --shadow-color: rgba(0, 0, 0, 0.319);
-
-            --hr-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
 
             --theme-color-tone: 222;
             --theme-bg-vivid: 15%;
@@ -63,34 +60,34 @@
             background-color: hsl(var(--theme-color-tone), 12%,  8%);
         }
 
-        #app a {
+        .app a {
             outline-style: solid;
             outline-width: 0.1rem;
             outline-color: transparent;
         }
 
-        #app :focus-visible,
-        #app :focus {
+        .app :focus-visible,
+        .app :focus {
             outline-color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
             color:         hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
         }
 
-        #app hr {
+        .app hr {
             background-color: transparent;
             background-image: linear-gradient(
                 to right,
                 transparent 0%,
-                var(--hr-color) 15% 85%,
+                hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51),
                 transparent 100%
             );
         }
 
-        #app a {
+        .app a {
             color:                  hsl(var(--theme-color-tone), 12%, 48%);
             text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
         }
 
-        #app a:hover {
+        .app a:hover {
             color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
         }
 
@@ -160,7 +157,7 @@
     </style>
 
     <style id="styles--app-base">
-        #app {
+        .app {
             --app-content-max-width: 45rem;
             line-height: 1.6;
             margin: 0 auto;
@@ -168,34 +165,34 @@
         }
 
         #app[v-cloak],
-        #app [v-cloak] {
+        .app [v-cloak] {
             display: none !important;
         }
 
-        #app hr {
+        .app hr {
             display: block;
             border-width: 0;
             border-style: none;
             width: 100%;
-            margin: 0.5rem auto;
+            margin: 1rem auto;
             min-height: 1px;
             max-height: 1px;
             flex: 0 0;
         }
 
-        #app svg.icon use {
+        .app svg.icon use {
             stroke: currentColor;
             fill:   transparent;
         }
 
-        #app svg.icon {
+        .app svg.icon {
             margin-top: 0.15em;
             width:  1em;
             height: 1em;
             flex: 0 0 auto;
         }
 
-        #app a {
+        .app a {
             text-decoration-color: #fff2;
             border-radius: 0.2em;
             padding: 0.15rem 0.35rem;
@@ -352,7 +349,7 @@
 
         .timeline-node-content-body article ol:last-child,
         .timeline-node-content-body article ul:last-child {
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.35rem;
         }
 
         .timeline-node-content-body article ol:last-child > li,
@@ -404,7 +401,6 @@
         }
 
         .section > hr {
-            --hr-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
             margin-block: 0.25rem 0.75rem;
         }
 
@@ -623,9 +619,21 @@
             padding: 0.25rem 0;
         }
 
+        .section.summary   p:last-child,
+        .section.portfolio p:last-child {
+            margin-bottom: 0;
+        }
+
         .section.summary p {
-            text-indent: 2ic;
+            text-indent: 0;
+            /* text-indent: 2ic; */
             margin-bottom: 1em;
+        }
+
+        .section.summary p + ul {
+            list-style: none;
+            /* list-style-type: '· '; */
+            padding-left: 2ic;
         }
 
         .section.portfolio p {
@@ -633,9 +641,9 @@
             margin-bottom: 1em;
         }
 
-        .section.summary   p:last-child,
-        .section.portfolio p:last-child {
-            margin-bottom: 0;
+        .section.portfolio p + ul {
+            list-style-type: '· ';
+            padding-left: 2ic;
         }
 
         .section.skills .section-body {
@@ -706,7 +714,7 @@
         </symbol>
     </svg>
 
-    <div id="app" v-cloak>
+    <div id="app" class="app" v-cloak>
         <header class="app-header revealable reveals-by-sliding-downwards">
             <div class="app-header-content">
                 <div class="people-name-and-profession-title">
@@ -714,8 +722,10 @@
                         <ruby>
                             <span>{{ resume.data.个人信息摘要.姓名 }}</span>
                             <rp>（</rp>
-                            <rt><span v-for="(某字的拼音, loopIndex) in resume.data.个人信息摘要.姓名拼音" :key="loopIndex">{{ 某字的拼音
-                                    }}</span></rt>
+                            <rt><span
+                                v-for="(某字的拼音, loopIndex) in resume.data.个人信息摘要.姓名拼音"
+                                :key="loopIndex"
+                            >{{ 某字的拼音 }}</span></rt>
                             <rp>）</rp>
                         </ruby>
                     </h1>
@@ -765,14 +775,16 @@
                         >
                             <section v-if="某自然段 && typeof 某自然段 === 'object'">
                                 <p v-if="某自然段.文" v-html="某自然段.文"></p>
-                                <ul v-if="Array.isArray(某自然段.表) && 某自然段.表.length">
+                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length">
                                     <li
-                                        v-for="(某项, 该表之循环序号) in 某自然段.表"
-                                        :key="该表之循环序号"
+                                        v-for="(某项, 该项之循环序号) in 某自然段.列"
+                                        :key="该项之循环序号"
                                         v-html="某项"
                                     ></li>
                                 </ul>
                             </section>
+
+                            <hr v-else-if="某自然段 === '分隔线'">
 
                             <p v-else v-html="某自然段"></p>
                         </template>
@@ -780,26 +792,28 @@
                 </div>
             </section>
 
-            <section class="section portfolio revealable reveals-by-sliding-upwards">
+            <section v-if="resume.data.作品集 && resume.data.作品集.length > 0" class="section portfolio revealable reveals-by-sliding-upwards">
                 <h2 class="section-main-title">作品集</h2>
                 <hr>
                 <div class="section-body">
                     <article>
                         <template
-                            v-for="(某自然段, loopIndex) in resume.data.个人信息摘要.作品集"
+                            v-for="(某自然段, loopIndex) in resume.data.作品集"
                             :key="loopIndex"
                             v-html="某自然段"
                         >
                             <section v-if="某自然段 && typeof 某自然段 === 'object'">
                                 <p v-if="某自然段.文" v-html="某自然段.文"></p>
-                                <ul v-if="Array.isArray(某自然段.表) && 某自然段.表.length">
+                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length">
                                     <li
-                                        v-for="(某项, 该表之循环序号) in 某自然段.表"
-                                        :key="该表之循环序号"
+                                        v-for="(某项, 该项之循环序号) in 某自然段.列"
+                                        :key="该项之循环序号"
                                         v-html="某项"
                                     ></li>
                                 </ul>
                             </section>
+
+                            <hr v-else-if="某自然段 === '分隔线'">
 
                             <p v-else v-html="某自然段"></p>
                         </template>
@@ -813,7 +827,7 @@
                 <div class="section-body">
                     <div class="skills-multi-lists">
                         <div class="capsules-single-list skills-single-list">
-                            <h3 class="section-content-title capsules-list-title">编程语言</h3>
+                            <h3 class="section-content-title capsules-list-title">开发语言</h3>
                             <ul class="the-list">
                                 <li
                                     v-for="某技能 in resume.data.技能集.开发语言"
@@ -825,10 +839,10 @@
                         </div>
 
                         <div class="capsules-single-list skills-single-list">
-                            <h3 class="section-content-title capsules-single-list-title">框架与库</h3>
+                            <h3 class="section-content-title capsules-single-list-title">技术框架、技术子领域与专门工具库</h3>
                             <ul class="the-list">
                                 <li
-                                    v-for="某技能 in resume.data.技能集.开发框架"
+                                    v-for="某技能 in resume.data.技能集.技术框架技术子领域与专门工具库"
                                     :key="某技能"
                                     class="capsule"
                                     :class="{ [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
@@ -837,10 +851,10 @@
                         </div>
 
                         <div class="capsules-single-list skills-single-list">
-                            <h3 class="section-content-title capsules-list-title">工具与平台</h3>
+                            <h3 class="section-content-title capsules-list-title">泛用工具与平台</h3>
                             <ul class="the-list">
                                 <li
-                                    v-for="某技能 in resume.data.技能集.开发工具"
+                                    v-for="某技能 in resume.data.技能集.泛用工具与平台"
                                     :key="某技能"
                                     class="capsule"
                                     :class="{ [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
@@ -965,10 +979,8 @@
                                     </div>
 
                                     <a v-if="某项目.项目成果地址" :href="某项目.项目成果地址" target="_blank" rel="noopener noreferrer"
-                                        class="project-link">
-                                        查看项目 <i data-lucide="arrow-up-right"
-                                            style="width: 16px; height: 16px; display: inline-block; vertical-align: middle;"></i>
-                                    </a>
+                                        class="project-link"
+                                    >查看项目 <svg class="icon"><use href="#lucide-arrow-up-right"></use></svg></a>
                                 </div>
                             </div>
                         </div>
@@ -1047,6 +1059,7 @@
                     data: {
                         个人信息摘要: { name: '-', title: '', 联系方式: {} },
                         个人简介: {},
+                        作品集: [],
                         技能集: {},
                         从业经历: [],
                         项目经验: [],
