@@ -93,7 +93,11 @@
 
         li,
         p {
-            color: hsl(var(--theme-color-tone), 9%, 88%);
+            color: hsl(var(--theme-color-tone), 25%, 52%);
+        }
+
+        em {
+            color: hsl(var(--theme-color-tone), 66%, 83%);
         }
 
         .section.summary {
@@ -121,16 +125,28 @@
             --theme-strokes-colors-lightness: 51%;
         }
 
-        .section.skills .capsules-single-list .capsule.技能掌握等级--默认 {
+        .capsules-single-list .capsule {
             color:            hsl(var(--theme-color-tone), 22%, 44%);
-            background-color: hsl(var(--theme-color-tone), 11%, 11%);
+            background-color: hsl(var(--theme-color-tone),  8%,  8%);
             border-color:     hsl(var(--theme-color-tone), 33%, 33%);
         }
 
-        .section.skills .capsules-single-list .capsule.技能掌握等级--精通 {
-            color:            hsl(var(--theme-color-tone), 88%, 88%);
-            background-color: hsl(var(--theme-color-tone), 15%, 15%);
+        .capsules-single-list .capsule:hover {
+            color:        hsl(var(--theme-color-tone), 66%, 77%);
+            border-color: hsl(var(--theme-color-tone), 66%, 66%);
+            box-shadow: 0 0 0.5rem #0001;
+        }
+
+        .capsules-single-list .capsule.应强调 {
+            color:            hsl(var(--theme-color-tone), 77%, 83%);
+            background-color: hsl(var(--theme-color-tone), 13%, 13%);
             border-color:     hsl(var(--theme-color-tone), 44%, 55%);
+        }
+
+        .capsules-single-list .capsule.应强调:hover {
+            color:        hsl(var(--theme-color-tone), 88%, 93%);
+            border-color: hsl(var(--theme-color-tone), 77%, 80%);
+            box-shadow: 0 0 0.5rem #0001;
         }
 
         .section.jobs {
@@ -167,6 +183,10 @@
         #app[v-cloak],
         .app [v-cloak] {
             display: none !important;
+        }
+
+        .app em {
+            font-style: normal;
         }
 
         .app hr {
@@ -240,7 +260,7 @@
             margin: 0.5rem;
             border-style: solid;
             border-width: 0;
-            padding: 0.1rem 0.5rem;
+            padding: 0.5rem 0.5rem;
             transition-property: color, border-color, background-color, opacity, box-shadow, transform;
             transition-duration: 0.26s;
             transition-timing-function: ease-out;
@@ -249,7 +269,7 @@
 
         article ol,
         article ul {
-            margin: 0.25rem 0 1rem;
+            margin: 0.25rem 0 1.25rem;
         }
 
         article ol {
@@ -263,7 +283,12 @@
 
         article ol > li,
         article ul > li {
-            margin: 0 0 0.75rem;
+            margin: 0 0 0.5rem;
+        }
+
+        article ol:last-child > li:last-child,
+        article ul:last-child > li:last-child {
+            margin-bottom: 0;
         }
 
         article p ~ ol,
@@ -284,9 +309,6 @@
 
         .capsules-single-list .capsule {
             cursor: default;
-            color:            hsl(var(--theme-color-tone), 33%, 77%);
-            background-color: hsl(var(--theme-color-tone),  9%,  9%);
-            border-color:     hsl(var(--theme-color-tone), 33%, 33%);
             border-style: solid;
             border-width: 0.05rem;
             line-height: 1;
@@ -297,13 +319,6 @@
             transition-duration: 0.26s;
             transition-timing-function: ease-out;
             box-shadow: 0 0 0.15rem #0006;
-        }
-
-        .capsules-single-list .capsule:hover {
-            /* transform: translateY(-0.3em); */
-            color:        hsl(var(--theme-color-tone),  9%, 99%);
-            border-color: hsl(var(--theme-color-tone), 77%, 77%);
-            box-shadow: 0 0 0.5rem #0001;
         }
     </style>
 
@@ -319,7 +334,7 @@
 
         .timeline-node-content {
             position: relative;
-            padding: 0.5rem 0.5rem 2.25rem 1.5rem;
+            padding: 0.5rem 0.5rem 3rem 1.5rem;
             margin: 0 0 -1rem 0;
             border-left: 2px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
         }
@@ -339,7 +354,7 @@
         }
 
         .timeline-node-content-header {
-            margin-top: -1.5rem;
+            margin-top: -1.45rem;
             width: 100%;
         }
 
@@ -350,11 +365,6 @@
         .timeline-node-content-body article ol:last-child,
         .timeline-node-content-body article ul:last-child {
             margin-bottom: 0.35rem;
-        }
-
-        .timeline-node-content-body article ol:last-child > li,
-        .timeline-node-content-body article ul:last-child > li {
-            margin-bottom: 0;
         }
 
         @media screen and (max-width: 730px) {
@@ -387,15 +397,15 @@
         }
 
         h3.section-content-title {
-            color: hsl(var(--theme-color-tone), 32%, 92%);
-            font-size: 1rem;
+            color: hsl(var(--theme-color-tone), 66%, 90%);
+            font-size: 0.95rem;
             letter-spacing: 0.05em;
             font-weight: 500;
+            margin-bottom: 0.5rem;
         }
 
         h4.section-content-title {
             font-size: 0.8rem;
-            /* color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 80%); */
             color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
             font-weight: 400;
         }
@@ -405,7 +415,7 @@
         }
 
         .section-body {
-            padding: 0;
+            padding: 0 0.15rem;
         }
 
         @media screen and (max-width: 641px) {
@@ -540,7 +550,7 @@
             padding: 2rem 1rem 32vh;
         }
 
-        .time-related-factor-and-the-period {
+        .period-and-subtitle {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -553,7 +563,7 @@
             color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 80%);
         }
 
-        .time-related-factor-and-the-period .the-period {
+        .period-and-subtitle .the-period {
             flex: 0 0 9rem;
         }
 
@@ -568,30 +578,6 @@
             color:        hsl(var(--theme-color-tone),  9%, 99%);
             border-color: hsl(var(--theme-color-tone), 77%, 77%);
         }
-
-        /* .section.summary {
-            transition-delay: 0.41s;
-        }
-
-        .section.portfolio {
-            transition-delay: 0.41s;
-        }
-
-        .section.skills {
-            transition-delay: 0.65s;
-        }
-
-        .section.jobs {
-            transition-delay: 0.75s;
-        }
-
-        .section.projects {
-            transition-delay: 0.41s;
-        }
-
-        .section.education {
-            transition-delay: 0.3s;
-        } */
 
         .section.skills .capsules-single-list .capsule.技能掌握等级--精通 {
             position: relative;
@@ -614,25 +600,22 @@
             transform: rotate(25deg);
         }
 
-        .section.summary   .section-body,
-        .section.portfolio .section-body {
-            padding: 0.25rem 0;
-        }
-
         .section.summary   p:last-child,
         .section.portfolio p:last-child {
             margin-bottom: 0;
         }
 
+        /* .section.summary li {
+            text-indent: 2ic;
+        } */
+
         .section.summary p {
             text-indent: 0;
-            /* text-indent: 2ic; */
             margin-bottom: 1em;
         }
 
-        .section.summary p + ul {
+        .section.summary ul {
             list-style: none;
-            /* list-style-type: '· '; */
             padding-left: 2ic;
         }
 
@@ -641,7 +624,7 @@
             margin-bottom: 1em;
         }
 
-        .section.portfolio p + ul {
+        .section.portfolio ul {
             list-style-type: '· ';
             padding-left: 2ic;
         }
@@ -663,24 +646,19 @@
         }
 
         .project-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: hsl(var(--theme-color-tone), 55%, 55%);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: hsl(var(--theme-color-tone), 99%, 66%);
         }
 
         .project-tech-stack {
             margin-top: 1rem;
         }
 
+        .project-tech-stack .capsules-single-list .the-list {
+            gap: 0.4rem;
+        }
+
         @media screen and (max-width: 730px) {
-            .time-related-factor-and-the-period {
+            .period-and-subtitle {
                 margin-left: 0;
             }
 
@@ -768,25 +746,31 @@
                 <hr>
                 <div class="section-body">
                     <article>
-                        <template
-                            v-for="(某自然段, loopIndex) in resume.data.个人信息摘要.个人简介"
-                            :key="loopIndex"
-                            v-html="某自然段"
-                        >
-                            <section v-if="某自然段 && typeof 某自然段 === 'object'">
-                                <p v-if="某自然段.文" v-html="某自然段.文"></p>
-                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length">
-                                    <li
-                                        v-for="(某项, 该项之循环序号) in 某自然段.列"
-                                        :key="该项之循环序号"
-                                        v-html="某项"
-                                    ></li>
+                        <template v-for="(某自然段, 循环序号_1级) in resume.data.个人信息摘要.个人简介">
+                            <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
+                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h3>
+                                <p  v-if="某自然段.文" v-html="某自然段.文"></p>
+                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
+                                    <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
+                                        <li
+                                            v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
+                                            :class="{ '应强调': 某项_2级.应强调 }"
+                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文">{{
+                                            某项_2级.文
+                                        }}</span><span v-if="某项_2级.链前文">{{
+                                            某项_2级.链前文
+                                        }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
+                                            某项_2级.链
+                                        }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
+
+                                        <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
+                                    </template>
                                 </ul>
                             </section>
 
-                            <hr v-else-if="某自然段 === '分隔线'">
+                            <hr v-else-if="某自然段 === '分隔线'" :key="`${循环序号_1级}-分隔线`">
 
-                            <p v-else v-html="某自然段"></p>
+                            <p v-else v-html="某自然段" :key="`${循环序号_1级}-html片段`"></p>
                         </template>
                     </article>
                 </div>
@@ -797,25 +781,31 @@
                 <hr>
                 <div class="section-body">
                     <article>
-                        <template
-                            v-for="(某自然段, loopIndex) in resume.data.作品集"
-                            :key="loopIndex"
-                            v-html="某自然段"
-                        >
-                            <section v-if="某自然段 && typeof 某自然段 === 'object'">
-                                <p v-if="某自然段.文" v-html="某自然段.文"></p>
-                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length">
-                                    <li
-                                        v-for="(某项, 该项之循环序号) in 某自然段.列"
-                                        :key="该项之循环序号"
-                                        v-html="某项"
-                                    ></li>
+                        <template v-for="(某自然段, 循环序号_1级) in resume.data.作品集">
+                            <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
+                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h3>
+                                <p  v-if="某自然段.文" v-html="某自然段.文"></p>
+                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
+                                    <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
+                                        <li
+                                            v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
+                                            :class="{ '应强调': 某项_2级.应强调 }"
+                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文">{{
+                                            某项_2级.文
+                                        }}</span><span v-if="某项_2级.链前文">{{
+                                            某项_2级.链前文
+                                        }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
+                                            某项_2级.链
+                                        }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
+
+                                        <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
+                                    </template>
                                 </ul>
                             </section>
 
-                            <hr v-else-if="某自然段 === '分隔线'">
+                            <hr v-else-if="某自然段 === '分隔线'" :key="`${循环序号_1级}-分隔线`">
 
-                            <p v-else v-html="某自然段"></p>
+                            <p v-else v-html="某自然段" :key="`${循环序号_1级}-html片段`"></p>
                         </template>
                     </article>
                 </div>
@@ -833,7 +823,7 @@
                                     v-for="某技能 in resume.data.技能集.开发语言"
                                     :key="某技能"
                                     class="capsule"
-                                    :class="{ [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
+                                    :class="{ '应强调': 某技能[1], [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
                                 >{{ 某技能[0] }}</li>
                             </ul>
                         </div>
@@ -845,7 +835,7 @@
                                     v-for="某技能 in resume.data.技能集.技术框架技术子领域与专门工具库"
                                     :key="某技能"
                                     class="capsule"
-                                    :class="{ [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
+                                    :class="{ '应强调': 某技能[1], [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
                                 >{{ 某技能[0] }}</li>
                             </ul>
                         </div>
@@ -857,7 +847,7 @@
                                     v-for="某技能 in resume.data.技能集.泛用工具与平台"
                                     :key="某技能"
                                     class="capsule"
-                                    :class="{ [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
+                                    :class="{ '应强调': 某技能[1], [`技能掌握等级--${某技能[1] || '默认'}`]: true }"
                                 >{{ 某技能[0] }}</li>
                             </ul>
                         </div>
@@ -879,7 +869,7 @@
                                 <div class="timeline-node-content-header">
                                     <h3 class="section-content-title">{{ 某职位.企业名称 }}</h3>
 
-                                    <div class="time-related-factor-and-the-period">
+                                    <div class="period-and-subtitle">
                                         <span class="the-period">
                                             <span class="period-date-1">
                                                 <span class="date-year">{{ 某职位.时间段[0][0] }}</span>
@@ -908,9 +898,32 @@
                                     <h4 class="section-content-title">岗位职责</h4>
 
                                     <article class="responsibilities">
-                                        <ul>
-                                            <li v-for="(某职责项, loopIndex) in 某职位.岗位职责" :key="loopIndex">{{ 某职责项 }}</li>
-                                        </ul>
+                                        <template v-for="(某自然段, 循环序号_1级) in 某职位.岗位职责">
+                                            <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
+                                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h3>
+                                                <p  v-if="某自然段.文" v-html="某自然段.文"></p>
+                                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
+                                                    <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
+                                                        <li
+                                                            v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
+                                                            :class="{ '应强调': 某项_2级.应强调 }"
+                                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文">{{
+                                                            某项_2级.文
+                                                        }}</span><span v-if="某项_2级.链前文">{{
+                                                            某项_2级.链前文
+                                                        }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
+                                                            某项_2级.链
+                                                        }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
+
+                                                        <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
+                                                    </template>
+                                                </ul>
+                                            </section>
+
+                                            <hr v-else-if="某自然段 === '分隔线'" :key="`${循环序号_1级}-分隔线`">
+
+                                            <p v-else v-html="某自然段" :key="`${循环序号_1级}-html片段`"></p>
+                                        </template>
                                     </article>
                                 </div>
                             </div>
@@ -933,7 +946,7 @@
                                 <div class="timeline-node-content-header">
                                     <h3 class="section-content-title">{{ 某项目.项目名称 }}</h3>
 
-                                    <span class="time-related-factor-and-the-period">
+                                    <span class="period-and-subtitle">
                                         <span class="the-period">
                                             <span class="period-date-1">
                                                 <span class="date-year">{{ 某项目.时间段[0][0] }}</span>
@@ -953,6 +966,10 @@
                                             </span>
                                             <span v-else>今</span>
                                         </span>
+
+                                        <a v-if="某项目.项目成果地址" :href="某项目.项目成果地址" target="_blank" rel="noopener noreferrer"
+                                            class="project-link"
+                                        >查看项目 <svg class="icon"><use href="#lucide-icon-arrow-up-right"></use></svg></a>
                                     </span>
                                 </div>
 
@@ -960,9 +977,32 @@
                                     <h4 class="section-content-title">项目简介</h4>
 
                                     <article class="project-description">
-                                        <ul>
-                                            <li v-for="(某自然段, loopIndex) in 某项目.项目简述" :key="loopIndex">{{ 某自然段 }}</li>
-                                        </ul>
+                                        <template v-for="(某自然段, 循环序号_1级) in 某项目.项目简述">
+                                            <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
+                                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h3>
+                                                <p  v-if="某自然段.文" v-html="某自然段.文"></p>
+                                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
+                                                    <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
+                                                        <li
+                                                            v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
+                                                            :class="{ '应强调': 某项_2级.应强调 }"
+                                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文">{{
+                                                            某项_2级.文
+                                                        }}</span><span v-if="某项_2级.链前文">{{
+                                                            某项_2级.链前文
+                                                        }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
+                                                            某项_2级.链
+                                                        }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
+
+                                                        <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
+                                                    </template>
+                                                </ul>
+                                            </section>
+
+                                            <hr v-else-if="某自然段 === '分隔线'" :key="`${循环序号_1级}-分隔线`">
+
+                                            <p v-else v-html="某自然段" :key="`${循环序号_1级}-html片段`"></p>
+                                        </template>
                                     </article>
 
                                     <div class="project-tech-stack">
@@ -973,14 +1013,11 @@
                                                     v-for="某种技术 in 某项目.所用技术栈"
                                                     :key="某种技术"
                                                     class="capsule"
-                                                >{{ 某种技术 }}</li>
+                                                    :class="{ '应强调': 某种技术[1] === '应强调' }"
+                                                ><component :is="某种技术[1] === '应强调' ? 'em' : 'span'">{{ 某种技术[0] }}</component></li>
                                             </ul>
                                         </div>
                                     </div>
-
-                                    <a v-if="某项目.项目成果地址" :href="某项目.项目成果地址" target="_blank" rel="noopener noreferrer"
-                                        class="project-link"
-                                    >查看项目 <svg class="icon"><use href="#lucide-arrow-up-right"></use></svg></a>
                                 </div>
                             </div>
                         </div>
@@ -1002,7 +1039,7 @@
                                 <div class="timeline-node-content-header">
                                     <h3 class="section-content-title">{{ 某段受教育经历.教育机构 }}</h3>
 
-                                    <span class="time-related-factor-and-the-period">
+                                    <span class="period-and-subtitle">
                                         <span class="the-period">
                                             <span class="period-date-1">
                                                 <span class="date-year">{{ 某段受教育经历.时间段[0][0] }}</span>
@@ -1026,14 +1063,6 @@
                                         <span class="time-related-factor">{{ 某段受教育经历.主修专业 }}</span>
                                     </span>
                                 </div>
-
-                                <!--
-                                <div class="timeline-node-content-body">
-                                    <h4 class="section-content-title">小标题</h4>
-
-                                    <article></article>
-                                </div>
-                                -->
                             </div>
                         </div>
                     </div>
@@ -1041,12 +1070,6 @@
             </section>
         </main>
     </div>
-
-    <!--
-    <script>
-        lucide.createIcons();
-    </script>
-    -->
 
     <script src="data/wulechuan.js"></script>
 
