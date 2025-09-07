@@ -92,10 +92,27 @@
                 background-color: hsl(var(--theme-color-tone), 12%,  8%);
             }
 
+            .app hr {
+                background-color: transparent;
+                background-image: linear-gradient(
+                    to right,
+                    transparent 0%,
+                    hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.319),
+                    transparent 100%
+                );
+            }
+
             .app a {
-                outline-style: solid;
-                outline-width: 0.1rem;
                 outline-color: transparent;
+                color:                  hsl(var(--theme-color-tone), 12%, 48%);
+                text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
+                text-decoration-color:  hsl(var(--theme-color-tone), 12%, 48%, 0.515);
+                text-decoration-thickness: 0.05rem;
+            }
+
+            .app a:hover {
+                outline-color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+                color:         hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
             }
 
             .app :focus-visible,
@@ -104,35 +121,32 @@
                 color:         hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
             }
 
-            .app hr {
-                background-color: transparent;
-                background-image: linear-gradient(
-                    to right,
-                    transparent 0%,
-                    hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51),
-                    transparent 100%
-                );
-            }
-
-            .app a {
-                color:                  hsl(var(--theme-color-tone), 12%, 48%);
-                text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
-            }
-
-            .app a:hover {
-                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
-            }
-
-            li,
-            p {
+            .app li,
+            .app p {
                 color: hsl(var(--theme-color-tone), 25%, 52%);
             }
 
-            em {
-                color: hsl(var(--theme-color-tone), 66%, 83%);
+            .app em {
+                color: hsl(var(--theme-color-tone), 66%, 79%);
             }
 
-            .section.summary {
+            .app h2 {
+                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+            }
+
+            .app h3 {
+                color: hsl(var(--theme-color-tone), 66%, 90%);
+            }
+
+            .app h4 {
+                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 84%);
+            }
+
+            .app .应弱化 h4 {
+                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 84%);
+            }
+
+            .app .card.summary {
                 --theme-color-tone: 219;
                 --theme-bg-vivid: 19%;
                 --theme-primary-colors-vivid: 55%;
@@ -141,7 +155,7 @@
                 --theme-strokes-colors-lightness: 51%;
             }
 
-            .section.portfolio {
+            .app .card.portfolio {
                 --theme-color-tone: 51;
                 --theme-bg-vivid: 19%;
                 --theme-primary-colors-vivid: 55%;
@@ -150,52 +164,52 @@
                 --theme-strokes-colors-lightness: 51%;
             }
 
-            .section.skills {
+            .app .card.skills {
                 --theme-color-tone: 27;
                 --theme-bg-vivid: 9%;
                 --theme-primary-colors-lightness: 74%;
                 --theme-strokes-colors-lightness: 51%;
             }
 
-            .capsules-single-list .capsule {
+            .app .capsules-single-list .capsule {
                 color:            hsl(var(--theme-color-tone), 22%, 44%);
                 background-color: hsl(var(--theme-color-tone),  8%,  8%);
                 border-color:     hsl(var(--theme-color-tone), 33%, 33%);
             }
 
-            .capsules-single-list .capsule:hover {
+            .app .capsules-single-list .capsule:hover {
                 color:        hsl(var(--theme-color-tone), 66%, 77%);
                 border-color: hsl(var(--theme-color-tone), 66%, 66%);
                 box-shadow: 0 0 0.5rem #0001;
             }
 
-            .capsules-single-list .capsule.应强调 {
+            .app .capsules-single-list .capsule.应强调 {
                 color:            hsl(var(--theme-color-tone), 77%, 83%);
                 background-color: hsl(var(--theme-color-tone), 13%, 13%);
                 border-color:     hsl(var(--theme-color-tone), 44%, 55%);
             }
 
-            .capsules-single-list .capsule.应强调:hover {
+            .app .capsules-single-list .capsule.应强调:hover {
                 color:        hsl(var(--theme-color-tone), 88%, 93%);
                 border-color: hsl(var(--theme-color-tone), 77%, 80%);
                 box-shadow: 0 0 0.5rem #0001;
             }
 
-            .section.jobs {
+            .app .card.jobs {
                 --theme-color-tone: 141;
                 --theme-bg-vivid: 10%;
                 --theme-primary-colors-lightness: 69%;
                 --theme-strokes-colors-lightness: 51%;
             }
 
-            .section.projects {
+            .app .card.projects {
                 --theme-color-tone: 180;
                 --theme-bg-vivid: 13%;
                 --theme-primary-colors-lightness: 69%;
                 --theme-strokes-colors-lightness: 46%;
             }
 
-            .section.education {
+            .app .card.education {
                 --theme-color-tone: 0;
                 --theme-bg-vivid: 9%;
                 --theme-primary-colors-lightness: 75%;
@@ -230,7 +244,7 @@
             /* .app h1, */
             .app h2,
             .app h3 {
-                margin-top:    2.5em;
+                margin-top:    1.5em;
                 margin-bottom: 0.5em;
             }
 
@@ -282,10 +296,11 @@
             }
 
             .app a {
-                text-decoration-color: #fff2;
+                outline-style: solid;
+                outline-width: 0.1rem;
                 border-radius: 0.2em;
-                padding: 0.15rem 0.35rem;
-                margin: 0 0.5em;
+                padding: 0.05rem 0.25rem;
+                margin: 0 0.2em;
                 transition-property: color, outline-color, background-color;
                 transition-duration: 0.319s;
                 transition-timing-function: ease-out;
@@ -300,33 +315,33 @@
 
     <style id="styles--component-revelable">
         @media screen {
-            .revealable {
+            .app .revealable {
                 opacity: 0;
                 transition-property: opacity, transform;
                 transition-duration: 0.515s;
                 transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
             }
 
-            .revealable .revealable {
+            .app .revealable .revealable {
                 visibility: hidden;
                 transition-delay: 0.27s;
             }
 
-            .revealable.visible {
+            .app .revealable.visible {
                 opacity: 1;
                 transform: translateY(0);
             }
 
-            .revealable.visible .revealable {
+            .app .revealable.visible .revealable {
                 visibility: visible;
             }
 
-            .reveals-by-sliding-upwards {
+            .app .reveals-by-sliding-upwards {
                 transform: translateY(2rem);
                 transition-delay: 0.19s;
             }
 
-            .reveals-by-sliding-downwards {
+            .app .reveals-by-sliding-downwards {
                 transform: translateY(-2rem);
                 transition-delay: 0s;
             }
@@ -335,7 +350,7 @@
 
     <style id="styles--component-article">
         @media screen {
-            article {
+            .app article {
                 margin: 0.5rem;
                 border-style: solid;
                 border-width: 0;
@@ -346,32 +361,32 @@
                 max-width: 51rem;
             }
 
-            article ol,
-            article ul {
+            .app article ol,
+            .app article ul {
                 margin: 0.25rem 0 1.25rem;
             }
 
-            article ol {
+            .app article ol {
                 padding-left: 1rem;
             }
 
-            article ul {
+            .app article ul {
                 list-style-type: disc;
                 padding-left: 1rem;
             }
 
-            article ol > li,
-            article ul > li {
-                margin: 0 0 0.5rem;
+            .app article ol > li,
+            .app article ul > li {
+                margin: 0 0 0.75rem;
             }
 
-            article ol:last-child > li:last-child,
-            article ul:last-child > li:last-child {
+            .app article ol:last-child > li:last-child,
+            .app article ul:last-child > li:last-child {
                 margin-bottom: 0;
             }
 
-            article p ~ ol,
-            article p ~ ul {
+            .app article p ~ ol,
+            .app article p ~ ul {
                 padding-left: 2.75rem;
             }
         }
@@ -379,14 +394,14 @@
 
     <style id="styles--component-capsules-list">
         @media print {
-            .capsules-single-list .the-list {
+            .app .capsules-single-list .the-list {
                 list-style: none;
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
 
-            .capsules-single-list .capsule {
+            .app .capsules-single-list .capsule {
                 border-style: solid;
                 border-width: 0.05rem;
                 line-height: 1;
@@ -397,7 +412,7 @@
         }
 
         @media screen {
-            .capsules-single-list .the-list {
+            .app .capsules-single-list .the-list {
                 list-style: none;
                 display: flex;
                 flex-wrap: wrap;
@@ -406,7 +421,7 @@
                 margin: 0;
             }
 
-            .capsules-single-list .capsule {
+            .app .capsules-single-list .capsule {
                 cursor: default;
                 border-style: solid;
                 border-width: 0.05rem;
@@ -424,23 +439,23 @@
 
     <style id="styles--component-timeline">
         @media screen {
-            .timeline-node {
+            .app .timeline-node {
                 padding: 1.5rem 0 0 1.25rem;
             }
 
-            .timeline-node:last-child .timeline-node-content {
+            .app .timeline-node:last-child .timeline-node-content {
                 border-left-color: transparent;
                 /* padding-bottom: 1rem; */
             }
 
-            .timeline-node-content {
+            .app .timeline-node-content {
                 position: relative;
                 padding: 0.5rem 0.5rem 3rem 1.5rem;
                 margin: 0 0 -1rem 0;
                 border-left: 2px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
             }
 
-            .timeline-node-content::before {
+            .app .timeline-node-content::before {
                 content: '';
                 position: absolute;
                 left: -0.45rem;
@@ -454,35 +469,35 @@
                 border-radius: 50%;
             }
 
-            .timeline-node-content-header {
-                margin-top: -1.45rem;
+            .app .timeline-node-content-header {
+                margin-top: -1.4rem;
                 width: 100%;
             }
 
-            .timeline-node-content-body {
+            .app .timeline-node-content-body {
                 margin-top: 0.75rem;
             }
 
-            .timeline-node-content-body article ol:last-child,
-            .timeline-node-content-body article ul:last-child {
+            .app .timeline-node-content-body article ol:last-child,
+            .app .timeline-node-content-body article ul:last-child {
                 margin-bottom: 0.35rem;
             }
         }
 
         @media screen and (max-width: 730px) {
-            .timeline-node {
+            .app .timeline-node {
                 padding-left: 0.5rem;
             }
 
-            .timeline-node-content {
+            .app .timeline-node-content {
                 padding-inline: 1rem 0.25rem;
             }
         }
     </style>
 
-    <style id="styles--component-section-card">
+    <style id="styles--card">
         @media screen {
-            .section {
+            .app .card {
                 margin-bottom: 2rem;
                 padding: 1rem;
                 border-radius: 0.7rem;
@@ -491,39 +506,36 @@
                 box-shadow: 0 2px 8px var(--shadow-color);
             }
 
-            .section-main-title {
+            .app .card-main-title {
                 font-size: 1.35rem;
                 font-weight: 200;
-                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
                 padding: 0 1rem;
                 letter-spacing: 0.1em;
             }
 
-            h3.section-content-title {
-                color: hsl(var(--theme-color-tone), 66%, 90%);
+            .app h3.card-content-title {
                 font-size: 0.95rem;
                 letter-spacing: 0.05em;
                 font-weight: 500;
                 margin-bottom: 0.5rem;
             }
 
-            h4.section-content-title {
-                font-size: 0.8rem;
-                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+            .app h4 {
+                font-size: 0.75rem;
                 font-weight: 400;
             }
 
-            .section > hr {
-                margin-block: 0.25rem 0.75rem;
+            .app .card > hr {
+                margin-block: 0.75rem;
             }
 
-            .section-body {
+            .app .card-body {
                 padding: 0 0.15rem;
             }
         }
 
         @media screen and (max-width: 641px) {
-            .section {
+            .app .card {
                 padding-inline: 0.25rem;
             }
         }
@@ -531,7 +543,7 @@
 
     <style id="styles--app-header">
         @media print {
-            .people-contacts a {
+            .app .app-header .people-contacts a {
                 text-decoration: none;
                 display: flex;
                 align-items: center;
@@ -541,7 +553,7 @@
         }
 
         @media screen {
-            .app-header {
+            .app .app-header {
                 --theme-primary-colors-vivid: 79%;
                 --theme-primary-colors-lightness: 72%;
                 position: sticky;
@@ -558,18 +570,18 @@
                 backdrop-filter: blur(0.75rem);
             }
 
-            .app-header-content {
+            .app .app-header-content {
                 max-width: var(--app-content-max-width);
                 margin: 0 auto;
                 padding: 1rem;
             }
 
-            .people-name-and-profession-title,
-            .people-contacts {
+            .app .app-header .people-name-and-profession-title,
+            .app .app-header .people-contacts {
                 margin: 0 2rem;
             }
 
-            .people-name-and-profession-title {
+            .app .app-header .people-name-and-profession-title {
                 display: flex;
                 justify-content: start;
                 align-items: center;
@@ -577,28 +589,28 @@
                 gap: 0 2rem;
             }
 
-            .people-name {
+            .app .app-header .people-name {
                 font-size: 1.5rem;
                 font-weight: 400;
                 margin-top: -0.4rem;
                 letter-spacing: 0.2em;
             }
 
-            .people-name rt {
+            .app .app-header .people-name rt {
                 opacity: 0.75;
                 letter-spacing: 0;
                 margin-right: 0.2em;
                 color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
             }
 
-            .people-profession-title {
+            .app .app-header .people-profession-title {
                 font-size: 1.2rem;
                 font-weight: 400;
                 color: hsl(var(--theme-color-tone), 67%, 61%);
                 letter-spacing: 0.1em;
             }
 
-            .people-contacts {
+            .app .app-header .people-contacts {
                 margin-top: 0.75rem;
                 display: grid;
                 grid-auto-flow: column;
@@ -609,78 +621,84 @@
                 font-size: 0.75rem;
             }
 
-            .people-contacts a {
+            .app .app-header .people-contacts a {
                 text-decoration: none;
                 display: flex;
                 align-items: center;
                 gap: 0.25rem;
             }
 
-            .people-contacts a .entry-title {
+            .app .app-header .people-contacts a .entry-title {
                 flex: 0 0 auto;
             }
         }
 
         @media screen and (max-width: 630px) {
-            .people-name-and-profession-title,
-            .people-contacts {
+            .app .app-header .people-name-and-profession-title,
+            .app .app-header .people-contacts {
                 margin-inline: 1rem;
             }
         }
 
         @media screen and (max-width: 440px) {
-            .people-name-and-profession-title,
-            .people-contacts {
+            .app .app-header .people-name-and-profession-title,
+            .app .app-header .people-contacts {
                 margin-inline: 0rem;
             }
 
-            .people-name-and-profession-title {
+            .app .app-header .people-name-and-profession-title {
                 justify-content: center;
                 text-align: center;
             }
 
-            .people-contacts {
+            .app .app-header .people-contacts {
                 display: block;
             }
 
-            .people-contacts a {
+            .app .app-header .people-contacts a {
                 justify-content: center;
             }
 
-            .people-contacts a .entry-title {
+            .app .app-header .people-contacts a .entry-title {
                 flex: 0 0 4rem;
                 text-align: right;
                 white-space: nowrap;
             }
 
-            .people-contacts a .entry-value {
+            .app .app-header .people-contacts a .entry-value {
                 flex: 0 0 9rem;
             }
         }
     </style>
-    
+
     <style id="styles--app-footer">
         @media screen {
-            .app-footer {
+            .app .app-footer {
                 font-size: 0.65rem;
                 text-align: center;
             }
 
-            .app-footer p {
+            .app .app-footer p {
                 opacity: 0.515;
             }
         }
     </style>
 
     <style id="styles--app-main">
+        @media print {
+            .app .card.portfolio .single-work {
+                margin-left: 2ic;
+            }
+        }
+
         @media screen {
-            main {
+            .app main {
                 max-width: var(--app-content-max-width);
                 margin: 0 auto;
                 padding: 2rem 1rem 32vh;
             }
 
-            .period-and-subtitle {
+            .app .period-and-subtitle {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
@@ -693,27 +711,27 @@
                 color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 80%);
             }
 
-            .period-and-subtitle .the-period {
+            .app .period-and-subtitle .the-period {
                 flex: 0 0 9rem;
             }
 
-            .timeline-node-content article {
+            .app .timeline-node-content article {
                 border-radius: 0.25rem;
                 border-width: 0.05rem;
                 border-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
                 background-color: hsl(var(--theme-color-tone), 9%, 9%);
             }
 
-            .timeline-node-content article:hover {
+            .app .timeline-node-content article:hover {
                 color:        hsl(var(--theme-color-tone),  9%, 99%);
                 border-color: hsl(var(--theme-color-tone), 77%, 77%);
             }
 
-            .section.skills .capsules-single-list .capsule.技能掌握等级--精通 {
+            .app .card.skills .capsules-single-list .capsule.技能掌握等级--精通 {
                 position: relative;
             }
 
-            .section.skills .capsules-single-list .capsule.技能掌握等级--精通::after {
+            .app .card.skills .capsules-single-list .capsule.技能掌握等级--精通::after {
                 font-size: 0.8em;
                 content: '精通';
                 display: block;
@@ -730,70 +748,82 @@
                 transform: rotate(25deg);
             }
 
-            .section.summary   p:last-child,
-            .section.portfolio p:last-child {
+            .app .card.summary   p:last-child,
+            .app .card.portfolio p:last-child {
                 margin-bottom: 0;
             }
 
-            /* .section.summary li {
+            /* .app .card.summary li {
                 text-indent: 2ic;
             } */
 
-            .section.summary p {
+            .app .card.summary p {
                 text-indent: 0;
                 margin-bottom: 1em;
             }
 
-            .section.summary ul {
+            .app .card.summary ul {
                 list-style: none;
                 padding-left: 2ic;
             }
 
-            .section.portfolio p {
+            .app .card.portfolio p {
                 text-indent: 0;
                 margin-bottom: 1em;
             }
 
-            .section.portfolio ul {
+            .app .card.portfolio ul {
                 list-style-type: '· ';
                 padding-left: 2ic;
             }
 
-            .section.skills .section-body {
+            .app .card.portfolio .works-single-group {
+                margin-bottom: 2.5rem;
+            }
+
+            .app .card.portfolio .works-single-group:last-child {
+                margin-bottom: 0.5rem;
+            }
+
+            .app .card.portfolio .single-work {
+                margin-left: 2ic;
+            }
+
+            .app .card.skills .card-body {
                 padding: 0.5rem 1rem;
             }
 
-            .skills-multi-lists {
+            .app .skills-multi-lists {
                 display: block;
             }
 
-            .skills-single-list {
+            .app .skills-single-list {
                 margin: 0 0 1rem;
             }
 
-            .skills-single-list:last-child {
+            .app .skills-single-list:last-child {
                 margin-bottom: 0;
             }
 
-            .project-link {
+            .app .project-link {
                 text-decoration: none;
             }
 
-            .project-tech-stack {
+            .app .project-tech-stack {
                 margin-top: 1rem;
             }
 
-            .project-tech-stack .capsules-single-list .the-list {
+            .app .project-tech-stack .capsules-single-list .the-list {
                 gap: 0.4rem;
             }
         }
 
         @media screen and (max-width: 730px) {
-            .period-and-subtitle {
+            .app .period-and-subtitle {
                 margin-left: 0;
             }
 
-            .timeline-node-content article {
+            .app .timeline-node-content article {
                 margin-inline: 0;
             }
         }
@@ -870,14 +900,14 @@
         </header>
 
         <main>
-            <section class="section summary revealable reveals-by-sliding-upwards">
-                <h2 class="section-main-title">个人简介</h2>
+            <section class="card summary revealable reveals-by-sliding-upwards">
+                <h2 class="card-main-title">个人简介</h2>
                 <hr>
-                <div class="section-body">
+                <div class="card-body">
                     <article>
                         <template v-for="(某自然段, 循环序号_1级) in resume.data.个人信息摘要.个人简介">
                             <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
-                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h3>
+                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="card-content-title"></h3>
                                 <p  v-if="某自然段.文" v-html="某自然段.文"></p>
                                 <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
                                     <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
@@ -903,17 +933,28 @@
                 </div>
             </section>
 
-            <section v-if="resume.data.作品集 && resume.data.作品集.length > 0" class="section portfolio revealable reveals-by-sliding-upwards">
-                <h2 class="section-main-title">作品集</h2>
+            <section v-if="resume.data.作品集 && resume.data.作品集.length > 0" class="card portfolio revealable reveals-by-sliding-upwards">
+                <h2 class="card-main-title">作品集</h2>
                 <hr>
-                <div class="section-body">
+                <div class="card-body">
                     <article>
-                        <template v-for="(某自然段, 循环序号_1级) in resume.data.作品集">
-                            <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
-                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h3>
-                                <p  v-if="某自然段.文" v-html="某自然段.文"></p>
-                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
-                                    <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
+                        <section
+                            v-for="(某组作品, 循环序号_组级) in resume.data.作品集"
+                            :key="`作品组-${循环序号_组级}`"
+                            class="works-single-group"
+                        >
+                            <h3 v-if="某组作品.组题" v-html="某组作品.组题" class="card-content-title"></h3>
+                            <p  v-if="某组作品.文" v-html="某组作品.文"></p>
+                            <section
+                                v-for="(某作品, 循环序号_1级) in 某组作品.作品组"
+                                :key="`${循环序号_1级}-带列表的自然段`"
+                                class="single-work"
+                                :class="{ '应弱化': !某作品.应强调 }"
+                            >
+                                <h4 v-if="某作品.题" v-html="某作品.题"></h4>
+                                <p  v-if="某作品.文" v-html="某作品.文"></p>
+                                <ul v-if="Array.isArray(某作品.列) && 某作品.列.length > 0">
+                                    <template v-for="(某项_2级, 循环序号_2级) in 某作品.列">
                                         <li
                                             v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
                                             :class="{ '应强调': 某项_2级.应强调 }"
@@ -927,22 +968,18 @@
                                     </template>
                                 </ul>
                             </section>
-
-                            <hr v-else-if="某自然段 === '分隔线'" :key="`${循环序号_1级}-分隔线`">
-
-                            <p v-else v-html="某自然段" :key="`${循环序号_1级}-html片段`"></p>
-                        </template>
+                        </section>
                     </article>
                 </div>
             </section>
 
-            <section class="section skills revealable reveals-by-sliding-upwards">
-                <h2 class="section-main-title">专业技能</h2>
+            <section class="card skills revealable reveals-by-sliding-upwards">
+                <h2 class="card-main-title">专业技能</h2>
                 <hr>
-                <div class="section-body">
+                <div class="card-body">
                     <div class="skills-multi-lists">
                         <div class="capsules-single-list skills-single-list">
-                            <h3 class="section-content-title capsules-list-title">开发语言</h3>
+                            <h3 class="card-content-title capsules-list-title">开发语言</h3>
                             <ul class="the-list">
                                 <li
                                     v-for="某技能 in resume.data.技能集.开发语言"
@@ -954,7 +991,7 @@
                         </div>
 
                         <div class="capsules-single-list skills-single-list">
-                            <h3 class="section-content-title capsules-single-list-title">技术框架、技术子领域与专门工具库</h3>
+                            <h3 class="card-content-title capsules-single-list-title">技术框架、技术子领域与专门工具库</h3>
                             <ul class="the-list">
                                 <li
                                     v-for="某技能 in resume.data.技能集.技术框架技术子领域与专门工具库"
@@ -966,7 +1003,7 @@
                         </div>
 
                         <div class="capsules-single-list skills-single-list">
-                            <h3 class="section-content-title capsules-list-title">泛用工具与平台</h3>
+                            <h3 class="card-content-title capsules-list-title">泛用工具与平台</h3>
                             <ul class="the-list">
                                 <li
                                     v-for="某技能 in resume.data.技能集.泛用工具与平台"
@@ -980,10 +1017,10 @@
                 </div>
             </section>
 
-            <section class="section jobs revealable reveals-by-sliding-upwards">
-                <h2 class="section-main-title">工作经历</h2>
+            <section class="card jobs revealable reveals-by-sliding-upwards">
+                <h2 class="card-main-title">工作经历</h2>
                 <hr>
-                <div class="section-body">
+                <div class="card-body">
                     <div class="timeline">
                         <div
                             v-for="(某职位, loopIndex) in resume.data.从业经历"
@@ -992,7 +1029,7 @@
                         >
                             <div class="timeline-node-content">
                                 <div class="timeline-node-content-header">
-                                    <h3 class="section-content-title">{{ 某职位.企业名称 }}</h3>
+                                    <h3 class="card-content-title">{{ 某职位.企业名称 }}</h3>
 
                                     <div class="period-and-subtitle">
                                         <span class="the-period">
@@ -1020,7 +1057,7 @@
                                 </div>
 
                                 <div class="timeline-node-content-body">
-                                    <h4 class="section-content-title">岗位职责</h4>
+                                    <h4 class="card-content-title">岗位职责</h4>
 
                                     <article class="responsibilities">
                                         <template v-for="(某自然段, 循环序号_1级) in 某职位.岗位职责">
@@ -1055,10 +1092,10 @@
                 </div>
             </section>
 
-            <section class="section projects revealable reveals-by-sliding-upwards">
-                <h2 class="section-main-title">项目经历</h2>
+            <section class="card projects revealable reveals-by-sliding-upwards">
+                <h2 class="card-main-title">项目经历</h2>
                 <hr>
-                <div class="section-body">
+                <div class="card-body">
                     <div class="timeline">
                         <div
                             v-for="(某项目, loopIndex) in resume.data.项目经验"
@@ -1067,7 +1104,7 @@
                         >
                             <div class="timeline-node-content">
                                 <div class="timeline-node-content-header">
-                                    <h3 class="section-content-title">{{ 某项目.项目名称 }}</h3>
+                                    <h3 class="card-content-title">{{ 某项目.项目名称 }}</h3>
 
                                     <span class="period-and-subtitle">
                                         <span class="the-period">
@@ -1107,7 +1144,7 @@
                                 </div>
 
                                 <div class="timeline-node-content-body">
-                                    <h4 class="section-content-title">项目简介</h4>
+                                    <h4 class="card-content-title">项目简介</h4>
 
                                     <article class="project-description">
                                         <template v-for="(某自然段, 循环序号_1级) in 某项目.项目简述">
@@ -1138,7 +1175,7 @@
 
                                     <div class="project-tech-stack">
                                         <div class="capsules-single-list">
-                                            <h4 class="section-content-title capsules-list-title">技术栈</h4>
+                                            <h4 class="card-content-title capsules-list-title">技术栈</h4>
                                             <ul class="the-list">
                                                 <li
                                                     v-for="某种技术 in 某项目.所用技术栈"
@@ -1156,10 +1193,10 @@
                 </div>
             </section>
 
-            <section class="section education revealable reveals-by-sliding-upwards">
-                <h2 class="section-main-title">教育背景</h2>
+            <section class="card education revealable reveals-by-sliding-upwards">
+                <h2 class="card-main-title">教育背景</h2>
                 <hr>
-                <div class="section-body">
+                <div class="card-body">
                     <div class="timeline">
                         <div
                             v-for="(某段受教育经历, loopIndex) in resume.data.受教育经历"
@@ -1168,7 +1205,7 @@
                         >
                             <div class="timeline-node-content">
                                 <div class="timeline-node-content-header">
-                                    <h3 class="section-content-title">{{ 某段受教育经历.教育机构 }}</h3>
+                                    <h3 class="card-content-title">{{ 某段受教育经历.教育机构 }}</h3>
 
                                     <span class="period-and-subtitle">
                                         <span class="the-period">

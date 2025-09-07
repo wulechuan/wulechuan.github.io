@@ -20,7 +20,7 @@ function genHtmlOfAnchor (url, text) {
 
 
 
-/** @type {import('../types/简历').范_简历_数据全集} */
+/** @type {import('../types/简历').简历_范_数据全集} */
 const resumeRawData = {
     填写该简历之年月: '2025 年 9 月',
 
@@ -95,16 +95,20 @@ const resumeRawData = {
                         文: '注重研发流程的自动化。独立搭建了多产品线、多型号、多商务品牌的全自动【软件发行版群】构建工具。制定并恪守办法部分规范，特别是持续维护版本发行与演进文档。',
                     },
                     {
-                        应强调: true,
-                        文: '注重代码可读性、可复用性。格外注重技术文档之编撰。',
+                        应强调: false,
+                        文: '注重代码可读性、可复用性。格外注重技术文档之编撰。具备优秀的文档撰写能力（中英文）。',
                     },
                     {
-                        应强调: true,
+                        应强调: false,
                         文: '积极利用人工智能体辅助编程。擅长预先拆解复杂的业务，以利交付于人工智能体。擅长撰写条理清晰、措辞精准、切中要害的需求文档，以引导和规范人工智能体之产出。',
                     },
                     {
                         应强调: true,
-                        文: '善与团队协作。5 年以上技术领导经验。具备优秀的文档撰写能力（中英文）。熟悉敏捷开发模式。熟悉 Scrum 多人协同工作框架。',
+                        文: '善与团队协作。熟悉敏捷开发模式。熟悉 Scrum 多人协同工作框架。',
+                    },
+                    {
+                        应强调: true,
+                        文: '5 年以上技术领导经验。',
                     },
                     {
                         应强调: false,
@@ -139,91 +143,135 @@ const resumeRawData = {
 
     作品集: [
         {
-            题: '实用工具',
+            组题: '实用工具',
             文: '独自设计了大大小小数十款实用工具，多半已发布于 npm 仓库。',
-            列: [
+            作品组: [
                 {
+                    题: '最新的工具（未发布）：',
                     应强调: true,
-                    链前文: '最新的工具（未发布）：',
-                    链: 'https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集',
-                    链后文: '。 若干工具已配文档。其余文档仍在整理。',
+                    列: [
+                        {
+                            应强调: false,
+                            链: 'https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集',
+                            链后文: '。 若干工具已配文档。其余文档仍在整理。',
+                        },
+                        // {
+                        //     应强调: true,
+                        //     文: '若干工具已配文档。其余文档仍在整理。',
+                        // },
+                    ],
                 },
 
                 {
+                    题: '较新的工具（已发布）：',
                     应强调: true,
-                    链前文: '较新的工具（已发布）：',
-                    链: 'https://www.npmjs.com/search?q=%40xinmier',
-                    链后文: '。',
+                    列: [
+                        {
+                            链: 'https://www.npmjs.com/search?q=%40xinmier',
+                            链后文: '。',
+                        },
+                    ],
                 },
 
                 {
+                    题: '老旧的工具（已发布）：',
                     应强调: false,
-                    链前文: '老旧的工具（已发布）：',
-                    链: 'https://www.npmjs.com/search?q=%40wulechuan',
-                    链后文: '。',
+                    列: [
+                        {
+                            链: 'https://www.npmjs.com/search?q=%40wulechuan',
+                            链后文: '。',
+                        },
+                    ],
                 },
             ],
         },
 
-        '分隔线',
-
         {
-            题: '有特色或代表性的工具或项目',
-            列: [
+            组题: '有特色或代表性的工具或项目',
+            作品组: [
                 {
+                    题: '泛用控制器《多表逐项协同机》：',
                     应强调: true,
-                    文: [
-                        '泛用控制器《多表逐项协同机》：',
-                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机', '汉语版'),
-                        '、',
-                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机_非汉语', '外国语版'),
-                        '。'
-                    ].join(''),
-                    // 链前文: '泛用控制器《多表逐项协同机》：',
-                    // 链: 'https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机',
-                    // 链后文: '。',
+                    列: [
+                        {
+                            应强调: true,
+                            链前文: '汉语版：',
+                            链: 'https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机',
+                        },
+                        {
+                            应强调: false,
+                            链前文: '外国语版：',
+                            链: 'https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机_非汉语',
+                        },
+                        // genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机', '汉语版'),
+                        // genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机_非汉语', '外国语版'),
+                    ],
                 },
 
                 {
+                    题: 'VSCode 插件《Markdown 文件预览（ HTML ）之配色方案》：',
                     应强调: false,
-                    链前文: 'VSCode 插件《Markdown 文件预览（ HTML ）之配色方案》：',
-                    链: 'https://marketplace.visualstudio.com/items?itemName=wulechuan.wulechuan-markdown-html-theme-light-1',
-                    链后文: '。',
+                    列: [
+                        {
+                            链: 'https://marketplace.visualstudio.com/items?itemName=wulechuan.wulechuan-markdown-html-theme-light-1',
+                            链后文: '。',
+                        },
+                    ],
                 },
 
                 {
+                    题: 'Vuejs 组件《仿真的 LED 灯珠》：',
                     应强调: true,
-                    链前文: 'Vuejs 组件《仿真的 LED 灯珠》：',
-                    链: 'https://gitee.com/nanchang-wulechuan/xme--ui--led-lights',
-                    链后文: '。',
+                    列: [
+                        {
+                            链: 'https://gitee.com/nanchang-wulechuan/xme--ui--led-lights',
+                            链后文: '。',
+                        },
+                    ],
                 },
 
                 {
+                    题: 'JavaScript 工具《Fabricjs 5.x 实用多边形》：',
                     应强调: true,
-                    链前文: 'JavaScript 工具《Fabricjs 5.x 实用多边形》：',
-                    链: 'https://codepen.io/wulechuan/pen/rNgpZom',
-                    链后文: '。',
+                    列: [
+                        {
+                            链: 'https://codepen.io/wulechuan/pen/rNgpZom',
+                            链后文: '。',
+                        },
+                    ],
                 },
 
                 {
+                    题: 'CSS 工具《以纯 CSS 实现拟真的玻璃板效果》：',
                     应强调: true,
-                    链前文: 'CSS 工具《以纯 CSS 实现拟真的玻璃板效果》：',
-                    链: 'https://codepen.io/wulechuan/pen/QQKXZb',
-                    链后文: '。',
+                    列: [
+                        {
+                            链: 'https://codepen.io/wulechuan/pen/QQKXZb',
+                            链后文: '。',
+                        },
+                    ],
                 },
 
                 {
+                    题: '老旧的 CSS 工具《CSS 动画花瓣》：',
                     应强调: false,
-                    链前文: '老旧的 CSS 工具《CSS 动画花瓣》：',
-                    链: 'https://codepen.io/wulechuan/pen/dqOpom',
-                    链后文: '。',
+                    列: [
+                        {
+                            链: 'https://codepen.io/wulechuan/pen/dqOpom',
+                            链后文: '。',
+                        },
+                    ],
                 },
 
                 {
+                    题: '为我犬子设计的网页小游戏《端端的超级勇士》：',
                     应强调: false,
-                    链前文: '为我犬子设计的网页小游戏《端端的超级勇士》：',
-                    链: 'https://gitee.com/nanchang-wulechuan/wulechuan-webapp-duan-duan-chao-ji-yong-shi',
-                    链后文: '。',
+                    列: [
+                        {
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-webapp-duan-duan-chao-ji-yong-shi',
+                            链后文: '。',
+                        },
+                    ],
                 },
             ],
         },
