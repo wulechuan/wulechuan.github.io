@@ -9,28 +9,47 @@
     <script src="js/3rd-parties/vuejs-3.4.27.js"></script>
 
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        @media print {
+            .media-screen-only {
+                display: none !important;
+            }
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        @media screen {
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .media-print-only {
+                display: none !important;
+            }
         }
     </style>
 
     <style id="styles--app-fonts">
-        :root {
-            font-size: 20px;
-            font-weight: 400;
+        @media screen {
+            :root {
+                font-size: 20px;
+                font-weight: 400;
+            }
+
+            .app {
+                font-family: 'HarmonyOS Sans', 'Inter', sans-serif;
+                font-size: 0.8rem;
+            }
         }
 
         @media screen and (max-width: 630px) {
@@ -38,333 +57,411 @@
                 font-size: 15px;
             }
         }
-
-        .app {
-            font-family: 'HarmonyOS Sans', 'Inter', sans-serif;
-            font-size: 0.8rem;
-        }
     </style>
 
     <style id="styles--app-theming-central">
-        .app {
-            --shadow-color: rgba(0, 0, 0, 0.319);
+        @media print {
+            .app hr {
+                border-style: solid;
+                border-width: 0;
+                height: 1pc;
+                background-color: #999;
+            }
 
-            --theme-color-tone: 222;
-            --theme-bg-vivid: 15%;
-            --theme-primary-colors-vivid: 66%;
-            --theme-primary-colors-lightness: 51%;
-            --theme-strokes-colors-vivid: 25%;
-            --theme-strokes-colors-lightness: 44%;
+            .app a {
+                color: blue;
+            }
 
-            color:            hsl(var(--theme-color-tone), 22%, 79%);
-            background-color: hsl(var(--theme-color-tone), 12%,  8%);
+            .app em {
+                font-style: normal;
+            }
         }
 
-        .app a {
-            outline-style: solid;
-            outline-width: 0.1rem;
-            outline-color: transparent;
-        }
+        @media screen {
+            .app {
+                --shadow-color: rgba(0, 0, 0, 0.319);
 
-        .app :focus-visible,
-        .app :focus {
-            outline-color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
-            color:         hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
-        }
+                --theme-color-tone: 222;
+                --theme-bg-vivid: 15%;
+                --theme-primary-colors-vivid: 66%;
+                --theme-primary-colors-lightness: 51%;
+                --theme-strokes-colors-vivid: 25%;
+                --theme-strokes-colors-lightness: 44%;
 
-        .app hr {
-            background-color: transparent;
-            background-image: linear-gradient(
-                to right,
-                transparent 0%,
-                hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51),
-                transparent 100%
-            );
-        }
+                color:            hsl(var(--theme-color-tone), 22%, 79%);
+                background-color: hsl(var(--theme-color-tone), 12%,  8%);
+            }
 
-        .app a {
-            color:                  hsl(var(--theme-color-tone), 12%, 48%);
-            text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
-        }
+            .app a {
+                outline-style: solid;
+                outline-width: 0.1rem;
+                outline-color: transparent;
+            }
 
-        .app a:hover {
-            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
-        }
+            .app :focus-visible,
+            .app :focus {
+                outline-color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+                color:         hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+            }
 
-        li,
-        p {
-            color: hsl(var(--theme-color-tone), 25%, 52%);
-        }
+            .app hr {
+                background-color: transparent;
+                background-image: linear-gradient(
+                    to right,
+                    transparent 0%,
+                    hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51),
+                    transparent 100%
+                );
+            }
 
-        em {
-            color: hsl(var(--theme-color-tone), 66%, 83%);
-        }
+            .app a {
+                color:                  hsl(var(--theme-color-tone), 12%, 48%);
+                text-shadow: 0 0 0.2rem hsl(var(--theme-color-tone), 77%, 11%);
+            }
 
-        .section.summary {
-            --theme-color-tone: 219;
-            --theme-bg-vivid: 19%;
-            --theme-primary-colors-vivid: 55%;
-            --theme-primary-colors-lightness: 69%;
-            --theme-strokes-colors-vivid: 33%;
-            --theme-strokes-colors-lightness: 51%;
-        }
+            .app a:hover {
+                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+            }
 
-        .section.portfolio {
-            --theme-color-tone: 51;
-            --theme-bg-vivid: 19%;
-            --theme-primary-colors-vivid: 55%;
-            --theme-primary-colors-lightness: 69%;
-            --theme-strokes-colors-vivid: 33%;
-            --theme-strokes-colors-lightness: 51%;
-        }
+            li,
+            p {
+                color: hsl(var(--theme-color-tone), 25%, 52%);
+            }
 
-        .section.skills {
-            --theme-color-tone: 27;
-            --theme-bg-vivid: 9%;
-            --theme-primary-colors-lightness: 74%;
-            --theme-strokes-colors-lightness: 51%;
-        }
+            em {
+                color: hsl(var(--theme-color-tone), 66%, 83%);
+            }
 
-        .capsules-single-list .capsule {
-            color:            hsl(var(--theme-color-tone), 22%, 44%);
-            background-color: hsl(var(--theme-color-tone),  8%,  8%);
-            border-color:     hsl(var(--theme-color-tone), 33%, 33%);
-        }
+            .section.summary {
+                --theme-color-tone: 219;
+                --theme-bg-vivid: 19%;
+                --theme-primary-colors-vivid: 55%;
+                --theme-primary-colors-lightness: 69%;
+                --theme-strokes-colors-vivid: 33%;
+                --theme-strokes-colors-lightness: 51%;
+            }
 
-        .capsules-single-list .capsule:hover {
-            color:        hsl(var(--theme-color-tone), 66%, 77%);
-            border-color: hsl(var(--theme-color-tone), 66%, 66%);
-            box-shadow: 0 0 0.5rem #0001;
-        }
+            .section.portfolio {
+                --theme-color-tone: 51;
+                --theme-bg-vivid: 19%;
+                --theme-primary-colors-vivid: 55%;
+                --theme-primary-colors-lightness: 69%;
+                --theme-strokes-colors-vivid: 33%;
+                --theme-strokes-colors-lightness: 51%;
+            }
 
-        .capsules-single-list .capsule.应强调 {
-            color:            hsl(var(--theme-color-tone), 77%, 83%);
-            background-color: hsl(var(--theme-color-tone), 13%, 13%);
-            border-color:     hsl(var(--theme-color-tone), 44%, 55%);
-        }
+            .section.skills {
+                --theme-color-tone: 27;
+                --theme-bg-vivid: 9%;
+                --theme-primary-colors-lightness: 74%;
+                --theme-strokes-colors-lightness: 51%;
+            }
 
-        .capsules-single-list .capsule.应强调:hover {
-            color:        hsl(var(--theme-color-tone), 88%, 93%);
-            border-color: hsl(var(--theme-color-tone), 77%, 80%);
-            box-shadow: 0 0 0.5rem #0001;
-        }
+            .capsules-single-list .capsule {
+                color:            hsl(var(--theme-color-tone), 22%, 44%);
+                background-color: hsl(var(--theme-color-tone),  8%,  8%);
+                border-color:     hsl(var(--theme-color-tone), 33%, 33%);
+            }
 
-        .section.jobs {
-            --theme-color-tone: 141;
-            --theme-bg-vivid: 10%;
-            --theme-primary-colors-lightness: 69%;
-            --theme-strokes-colors-lightness: 51%;
-        }
+            .capsules-single-list .capsule:hover {
+                color:        hsl(var(--theme-color-tone), 66%, 77%);
+                border-color: hsl(var(--theme-color-tone), 66%, 66%);
+                box-shadow: 0 0 0.5rem #0001;
+            }
 
-        .section.projects {
-            --theme-color-tone: 180;
-            --theme-bg-vivid: 13%;
-            --theme-primary-colors-lightness: 69%;
-            --theme-strokes-colors-lightness: 46%;
-        }
+            .capsules-single-list .capsule.应强调 {
+                color:            hsl(var(--theme-color-tone), 77%, 83%);
+                background-color: hsl(var(--theme-color-tone), 13%, 13%);
+                border-color:     hsl(var(--theme-color-tone), 44%, 55%);
+            }
 
-        .section.education {
-            --theme-color-tone: 0;
-            --theme-bg-vivid: 9%;
-            --theme-primary-colors-lightness: 75%;
-            --theme-strokes-colors-vivid: 16%;
-            --theme-strokes-colors-lightness: 45%;
+            .capsules-single-list .capsule.应强调:hover {
+                color:        hsl(var(--theme-color-tone), 88%, 93%);
+                border-color: hsl(var(--theme-color-tone), 77%, 80%);
+                box-shadow: 0 0 0.5rem #0001;
+            }
+
+            .section.jobs {
+                --theme-color-tone: 141;
+                --theme-bg-vivid: 10%;
+                --theme-primary-colors-lightness: 69%;
+                --theme-strokes-colors-lightness: 51%;
+            }
+
+            .section.projects {
+                --theme-color-tone: 180;
+                --theme-bg-vivid: 13%;
+                --theme-primary-colors-lightness: 69%;
+                --theme-strokes-colors-lightness: 46%;
+            }
+
+            .section.education {
+                --theme-color-tone: 0;
+                --theme-bg-vivid: 9%;
+                --theme-primary-colors-lightness: 75%;
+                --theme-strokes-colors-vivid: 16%;
+                --theme-strokes-colors-lightness: 45%;
+            }
         }
     </style>
 
     <style id="styles--app-base">
-        .app {
-            --app-content-max-width: 45rem;
-            line-height: 1.6;
-            margin: 0 auto;
-            padding: 0 0 2rem;
+        @media print {
+            .app em {
+                font-style: bolder;
+            }
+
+            .app svg.icon use {
+                stroke: currentColor;
+                fill:   transparent;
+            }
+
+            .app svg.icon {
+                margin-top: 0.15em;
+                width:  1em;
+                height: 1em;
+                flex: 0 0 auto;
+            }
+
+            h2 {
+                break-before: page;
+            }
+
+            /* h1, */
+            h2,
+            h3 {
+                margin-top:    2.5em;
+                margin-bottom: 0.5em;
+            }
+
+            h4,
+            h5,
+            h6 {
+                margin-top:    1em;
+                margin-bottom: 0.5em;
+            }
         }
 
-        #app[v-cloak],
-        .app [v-cloak] {
-            display: none !important;
-        }
+        @media screen {
+            .app {
+                --app-content-max-width: 45rem;
+                line-height: 1.6;
+                margin: 0 auto;
+                padding: 0 0 2rem;
+            }
 
-        .app em {
-            font-style: normal;
-        }
+            .app [v-cloak] {
+                display: none !important;
+            }
 
-        .app hr {
-            display: block;
-            border-width: 0;
-            border-style: none;
-            width: 100%;
-            margin: 1rem auto;
-            min-height: 1px;
-            max-height: 1px;
-            flex: 0 0;
-        }
+            .app em {
+                font-style: normal;
+            }
 
-        .app svg.icon use {
-            stroke: currentColor;
-            fill:   transparent;
-        }
+            .app hr {
+                display: block;
+                border-width: 0;
+                border-style: none;
+                width: 100%;
+                margin: 1rem auto;
+                min-height: 1px;
+                max-height: 1px;
+                flex: 0 0;
+            }
 
-        .app svg.icon {
-            margin-top: 0.15em;
-            width:  1em;
-            height: 1em;
-            flex: 0 0 auto;
-        }
+            .app svg.icon use {
+                stroke: currentColor;
+                fill:   transparent;
+            }
 
-        .app a {
-            text-decoration-color: #fff2;
-            border-radius: 0.2em;
-            padding: 0.15rem 0.35rem;
-            transition-property: color, outline-color, background-color;
-            transition-duration: 0.319s;
-            transition-timing-function: ease-out;
+            .app svg.icon {
+                margin-top: 0.15em;
+                width:  1em;
+                height: 1em;
+                flex: 0 0 auto;
+            }
+
+            .app a {
+                text-decoration-color: #fff2;
+                border-radius: 0.2em;
+                padding: 0.15rem 0.35rem;
+                margin: 0 0.5em;
+                transition-property: color, outline-color, background-color;
+                transition-duration: 0.319s;
+                transition-timing-function: ease-out;
+            }
         }
     </style>
 
     <style id="styles--component-revelable">
-        .revealable {
-            opacity: 0;
-            transition-property: opacity, transform;
-            transition-duration: 0.515s;
-            transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
+        @media screen {
+            .revealable {
+                opacity: 0;
+                transition-property: opacity, transform;
+                transition-duration: 0.515s;
+                transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
 
-        .revealable .revealable {
-            visibility: hidden;
-            transition-delay: 0.27s;
-        }
+            .revealable .revealable {
+                visibility: hidden;
+                transition-delay: 0.27s;
+            }
 
-        .revealable.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+            .revealable.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-        .revealable.visible .revealable {
-            visibility: visible;
-        }
+            .revealable.visible .revealable {
+                visibility: visible;
+            }
 
-        .reveals-by-sliding-upwards {
-            transform: translateY(2rem);
-            transition-delay: 0.19s;
-        }
+            .reveals-by-sliding-upwards {
+                transform: translateY(2rem);
+                transition-delay: 0.19s;
+            }
 
-        .reveals-by-sliding-downwards {
-            transform: translateY(-2rem);
-            transition-delay: 0s;
+            .reveals-by-sliding-downwards {
+                transform: translateY(-2rem);
+                transition-delay: 0s;
+            }
         }
     </style>
 
     <style id="styles--component-article">
-        article {
-            margin: 0.5rem;
-            border-style: solid;
-            border-width: 0;
-            padding: 0.5rem 0.5rem;
-            transition-property: color, border-color, background-color, opacity, box-shadow, transform;
-            transition-duration: 0.26s;
-            transition-timing-function: ease-out;
-            max-width: 51rem;
-        }
+        @media screen {
+            article {
+                margin: 0.5rem;
+                border-style: solid;
+                border-width: 0;
+                padding: 0.5rem 0.5rem;
+                transition-property: color, border-color, background-color, opacity, box-shadow, transform;
+                transition-duration: 0.26s;
+                transition-timing-function: ease-out;
+                max-width: 51rem;
+            }
 
-        article ol,
-        article ul {
-            margin: 0.25rem 0 1.25rem;
-        }
+            article ol,
+            article ul {
+                margin: 0.25rem 0 1.25rem;
+            }
 
-        article ol {
-            padding-left: 1rem;
-        }
+            article ol {
+                padding-left: 1rem;
+            }
 
-        article ul {
-            list-style-type: disc;
-            padding-left: 1rem;
-        }
+            article ul {
+                list-style-type: disc;
+                padding-left: 1rem;
+            }
 
-        article ol > li,
-        article ul > li {
-            margin: 0 0 0.5rem;
-        }
+            article ol > li,
+            article ul > li {
+                margin: 0 0 0.5rem;
+            }
 
-        article ol:last-child > li:last-child,
-        article ul:last-child > li:last-child {
-            margin-bottom: 0;
-        }
+            article ol:last-child > li:last-child,
+            article ul:last-child > li:last-child {
+                margin-bottom: 0;
+            }
 
-        article p ~ ol,
-        article p ~ ul {
-            padding-left: 2.75rem;
+            article p ~ ol,
+            article p ~ ul {
+                padding-left: 2.75rem;
+            }
         }
     </style>
 
     <style id="styles--component-capsules-list">
-        .capsules-single-list .the-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding: 0.5rem;
-            margin: 0;
+        @media print {
+            .capsules-single-list .the-list {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .capsules-single-list .capsule {
+                border-style: solid;
+                border-width: 0.05rem;
+                line-height: 1;
+                font-size: 0.8rem;
+                padding: 0.4em 1em;
+                border-radius: 50rem;
+            }
         }
 
-        .capsules-single-list .capsule {
-            cursor: default;
-            border-style: solid;
-            border-width: 0.05rem;
-            line-height: 1;
-            font-size: 0.7rem;
-            padding: 0.4em 1em;
-            border-radius: 50rem;
-            transition-property: color, border-color, background-color, opacity, box-shadow, transform;
-            transition-duration: 0.26s;
-            transition-timing-function: ease-out;
-            box-shadow: 0 0 0.15rem #0006;
+        @media screen {
+            .capsules-single-list .the-list {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 0.5rem;
+                margin: 0;
+            }
+
+            .capsules-single-list .capsule {
+                cursor: default;
+                border-style: solid;
+                border-width: 0.05rem;
+                line-height: 1;
+                font-size: 0.7rem;
+                padding: 0.4em 1em;
+                border-radius: 50rem;
+                transition-property: color, border-color, background-color, opacity, box-shadow, transform;
+                transition-duration: 0.26s;
+                transition-timing-function: ease-out;
+                box-shadow: 0 0 0.15rem #0006;
+            }
         }
     </style>
 
     <style id="styles--component-timeline">
-        .timeline-node {
-            padding: 1.5rem 0 0 1.25rem;
-        }
+        @media screen {
+            .timeline-node {
+                padding: 1.5rem 0 0 1.25rem;
+            }
 
-        .timeline-node:last-child .timeline-node-content {
-            border-left-color: transparent;
-            /* padding-bottom: 1rem; */
-        }
+            .timeline-node:last-child .timeline-node-content {
+                border-left-color: transparent;
+                /* padding-bottom: 1rem; */
+            }
 
-        .timeline-node-content {
-            position: relative;
-            padding: 0.5rem 0.5rem 3rem 1.5rem;
-            margin: 0 0 -1rem 0;
-            border-left: 2px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
-        }
+            .timeline-node-content {
+                position: relative;
+                padding: 0.5rem 0.5rem 3rem 1.5rem;
+                margin: 0 0 -1rem 0;
+                border-left: 2px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
+            }
 
-        .timeline-node-content::before {
-            content: '';
-            position: absolute;
-            left: -0.45rem;
-            top:  -0.5rem;
-            width:  0.8rem;
-            height: 0.8rem;
-            background-color: hsl(var(--theme-color-tone), 9%, 9%);
-            border-color:     hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
-            border-width: 0.1rem;
-            border-style: solid;
-            border-radius: 50%;
-        }
+            .timeline-node-content::before {
+                content: '';
+                position: absolute;
+                left: -0.45rem;
+                top:  -0.5rem;
+                width:  0.8rem;
+                height: 0.8rem;
+                background-color: hsl(var(--theme-color-tone), 9%, 9%);
+                border-color:     hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
+                border-width: 0.1rem;
+                border-style: solid;
+                border-radius: 50%;
+            }
 
-        .timeline-node-content-header {
-            margin-top: -1.45rem;
-            width: 100%;
-        }
+            .timeline-node-content-header {
+                margin-top: -1.45rem;
+                width: 100%;
+            }
 
-        .timeline-node-content-body {
-            margin-top: 0.75rem;
-        }
+            .timeline-node-content-body {
+                margin-top: 0.75rem;
+            }
 
-        .timeline-node-content-body article ol:last-child,
-        .timeline-node-content-body article ul:last-child {
-            margin-bottom: 0.35rem;
+            .timeline-node-content-body article ol:last-child,
+            .timeline-node-content-body article ul:last-child {
+                margin-bottom: 0.35rem;
+            }
         }
 
         @media screen and (max-width: 730px) {
@@ -379,43 +476,45 @@
     </style>
 
     <style id="styles--component-section-card">
-        .section {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-radius: 0.7rem;
-            border: 1px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
-            background-color: hsl(var(--theme-color-tone), var(--theme-bg-vivid), 16%);
-            box-shadow: 0 2px 8px var(--shadow-color);
-        }
+        @media screen {
+            .section {
+                margin-bottom: 2rem;
+                padding: 1rem;
+                border-radius: 0.7rem;
+                border: 1px solid hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
+                background-color: hsl(var(--theme-color-tone), var(--theme-bg-vivid), 16%);
+                box-shadow: 0 2px 8px var(--shadow-color);
+            }
 
-        .section-main-title {
-            font-size: 1.35rem;
-            font-weight: 200;
-            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
-            padding: 0 1rem;
-            letter-spacing: 0.1em;
-        }
+            .section-main-title {
+                font-size: 1.35rem;
+                font-weight: 200;
+                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+                padding: 0 1rem;
+                letter-spacing: 0.1em;
+            }
 
-        h3.section-content-title {
-            color: hsl(var(--theme-color-tone), 66%, 90%);
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
+            h3.section-content-title {
+                color: hsl(var(--theme-color-tone), 66%, 90%);
+                font-size: 0.95rem;
+                letter-spacing: 0.05em;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
 
-        h4.section-content-title {
-            font-size: 0.8rem;
-            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
-            font-weight: 400;
-        }
+            h4.section-content-title {
+                font-size: 0.8rem;
+                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+                font-weight: 400;
+            }
 
-        .section > hr {
-            margin-block: 0.25rem 0.75rem;
-        }
+            .section > hr {
+                margin-block: 0.25rem 0.75rem;
+            }
 
-        .section-body {
-            padding: 0 0.15rem;
+            .section-body {
+                padding: 0 0.15rem;
+            }
         }
 
         @media screen and (max-width: 641px) {
@@ -426,83 +525,93 @@
     </style>
 
     <style id="styles--app-header">
-        .app-header {
-            --theme-primary-colors-vivid: 79%;
-            --theme-primary-colors-lightness: 72%;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            padding: 0;
-            margin: 0;
-            border-radius: 0;
-            border-style: none none solid none;
-            border-width: 0 0 0.05rem 0;
-            border-color:     hsl(var(--theme-color-tone), 16%, 48%, 0.64);
-            background-color: hsl(var(--theme-color-tone), 11%, 11%, 0.66);
-            box-shadow: 0 4px 12px var(--shadow-color);
-            backdrop-filter: blur(0.75rem);
+        @media print {
+            .people-contacts a {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
         }
 
-        .app-header-content {
-            max-width: var(--app-content-max-width);
-            margin: 0 auto;
-            padding: 1rem;
-        }
+        @media screen {
+            .app-header {
+                --theme-primary-colors-vivid: 79%;
+                --theme-primary-colors-lightness: 72%;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                padding: 0;
+                margin: 0;
+                border-radius: 0;
+                border-style: none none solid none;
+                border-width: 0 0 0.05rem 0;
+                border-color:     hsl(var(--theme-color-tone), 16%, 48%, 0.64);
+                background-color: hsl(var(--theme-color-tone), 11%, 11%, 0.66);
+                box-shadow: 0 4px 12px var(--shadow-color);
+                backdrop-filter: blur(0.75rem);
+            }
 
-        .people-name-and-profession-title,
-        .people-contacts {
-            margin: 0 2rem;
-        }
+            .app-header-content {
+                max-width: var(--app-content-max-width);
+                margin: 0 auto;
+                padding: 1rem;
+            }
 
-        .people-name-and-profession-title {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0 2rem;
-        }
+            .people-name-and-profession-title,
+            .people-contacts {
+                margin: 0 2rem;
+            }
 
-        .people-name {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-top: -0.4rem;
-            letter-spacing: 0.2em;
-        }
+            .people-name-and-profession-title {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 0 2rem;
+            }
 
-        .people-name rt {
-            opacity: 0.75;
-            letter-spacing: 0;
-            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
-        }
+            .people-name {
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin-top: -0.4rem;
+                letter-spacing: 0.2em;
+            }
 
-        .people-profession-title {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: hsl(var(--theme-color-tone), 67%, 61%);
-            letter-spacing: 0.1em;
-        }
+            .people-name rt {
+                opacity: 0.75;
+                letter-spacing: 0;
+                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+            }
 
-        .people-contacts {
-            margin-top: 0.75rem;
-            display: grid;
-            grid-auto-flow: column;
-            grid-template: repeat(2, 1fr) / repeat(2, auto);
-            gap: 0.25rem 2rem;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.75rem;
-        }
+            .people-profession-title {
+                font-size: 1.2rem;
+                font-weight: 400;
+                color: hsl(var(--theme-color-tone), 67%, 61%);
+                letter-spacing: 0.1em;
+            }
 
-        .people-contacts a {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.15rem 0.35rem;
-        }
+            .people-contacts {
+                margin-top: 0.75rem;
+                display: grid;
+                grid-auto-flow: column;
+                grid-template: repeat(2, 1fr) / repeat(2, auto);
+                gap: 0.25rem 2rem;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.75rem;
+            }
 
-        .people-contacts a .entry-title {
-            flex: 0 0 auto;
+            .people-contacts a {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+
+            .people-contacts a .entry-title {
+                flex: 0 0 auto;
+            }
         }
 
         @media screen and (max-width: 630px) {
@@ -544,117 +653,119 @@
     </style>
 
     <style id="styles--app-main">
-        main {
-            max-width: var(--app-content-max-width);
-            margin: 0 auto;
-            padding: 2rem 1rem 32vh;
-        }
+        @media screen {
+            main {
+                max-width: var(--app-content-max-width);
+                margin: 0 auto;
+                padding: 2rem 1rem 32vh;
+            }
 
-        .period-and-subtitle {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 0.25rem 0 0.25rem 2rem;
-            font-size: 0.7rem;
-            /* color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness)); */
-            color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 80%);
-        }
+            .period-and-subtitle {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin: 0.25rem 0 0.25rem 2rem;
+                font-size: 0.7rem;
+                /* color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness)); */
+                color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 80%);
+            }
 
-        .period-and-subtitle .the-period {
-            flex: 0 0 9rem;
-        }
+            .period-and-subtitle .the-period {
+                flex: 0 0 9rem;
+            }
 
-        .timeline-node-content article {
-            border-radius: 0.25rem;
-            border-width: 0.05rem;
-            border-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
-            background-color: hsl(var(--theme-color-tone), 9%, 9%);
-        }
+            .timeline-node-content article {
+                border-radius: 0.25rem;
+                border-width: 0.05rem;
+                border-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness), 0.51);
+                background-color: hsl(var(--theme-color-tone), 9%, 9%);
+            }
 
-        .timeline-node-content article:hover {
-            color:        hsl(var(--theme-color-tone),  9%, 99%);
-            border-color: hsl(var(--theme-color-tone), 77%, 77%);
-        }
+            .timeline-node-content article:hover {
+                color:        hsl(var(--theme-color-tone),  9%, 99%);
+                border-color: hsl(var(--theme-color-tone), 77%, 77%);
+            }
 
-        .section.skills .capsules-single-list .capsule.技能掌握等级--精通 {
-            position: relative;
-        }
+            .section.skills .capsules-single-list .capsule.技能掌握等级--精通 {
+                position: relative;
+            }
 
-        .section.skills .capsules-single-list .capsule.技能掌握等级--精通::after {
-            font-size: 0.8em;
-            content: '精通';
-            display: block;
-            position: absolute;
-            top: 0;
-            left: auto;
-            right: 0;
-            bottom: auto;
-            margin: -0.5em -1em;
-            padding: 0.1em 0.5em;
-            border-radius: 10em;
-            color: black;
-            background-color: hsl(var(--theme-color-tone), 79%, 79%);
-            transform: rotate(25deg);
-        }
+            .section.skills .capsules-single-list .capsule.技能掌握等级--精通::after {
+                font-size: 0.8em;
+                content: '精通';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: auto;
+                right: 0;
+                bottom: auto;
+                margin: -0.5em -1em;
+                padding: 0.1em 0.5em;
+                border-radius: 10em;
+                color: black;
+                background-color: hsl(var(--theme-color-tone), 79%, 79%);
+                transform: rotate(25deg);
+            }
 
-        .section.summary   p:last-child,
-        .section.portfolio p:last-child {
-            margin-bottom: 0;
-        }
+            .section.summary   p:last-child,
+            .section.portfolio p:last-child {
+                margin-bottom: 0;
+            }
 
-        /* .section.summary li {
-            text-indent: 2ic;
-        } */
+            /* .section.summary li {
+                text-indent: 2ic;
+            } */
 
-        .section.summary p {
-            text-indent: 0;
-            margin-bottom: 1em;
-        }
+            .section.summary p {
+                text-indent: 0;
+                margin-bottom: 1em;
+            }
 
-        .section.summary ul {
-            list-style: none;
-            padding-left: 2ic;
-        }
+            .section.summary ul {
+                list-style: none;
+                padding-left: 2ic;
+            }
 
-        .section.portfolio p {
-            text-indent: 0;
-            margin-bottom: 1em;
-        }
+            .section.portfolio p {
+                text-indent: 0;
+                margin-bottom: 1em;
+            }
 
-        .section.portfolio ul {
-            list-style-type: '· ';
-            padding-left: 2ic;
-        }
+            .section.portfolio ul {
+                list-style-type: '· ';
+                padding-left: 2ic;
+            }
 
-        .section.skills .section-body {
-            padding: 0.5rem 1rem;
-        }
+            .section.skills .section-body {
+                padding: 0.5rem 1rem;
+            }
 
-        .skills-multi-lists {
-            display: block;
-        }
+            .skills-multi-lists {
+                display: block;
+            }
 
-        .skills-single-list {
-            margin: 0 0 1rem;
-        }
+            .skills-single-list {
+                margin: 0 0 1rem;
+            }
 
-        .skills-single-list:last-child {
-            margin-bottom: 0;
-        }
+            .skills-single-list:last-child {
+                margin-bottom: 0;
+            }
 
-        .project-link {
-            text-decoration: none;
-        }
+            .project-link {
+                text-decoration: none;
+            }
 
-        .project-tech-stack {
-            margin-top: 1rem;
-        }
+            .project-tech-stack {
+                margin-top: 1rem;
+            }
 
-        .project-tech-stack .capsules-single-list .the-list {
-            gap: 0.4rem;
+            .project-tech-stack .capsules-single-list .the-list {
+                gap: 0.4rem;
+            }
         }
 
         @media screen and (max-width: 730px) {
@@ -670,7 +781,7 @@
 </head>
 
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="lucide-icon-phone" viewBox="0 0 24 24">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
         </symbol>
@@ -734,7 +845,8 @@
                     <a :href="resume.data.个人信息摘要.联系方式.代码仓库" target="_blank" rel="noopener noreferrer">
                         <svg class="icon"><use href="#lucide-icon-database"></use></svg>
                         <span class="entry-title">代码仓库：</span>
-                        <span class="entry-value">码云</span>
+                        <span class="entry-value media-screen-only">码云</span>
+                        <span class="entry-value media-print-only">{{ resume.data.个人信息摘要.联系方式.代码仓库 }}</span>
                     </a>
                 </div>
             </div>
@@ -967,9 +1079,19 @@
                                             <span v-else>今</span>
                                         </span>
 
-                                        <a v-if="某项目.项目成果地址" :href="某项目.项目成果地址" target="_blank" rel="noopener noreferrer"
-                                            class="project-link"
-                                        >查看项目 <svg class="icon"><use href="#lucide-icon-arrow-up-right"></use></svg></a>
+                                        <template v-if="某项目.项目成果地址">
+                                            <a
+                                                :href="某项目.项目成果地址"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="project-link media-screen-only"
+                                            >查看项目 <svg class="icon"><use href="#lucide-icon-arrow-up-right"></use></svg></a>
+
+                                            <p class="media-print-only">
+                                                <span>项目地址：</span>
+                                                <a :href="某项目.项目成果地址">{{ 某项目.项目成果地址 }}</a>
+                                            </p>
+                                        </template>
                                     </span>
                                 </div>
 
@@ -1102,7 +1224,7 @@
                     function loadResumeData() {
                         const { resumeRawData } = window
                         resume.data = structuredClone(resumeRawData)
-                        document.title = `${resumeRawData.个人信息摘要.姓名}简历（${resumeRawData.填写该简历之年月}）`
+                        document.title = `${resumeRawData.个人信息摘要.姓名} 《简历（${resumeRawData.填写该简历之年月}）》 电话：${resumeRawData.个人信息摘要.联系方式.手机号}`
                     }
 
                     function setupPageScrollingObserver() {
