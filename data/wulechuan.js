@@ -4,8 +4,17 @@
 
 
 
-/** @param {string} url  */
-function genHtmlOfAnchor (url) { return `<a href="${encodeURI(url)}" target="_blank">${url}</a>` }
+/**
+ * @param {string} url
+ * @param {string} [text]
+ */
+function genHtmlOfAnchor (url, text) {
+    if (text) {
+        return `<a href="${encodeURI(url)}" target="_blank" rel="noopener noreferrer" class="media-screen-only">${text}</a><span class="media-print-only">${text}： </span><a href="${encodeURI(url)}" class="media-print-only">${url}</a>`
+    } else {
+        return `<a href="${encodeURI(url)}" target="_blank" rel="noopener noreferrer">${url}</a>`
+    }
+}
 
 
 
@@ -18,9 +27,9 @@ const resumeRawData = {
 
 
     个人信息摘要: {
-        姓名: '吴乐川',
-        姓名拼音: [ undefined, 'lè', undefined ],
-        职业称谓: '资深网页开发工程师',
+        姓名逐字: [ '吴', '乐', '川' ],
+        姓名拼音: [ 'wú', 'lè', 'chuān' ],
+        职业称谓: '网页应用开发资深工程师',
 
 
 
@@ -95,7 +104,7 @@ const resumeRawData = {
                     },
                     {
                         应强调: true,
-                        文: '善与团队协作。5 年以上技术领导经验。具备优秀的文档撰写能力（中英文）。',
+                        文: '善与团队协作。5 年以上技术领导经验。具备优秀的文档撰写能力（中英文）。熟悉敏捷开发模式。熟悉 Scrum 多人协同工作框架。',
                     },
                     {
                         应强调: false,
@@ -162,6 +171,20 @@ const resumeRawData = {
             题: '有特色或代表性的工具或项目',
             列: [
                 {
+                    应强调: true,
+                    文: [
+                        '泛用控制器《多表逐项协同机》：',
+                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机', '汉语版'),
+                        '、',
+                        genHtmlOfAnchor('https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机_非汉语', '外国语版'),
+                        '。'
+                    ].join(''),
+                    // 链前文: '泛用控制器《多表逐项协同机》：',
+                    // 链: 'https://gitee.com/nanchang-wulechuan/wlc-compound-project-2025-08/tree/主/跨应用公共资源集/通用工具-多表逐项匹配与协同机',
+                    // 链后文: '。',
+                },
+
+                {
                     应强调: false,
                     链前文: 'VSCode 插件《Markdown 文件预览（ HTML ）之配色方案》：',
                     链: 'https://marketplace.visualstudio.com/items?itemName=wulechuan.wulechuan-markdown-html-theme-light-1',
@@ -170,21 +193,28 @@ const resumeRawData = {
 
                 {
                     应强调: true,
-                    链前文: '仿真的 LED 灯珠：',
+                    链前文: 'Vuejs 组件《仿真的 LED 灯珠》：',
                     链: 'https://gitee.com/nanchang-wulechuan/xme--ui--led-lights',
                     链后文: '。',
                 },
 
                 {
                     应强调: true,
-                    链前文: 'Fabricjs 5.x 实用多边形：',
+                    链前文: 'JavaScript 工具《Fabricjs 5.x 实用多边形》：',
                     链: 'https://codepen.io/wulechuan/pen/rNgpZom',
                     链后文: '。',
                 },
 
                 {
+                    应强调: true,
+                    链前文: 'CSS 工具《以纯 CSS 实现拟真的玻璃板效果》：',
+                    链: 'https://codepen.io/wulechuan/pen/QQKXZb',
+                    链后文: '。',
+                },
+
+                {
                     应强调: false,
-                    链前文: '老旧的 CSS 动画花瓣：',
+                    链前文: '老旧的 CSS 工具《CSS 动画花瓣》：',
                     链: 'https://codepen.io/wulechuan/pen/dqOpom',
                     链后文: '。',
                 },
@@ -228,36 +258,40 @@ const resumeRawData = {
         ],
 
         技术框架技术子领域与专门工具库: [
-            [ 'Vuejs 2',        '精通' ],
-            [ 'Vuejs 3',        '精通' ],
-            [ 'VueX',           '精通' ],
-            [ 'Piniajs',        '精通' ],
-            [ 'Vue Router',     '精通' ],
-            [ 'jQuery',         '精通' ],
-            [ 'Threejs',        '精通' ],
-            [ 'Konvajs',        '精通' ],
-            [ 'Fabricjs',       '精通' ],
-            [ 'ECharts',        '精通' ],
+            [ 'Vuejs 2',         '精通' ],
+            [ 'Vuejs 3',         '精通' ],
+            [ 'VueX',            '精通' ],
+            [ 'Piniajs',         '精通' ],
+            [ 'Vue Router',      '精通' ],
+            [ 'VueUse',          '精通' ],
+            [ 'jQuery',          '精通' ],
+            [ 'Django (Client)', '精通' ],
+            [ 'Threejs',         '精通' ],
+            [ 'Konvajs',         '精通' ],
+            [ 'Fabricjs',        '精通' ],
+            [ 'ECharts',         '精通' ],
             [ 'HighCharts' ],
-            [ 'Element Plus',   '精通' ],
-            [ 'Ant Design Vue', '精通' ],
+            [ 'Element Plus',    '精通' ],
+            [ 'Ant Design Vue',  '精通' ],
             [ 'Web API: MediaStream' ],
             [ 'Web API: Workers' ],
             [ 'NuxtJS' ],
             [ 'ReactJS' ],
+            [ 'MeteorJS' ],
             [ 'NodeJS' ],
-            [ 'KoaJS',          '精通' ],
+            [ 'KoaJS',           '精通' ],
             [ 'ExpressJS' ],
+            [ 'MongoDB' ],
         ],
 
         泛用工具与平台: [
-            [ 'PowerShellCore', '精通' ],
-            [ 'Bash',           '精通' ],
-            [ 'Vite',           '精通' ],
-            [ 'Webpack',        '精通' ],
-            [ 'Gulp',           '精通' ],
-            [ 'git',            '精通' ],
-            [ 'npm',            '精通' ],
+            [ 'PowerShellCore',  '精通' ],
+            [ 'Bash',            '精通' ],
+            [ 'ViteJS',          '精通' ],
+            [ 'WebpackJS',       '精通' ],
+            [ 'GulpJS',          '精通' ],
+            [ 'git',             '精通' ],
+            [ 'npm',             '精通' ],
             [ 'Jenkins' ],
             [ 'CircleCI' ],
             [ 'Docker' ],
@@ -270,7 +304,7 @@ const resumeRawData = {
     从业经历: [
         {
             企业名称: '辛米尔视觉科技（上海）有限公司',
-            职位名称: '高级前端开发工程师',
+            职位名称: '网页应用开发组长',
             时间段: [
                 [2022, 10],
                 [2025, 8],
@@ -288,7 +322,7 @@ const resumeRawData = {
 
         {
             企业名称: '上海申铁信息工程有限公司',
-            职位名称: '高级 WEB前端开发工程师',
+            职位名称: '高级网页应用开发工程师',
             时间段: [
                 [2020, 7],
                 [2022, 7],
@@ -309,7 +343,7 @@ const resumeRawData = {
 
         {
             企业名称: '新趣教育科技（上海）有限公司',
-            职位名称: '高级 WEB前端开发工程师 / UI设计师 / UX设计师',
+            职位名称: '高级网页应用开发工程师 / UI设计师 / UX设计师',
             时间段: [
                 [2020, 1],
                 [2020, 6],
@@ -328,7 +362,7 @@ const resumeRawData = {
 
         {
             企业名称: '上海天旦网络科技发展有限公司',
-            职位名称: '高级 WEB前端开发工程师 / 研发部形象设计师 / 产品技术支持',
+            职位名称: '高级网页应用开发工程师 / 研发部形象设计师 / 产品技术支持',
             时间段: [
                 [2017, 7],
                 [2019, 6],
@@ -349,7 +383,7 @@ const resumeRawData = {
 
         {
             企业名称: '帝帆美（上海）信息科技有限公司',
-            职位名称: '高级 WEB前端开发工程师',
+            职位名称: '高级网页应用开发工程师',
             时间段: [
                 [2016, 5],
                 [2017, 6],
@@ -368,7 +402,7 @@ const resumeRawData = {
 
         {
             企业名称: '上海耘智科技有限公司',
-            职位名称: 'UI/UX设计 / WEB前端开发',
+            职位名称: '网页应用开发工程师 / UI设计师 / UX设计师',
             时间段: [
                 [2014, 11],
                 [2016, 5],

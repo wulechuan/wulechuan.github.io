@@ -62,7 +62,7 @@ type 范_简历_项目经验_单条 = {
 export type 范_简历_数据全集 = {
     填写该简历之年月: string;
     个人信息摘要: {
-        姓名: string;
+        姓名逐字: Array<            string>;
         姓名拼音: Array<undefined | string>;
         职业称谓: string;
         联系方式: {

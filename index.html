@@ -223,20 +223,20 @@
                 flex: 0 0 auto;
             }
 
-            h2 {
+            .app h2 {
                 break-before: page;
             }
 
-            /* h1, */
-            h2,
-            h3 {
+            /* .app h1, */
+            .app h2,
+            .app h3 {
                 margin-top:    2.5em;
                 margin-bottom: 0.5em;
             }
 
-            h4,
-            h5,
-            h6 {
+            .app h4,
+            .app h5,
+            .app h6 {
                 margin-top:    1em;
                 margin-bottom: 0.5em;
             }
@@ -289,6 +289,11 @@
                 transition-property: color, outline-color, background-color;
                 transition-duration: 0.319s;
                 transition-timing-function: ease-out;
+            }
+
+            .app ruby {
+                ruby-align: space-between;
+                ruby-position: over;
             }
         }
     </style>
@@ -531,6 +536,7 @@
                 display: flex;
                 align-items: center;
                 gap: 0.25rem;
+                margin: 0.5rem 0;
             }
         }
 
@@ -581,6 +587,7 @@
             .people-name rt {
                 opacity: 0.75;
                 letter-spacing: 0;
+                margin-right: 0.2em;
                 color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
             }
 
@@ -655,11 +662,12 @@
     <style id="styles--app-footer">
         @media screen {
             .app-footer {
+                font-size: 0.65rem;
                 text-align: center;
             }
 
             .app-footer p {
-                opacity: 0.319;
+                opacity: 0.515;
             }
         }
     </style>
@@ -821,13 +829,10 @@
                 <div class="people-name-and-profession-title">
                     <h1 class="people-name">
                         <ruby>
-                            <span>{{ resume.data.个人信息摘要.姓名 }}</span>
-                            <rp>（</rp>
-                            <rt><span
-                                v-for="(某字的拼音, loopIndex) in resume.data.个人信息摘要.姓名拼音"
-                                :key="loopIndex"
-                            >{{ 某字的拼音 }}</span></rt>
-                            <rp>）</rp>
+                            <template v-for="(姓名中的某字, 姓名循环序号) in resume.data.个人信息摘要.姓名逐字" :key="`姓名-${姓名循环序号}`">
+                                <span>{{ 姓名中的某字 }}</span>
+                                <rp>（</rp><rt>{{ resume.data.个人信息摘要.姓名拼音[姓名循环序号] }}</rt><rp>）</rp>
+                            </template>
                         </ruby>
                     </h1>
                     <p class="people-profession-title">{{ resume.data.个人信息摘要.职业称谓 }}</p>
@@ -879,9 +884,7 @@
                                         <li
                                             v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
                                             :class="{ '应强调': 某项_2级.应强调 }"
-                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文">{{
-                                            某项_2级.文
-                                        }}</span><span v-if="某项_2级.链前文">{{
+                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
                                             某项_2级.链前文
                                         }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
                                             某项_2级.链
@@ -914,9 +917,7 @@
                                         <li
                                             v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
                                             :class="{ '应强调': 某项_2级.应强调 }"
-                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文">{{
-                                            某项_2级.文
-                                        }}</span><span v-if="某项_2级.链前文">{{
+                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
                                             某项_2级.链前文
                                         }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
                                             某项_2级.链
@@ -1031,9 +1032,7 @@
                                                         <li
                                                             v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
                                                             :class="{ '应强调': 某项_2级.应强调 }"
-                                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文">{{
-                                                            某项_2级.文
-                                                        }}</span><span v-if="某项_2级.链前文">{{
+                                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
                                                             某项_2级.链前文
                                                         }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
                                                             某项_2级.链
@@ -1120,9 +1119,7 @@
                                                         <li
                                                             v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
                                                             :class="{ '应强调': 某项_2级.应强调 }"
-                                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文">{{
-                                                            某项_2级.文
-                                                        }}</span><span v-if="某项_2级.链前文">{{
+                                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
                                                             某项_2级.链前文
                                                         }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
                                                             某项_2级.链
@@ -1240,7 +1237,13 @@
                     function loadResumeData() {
                         const { resumeRawData } = window
                         resume.data = structuredClone(resumeRawData)
-                        document.title = `${resumeRawData.个人信息摘要.姓名} 《简历（${resumeRawData.填写该简历之年月}）》 电话：${resumeRawData.个人信息摘要.联系方式.手机号}`
+                        document.title = `${
+                            resumeRawData.个人信息摘要.姓名逐字.join('')
+                        } 《简历（${
+                            resumeRawData.填写该简历之年月
+                        }）》 电话：${
+                            resumeRawData.个人信息摘要.联系方式.手机号
+                        }`
                     }
 
                     function setupPageScrollingObserver() {
