@@ -50,22 +50,15 @@ body {
     letter-spacing: 0.25em;
     text-align: center;
 }
-.xme-led-lights-examples .special-lights-container,
 .xme-led-lights-examples ul {
     margin: 0.15rem auto;
     max-width: 100%;
     display: flex;
-    justify-content: flex-start;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     overflow: auto;
     border-radius: 0.25rem;
-}
-.xme-led-lights-examples .special-lights-container {
-    padding: 0.5rem;
-}
-.xme-led-lights-examples .special-lights-container .xme--led-light-box {
-    background-color: #000;
 }
 .xme-led-lights-examples .lights-array {
     display: flex;
