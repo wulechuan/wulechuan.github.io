@@ -1,5 +1,6 @@
 :root {
     font-size: 20px;
+    background-color: #000;
 }
 body {
     margin: 0;
@@ -13,26 +14,29 @@ body {
     background-color: #111;
     width:      100vw;
     min-height: 100vh;
+    font-size: 0.75rem;
 }
 .app h1 {
     margin: 1em auto;
+    padding: 0.25em 1em;
 }
 .app main {
     box-sizing: border-box;
-    flex: 0 0 40rem;
+    flex: 1 1 36rem;
     width: 24rem;
+    max-width: 100vw;
     margin: 0;
     padding: 2rem 1rem;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 .app .bg {
     position: absolute;
     inset: 0;
-    margin: auto;
+    margin: 0;
     background-size: cover;
     background-position: top;
     /* background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7)), url("../assets/background.jpg"); */
@@ -40,6 +44,7 @@ body {
 }
 .candidates-board {
     width: 20rem;
+    max-width: 100%;
     height: 2.5rem;
     border-radius: 0.3rem;
     margin: 0.75rem auto;
