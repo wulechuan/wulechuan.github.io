@@ -13,7 +13,7 @@
         "baseUrl": "."
     },
     "include": [
-        "types/**/*.ts",
-        "data/**/*.js"
+        "resume/types/**/*.ts",
+        "resume/data/**/*.js"
     ]
 }

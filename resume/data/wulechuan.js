@@ -246,6 +246,12 @@ const resumeRawData = {
                     应强调: true,
                     列: [
                         {
+                            链前文: '此处：',
+                            链: '/demos/css-glass/index.html',
+                            链后文: '。',
+                        },
+                        {
+                            链前文: '或：',
                             链: 'https://codepen.io/wulechuan/pen/QQKXZb',
                             链后文: '。',
                         },

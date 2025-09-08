@@ -1,0 +1,75 @@
+body {
+  background-color: #000;
+}
+.app {
+  width: 480px;
+  height: 842px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 80px;
+  background-color: #111;
+}
+.app .bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
+  background-size: contain;
+  /* background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7)), url("../assets/background.png"); */
+  background-image: url("../assets/background.png");
+}
+.board {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 6px;
+}
+.board.narrow {
+  margin: auto 30px;
+  border-radius: 6px;
+}
+.tab {
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  line-height: 20px;
+  margin: auto 20px;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+#test-board-1 {
+  margin-top: -540px;
+}
+#test-board-2 {
+  margin-top: -450px;
+}
+#test-board-3 {
+  margin-top: -360px;
+}
+#test-board-4 {
+  margin-top: -270px;
+}
+#test-board-5 {
+  margin-top: -180px;
+}
+#test-board-6 {
+  margin-top: -90px;
+}
+#test-board-7 {
+  margin-top: 0;
+}
+#test-board-8 {
+  margin-top: 90px;
+}
