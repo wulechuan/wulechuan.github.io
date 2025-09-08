@@ -10,11 +10,14 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    box-sizing: border-box;
+    padding: 1px 0;
     color: white;
     background-color: #111;
-    width:      100vw;
     min-height: 100vh;
     font-size: 0.75rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .app h1 {
     margin: 1em auto;
@@ -25,6 +28,7 @@ body {
     flex: 1 1 36rem;
     width: 24rem;
     max-width: 100vw;
+    max-height: 40rem;
     margin: 0;
     padding: 2rem 1rem;
     position: relative;

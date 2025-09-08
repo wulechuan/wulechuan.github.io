@@ -1,0 +1,87 @@
+.xme-led-light-style-1--light-box {
+    line-height: 1;
+    border-radius: 0.25em;
+}
+.xme-led-light-style-1--light-box > .shi-ti--led-light-base {
+    font-size: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    order: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25em;
+    padding: 0.25em;
+    margin: -0.25em;
+}
+.xme-led-light-style-1--light-box > .shi-ti--led-light-label {
+    font-size: 0.75em;
+    line-height: inherit;
+    display: block;
+    margin: 0;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--above, .xme-led-light-style-1--light-box.zhuang-tia--label-lays--below, .xme-led-light-style-1--light-box.zhuang-tia--label-lays--rightside, .xme-led-light-style-1--light-box.zhuang-tia--label-lays--leftside {
+    display: flex;
+    align-items: center;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--above > .shi-ti--led-light-label, .xme-led-light-style-1--light-box.zhuang-tia--label-lays--leftside > .shi-ti--led-light-label {
+    order: 1;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--below > .shi-ti--led-light-label, .xme-led-light-style-1--light-box.zhuang-tia--label-lays--rightside > .shi-ti--led-light-label {
+    order: 9;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--above, .xme-led-light-style-1--light-box.zhuang-tia--label-lays--below {
+    flex-direction: column;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--above > .shi-ti--led-light-label, .xme-led-light-style-1--light-box.zhuang-tia--label-lays--below > .shi-ti--led-light-label {
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--leftside, .xme-led-light-style-1--light-box.zhuang-tia--label-lays--rightside {
+    flex-direction: row;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--above {
+    padding: 0.75em 0 0.325em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--above > .shi-ti--led-light-base {
+    margin-top: 0em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--above > .shi-ti--led-light-label {
+    margin-bottom: -0.1em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--below {
+    padding: 0.4em 0 0.675em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--below > .shi-ti--led-light-base {
+    margin-bottom: 0em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--below > .shi-ti--led-light-label {
+    margin-top: -0.1em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--leftside {
+    padding: 0.25em 0.25em 0.25em 0.75em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--leftside > .shi-ti--led-light-base {
+    margin-left: 0em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--leftside > .shi-ti--led-light-label {
+    text-align: right;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--rightside {
+    padding: 0.25em 0.75em 0.25em 0.25em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--rightside > .shi-ti--led-light-base {
+    margin-right: 0em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-lays--rightside > .shi-ti--led-light-label {
+    text-align: left;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-is-hidden {
+    display: block;
+    padding: 0.25em;
+}
+.xme-led-light-style-1--light-box.zhuang-tia--label-is-hidden > .shi-ti--led-light-label {
+    display: none;
+}

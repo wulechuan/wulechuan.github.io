@@ -229,6 +229,11 @@ const resumeRawData = {
                             链后文: '。',
                         },
                         {
+                            链前文: '运行效果：',
+                            链: '/demos/led-light/index.html',
+                            链后文: '。',
+                        },
+                        {
                             链前文: '代码库：',
                             链: 'https://gitee.com/nanchang-wulechuan/xme--ui--led-lights',
                             链后文: '。',

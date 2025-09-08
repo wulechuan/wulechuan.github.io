@@ -1,0 +1,153 @@
+:root {
+    font-size: 20px;
+    background-color: #000;
+}
+body {
+    margin: 0;
+}
+@media screen and (max-width: 500px) {
+    .hide-on-mobile-phones {
+        display: none;
+    }
+}
+.app {
+    color: white;
+    background-color: #333;
+    box-sizing: border-box;
+    padding: 1px 0;
+    font-size: 0.75rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.app h1 {
+    text-align: center;
+    margin: 1em auto 0.5em;
+    padding: 0.25em 1em;
+}
+.app .phrase {
+    display: inline-block;
+}
+.app main {
+    box-sizing: border-box;
+}
+.xme-led-lights-examples {
+    box-sizing: border-box;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+    color: white;
+    background-color: #111;
+}
+.xme-led-lights-examples hr {
+    margin: 1rem 0 1.95rem;
+    border-width: 0;
+    height: 1px;
+    background-color: #ffffff08;
+}
+.xme-led-lights-examples h2 {
+    margin: 1rem auto 0.5rem;
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 0.25em;
+    text-align: center;
+}
+.xme-led-lights-examples .special-lights-container,
+.xme-led-lights-examples ul {
+    margin: 0.15rem auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    overflow: auto;
+    border-radius: 0.25rem;
+}
+.xme-led-lights-examples .special-lights-container {
+    padding: 0.5rem;
+}
+.xme-led-lights-examples .special-lights-container .xme--led-light-box {
+    background-color: #000;
+}
+.xme-led-lights-examples .lights-array {
+    display: flex;
+    justify-content: center;
+}
+.xme-led-lights-examples ul {
+    color: #fff6;
+    background-color: #000;
+    list-style: none;
+}
+.xme-led-lights-examples ul li {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.xme-led-lights-examples ul.hue-values-in-numbers {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
+}
+.xme-led-lights-examples ul.hue-values-in-numbers li {
+    width: 2rem;
+}
+.xme-led-lights-examples ul.hue-values-in-names {
+    font-size: 0.85rem;
+    padding: 0.25rem 1.5rem;
+}
+.xme-led-lights-examples ul.hue-values-in-names li {
+    width: 4rem;
+}
+.xme-led-lights-examples ul.lights-of-diff-sizes {
+    padding: 1rem 2.5rem;
+}
+.xme-led-lights-examples ul.lights-of-diff-sizes li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 6rem;
+    height: 8rem;
+    padding: 0;
+}
+.xme-led-lights-examples ul.lights-of-diff-sizes li .light-base {
+    width: 100%;
+    background-color: #0006;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 6rem;
+}
+.xme-led-lights-examples ul.lights-of-diff-sizes li:first-child .light-base {
+    border-radius: 10rem 0 0 10rem;
+}
+.xme-led-lights-examples ul.lights-of-diff-sizes li:last-child .light-base {
+    border-radius: 0 10rem 10rem 0;
+}
+.xme-led-lights-examples table {
+    font-size: 0.75rem;
+    margin: 0.5rem auto 2rem;
+    border-color: black;
+    border-style: solid;
+    border-collapse: collapse;
+    border-width: 0.3rem;
+    color: #666;
+}
+.xme-led-lights-examples table tr:nth-child(even) {
+    background-color: #0001;
+}
+.xme-led-lights-examples table tr:nth-child(odd) {
+    background-color: #fff1;
+}
+.xme-led-lights-examples table td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 0.5em;
+}
+.xme-led-lights-examples table td em {
+    color: white;
+    font-style: normal;
+}
+.xme-led-lights-examples table td em:nth-of-type(2) {
+    color: #ff946d;
+}

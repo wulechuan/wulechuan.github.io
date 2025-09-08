@@ -1,0 +1,378 @@
+.xme--led-light--style-1 {
+    font-size: var(--xme--led-light--size, 2rem);
+    box-sizing: border-box;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    overflow: visible;
+    border-radius: 50%;
+}
+.xme--led-light--style-1 .shi-ti--bulb-placeholder {
+    z-index: 1;
+}
+.xme--led-light--style-1 .shi-ti--led-light-outer-glow {
+    z-index: 5;
+}
+.xme--led-light--style-1 .shi-ti--led-light-bulb {
+    z-index: 1;
+}
+.xme--led-light--style-1 .shi-ti--bulb-placeholder,
+.xme--led-light--style-1 .shi-ti--led-light-outer-glow,
+.xme--led-light--style-1 .shi-ti--led-light-bulb {
+    box-sizing: border-box;
+    overflow: visible;
+    margin: 0.25em;
+    border-radius: 50%;
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+    width: 0.5em;
+    height: 0.5em;
+}
+.xme--led-light--style-1 .shi-ti--bulb-placeholder,
+.xme--led-light--style-1 .shi-ti--led-light-bulb {
+    position: relative;
+}
+.xme--led-light--style-1 .shi-ti--led-light-outer-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.xme--led-light--style-1.zhuang-tai--has-bulb .shi-ti--bulb-placeholder {
+    display: none;
+}
+.xme--led-light--style-1.zhuang-tai--has-bulb .shi-ti--led-light-outer-glow,
+.xme--led-light--style-1.zhuang-tai--has-bulb .shi-ti--led-light-bulb {
+    display: block;
+}
+.xme--led-light--style-1.zhuang-tai--has-no-bulb .shi-ti--bulb-placeholder {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff2;
+    display: block;
+    background-color: #2226;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(45deg, #3336 43%, #fff2 46% 54%, #3336 57%);
+    box-shadow: inset 0 0 0.1em #0003;
+}
+.xme--led-light--style-1.zhuang-tai--has-no-bulb .shi-ti--led-light-outer-glow,
+.xme--led-light--style-1.zhuang-tai--has-no-bulb .shi-ti--led-light-bulb {
+    display: none;
+}
+.xme--led-light--style-1 .shi-ti--led-light-bulb::before, .xme--led-light--style-1 .shi-ti--led-light-bulb::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass .shi-ti--led-light-bulb::before {
+    top: 32%;
+    left: 27%;
+    width: 0.04em;
+    height: 0.04em;
+    filter: blur(0.01em);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass .shi-ti--led-light-bulb::after {
+    width: 0.15em;
+    height: 0.06em;
+    bottom: 25%;
+    right: 18%;
+    filter: blur(0.03em);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 96%, 3%, 1);
+    box-shadow: inset 0 0 0.03em 0.03em hsla(var(--xme--led-light--color-hue, 90), 25%, 1%, 1), inset -0.07em -0.07em 0.09em 0.07em hsla(var(--xme--led-light--color-hue, 90), 99%, 45%, 0.219);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb::before {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 51%, 90%, 0.95);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb::after {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 51%, 66%, 0.79);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-is-white .shi-ti--led-light-bulb {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 1%, 10%, 1);
+    box-shadow: inset 0 0 0.12em 0.1em hsla(var(--xme--led-light--color-hue, 90), 1%, 1%, 1), inset -0.06em -0.06em 0.09em 0.06em hsla(var(--xme--led-light--color-hue, 90), 2%, 94%, 0.219);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-is-white .shi-ti--led-light-bulb::before {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 32%, 0.98);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-is-white .shi-ti--led-light-bulb::after {
+    filter: blur(0.02em);
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 99%, 0.98);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-is-gray .shi-ti--led-light-bulb {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 1%, 10%, 1);
+    box-shadow: inset 0 0 0.03em 0.03em hsla(var(--xme--led-light--color-hue, 90), 1%, 1%, 1), inset -0.45em -0.45em 0.15em 0.25em hsla(var(--xme--led-light--color-hue, 90), 2%, 33%, 0.219);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-is-gray .shi-ti--led-light-bulb::before {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 79%, 0.98);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--color-is-gray .shi-ti--led-light-bulb::after {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 36%, 0.9);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--light-is-always-off .shi-ti--led-light-bulb {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 8%, 1);
+    box-shadow: inset 0 0 0.12em 0.05em hsla(var(--xme--led-light--color-hue, 90), 0%, 1%, 1), inset -0.06em -0.06em 0.13em 0.12em hsla(var(--xme--led-light--color-hue, 90), 0%, 24%, 0.219);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--light-is-always-off .shi-ti--led-light-bulb::before {
+    filter: blur(0.02em);
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 36%, 0.319);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-glass.zhuang-tai--light-is-always-off .shi-ti--led-light-bulb::after {
+    filter: blur(0.035em);
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 36%, 0.319);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic .shi-ti--led-light-bulb::before {
+    top: 27%;
+    left: 16%;
+    width: 0.15em;
+    height: 0.08em;
+    filter: blur(0.024em);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic .shi-ti--led-light-bulb::after {
+    width: 0.28em;
+    height: 0.14em;
+    bottom: 24%;
+    right: 12%;
+    filter: blur(0.05em);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 75%, 5%, 1);
+    box-shadow: inset 0 0 0.03em 0.03em hsla(var(--xme--led-light--color-hue, 90), 25%, 1%, 1), inset -0.19em -0.19em 0.26em 0.05em hsla(var(--xme--led-light--color-hue, 90), 99%, 51%, 0.219);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb::before {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 51%, 75%, 0.96);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb::after {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 96%, 79%, 0.66);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-is-white .shi-ti--led-light-bulb {
+    box-shadow: inset 0 0 0.12em 0.05em hsla(var(--xme--led-light--color-hue, 90), 1%, 1%, 1), inset -0.19em -0.19em 0.26em 0.05em hsla(var(--xme--led-light--color-hue, 90), 1%, 51%, 0.219);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-is-white .shi-ti--led-light-bulb::before {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 1%, 99%, 0.319);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-is-white .shi-ti--led-light-bulb::after {
+    width: 0.24em;
+    height: 0.12em;
+    bottom: 18%;
+    right: 14%;
+    filter: blur(0.035em);
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 1%, 99%, 0.64);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-is-gray .shi-ti--led-light-bulb {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 15%, 1);
+    box-shadow: inset 0 0 0.03em 0.03em hsla(var(--xme--led-light--color-hue, 90), 0%, 1%, 1), inset -0.19em -0.19em 0.26em 0.05em hsla(var(--xme--led-light--color-hue, 90), 0%, 51%, 0.219);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-is-gray .shi-ti--led-light-bulb::before {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 79%, 0.45);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--color-is-gray .shi-ti--led-light-bulb::after {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 79%, 0.25);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--light-is-always-off .shi-ti--led-light-bulb {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 2%, 1);
+    box-shadow: inset 0 0 0.12em 0.05em hsla(var(--xme--led-light--color-hue, 90), 0%, 1%, 1), inset -0.19em -0.19em 0.26em 0.05em hsla(var(--xme--led-light--color-hue, 90), 0%, 32%, 0.219);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--light-is-always-off .shi-ti--led-light-bulb::before {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 36%, 0.15);
+}
+.xme--led-light--style-1.zhuang-tai--shell-material--is-plastic.zhuang-tai--light-is-always-off .shi-ti--led-light-bulb::after {
+    background-color: hsla(var(--xme--led-light--color-hue, 90), 0%, 36%, 0.15);
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on .shi-ti--led-light-outer-glow {
+    mix-blend-mode: screen;
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on .shi-ti--led-light-bulb::after {
+    width: 85%;
+    height: 85%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(0.03em);
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb, .xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-white .shi-ti--led-light-bulb, .xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-gray .shi-ti--led-light-bulb {
+    box-shadow: inset 0 0 0.02em 0 #fff9;
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-outer-glow {
+    box-shadow: 0 0 0.11em 0.06em hsl(var(--xme--led-light--color-hue, 90), 99%, 40%), 0 0 0.22em 0.09em hsl(var(--xme--led-light--color-hue, 90), 99%, 21%), 0 0 0.33em 0.12em hsl(var(--xme--led-light--color-hue, 90), 99%, 16%);
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb {
+    background-color: hsl(var(--xme--led-light--color-hue, 90), 99%, var(--xme--led-light--lighting-brightness, 56%));
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb::after {
+    background-color: hsl(var(--xme--led-light--color-hue, 90), 2%, 100%);
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-white .shi-ti--led-light-outer-glow {
+    box-shadow: 0 0 0.16em 0.04em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 79%), 0 0 0.36em 0.16em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 39%), 0 0 0.64em 0.27em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 16%);
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-white .shi-ti--led-light-bulb {
+    background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, var(--xme--led-light--lighting-brightness, 56%));
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-white .shi-ti--led-light-bulb::before {
+    opacity: 0;
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-white .shi-ti--led-light-bulb::after {
+    width: 96%;
+    height: 96%;
+    background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, 100%);
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-gray .shi-ti--led-light-outer-glow {
+    box-shadow: 0 0 0.16em 0.03em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 45%), 0 0 0.36em 0.11em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 19%), 0 0 0.49em 0.19em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 3%);
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-gray .shi-ti--led-light-bulb {
+    background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, var(--xme--led-light--lighting-brightness, 56%));
+}
+.xme--led-light--style-1.zhuang-tai--light-is-on.zhuang-tai--color-is-gray .shi-ti--led-light-bulb::after {
+    width: 51%;
+    height: 51%;
+    filter: blur(0.05em);
+    background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 33%);
+}
+.xme--led-light--style-1.zhuang-tai--light-is-flashing .shi-ti--led-light-outer-glow, .xme--led-light--style-1.zhuang-tai--light-is-flashing .shi-ti--led-light-outer-glow::after,
+.xme--led-light--style-1.zhuang-tai--light-is-flashing .shi-ti--led-light-bulb,
+.xme--led-light--style-1.zhuang-tai--light-is-flashing .shi-ti--led-light-bulb::after {
+    animation-duration: var(--xme--led-light--flashing-duration, 2s);
+    animation-delay: var(--xme--led-light--flashing-delay, 0s);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+.xme--led-light--style-1.zhuang-tai--light-is-flashing.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-outer-glow {
+    animation-name: xme--led-light--style-1--vivid--keyframes--flashing;
+}
+@keyframes xme--led-light--style-1--vivid--keyframes--flashing {
+    0% {
+        box-shadow: 0 0 0.11em 0.06em hsl(var(--xme--led-light--color-hue, 90), 100%, 24%), 0 0 0.24em 0.09em hsl(var(--xme--led-light--color-hue, 90), 100%, 12%);
+    }
+    19% {
+        box-shadow: 0 0 0.22em 0.11em hsl(var(--xme--led-light--color-hue, 90), 100%, 42%), 0 0 0.38em 0.15em hsl(var(--xme--led-light--color-hue, 90), 100%, 16%);
+    }
+    51% {
+        box-shadow: 0 0 0.17em 0.09em hsl(var(--xme--led-light--color-hue, 90), 100%, 33%), 0 0 0.24em 0.11em hsl(var(--xme--led-light--color-hue, 90), 100%, 14%);
+    }
+    100% {
+        box-shadow: 0 0 0.11em 0.06em hsl(var(--xme--led-light--color-hue, 90), 100%, 24%), 0 0 0.24em 0.09em hsl(var(--xme--led-light--color-hue, 90), 100%, 12%);
+    }
+}
+.xme--led-light--style-1.zhuang-tai--light-is-flashing.zhuang-tai--color-tone-is-vivid .shi-ti--led-light-bulb::after {
+    width: 75%;
+    height: 75%;
+    animation-name: xme--led-light--style-1--vivid--keyframes--flashing-light-spot;
+}
+@keyframes xme--led-light--style-1--vivid--keyframes--flashing-light-spot {
+    0% {
+        transform: scale(1);
+        filter: blur(0.04em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 100%, 97%);
+    }
+    19% {
+        transform: scale(1.23);
+        filter: blur(0.02em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 100%, 100%);
+    }
+    51% {
+        transform: scale(1.08);
+        filter: blur(0.03em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 100%, 98%);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0.04em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 100%, 97%);
+    }
+}
+.xme--led-light--style-1.zhuang-tai--light-is-flashing.zhuang-tai--color-is-white .shi-ti--led-light-outer-glow {
+    animation-name: xme--led-light--style-1--white--keyframes--flashing;
+}
+@keyframes xme--led-light--style-1--white--keyframes--flashing {
+    0% {
+        box-shadow: 0 0 0.15em 0.06em hsl(var(--xme--led-light--color-hue, 90), 1%, 32%), 0 0 0.24em 0.09em hsl(var(--xme--led-light--color-hue, 90), 1%, 19%);
+    }
+    19% {
+        box-shadow: 0 0 0.28em 0.11em hsl(var(--xme--led-light--color-hue, 90), 5%, 45%), 0 0 0.42em 0.27em hsl(var(--xme--led-light--color-hue, 90), 5%, 27%);
+    }
+    51% {
+        box-shadow: 0 0 0.23em 0.09em hsl(var(--xme--led-light--color-hue, 90), 5%, 36%), 0 0 0.36em 0.24em hsl(var(--xme--led-light--color-hue, 90), 5%, 24%);
+    }
+    100% {
+        box-shadow: 0 0 0.15em 0.06em hsl(var(--xme--led-light--color-hue, 90), 5%, 32%), 0 0 0.24em 0.09em hsl(var(--xme--led-light--color-hue, 90), 5%, 19%);
+    }
+}
+.xme--led-light--style-1.zhuang-tai--light-is-flashing.zhuang-tai--color-is-white .shi-ti--led-light-bulb::after {
+    width: 87%;
+    height: 87%;
+    animation-name: xme--led-light--style-1--white--keyframes--flashing-light-spot;
+}
+@keyframes xme--led-light--style-1--white--keyframes--flashing-light-spot {
+    0% {
+        transform: scale(1);
+        filter: blur(0.03em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 5%, 100%);
+    }
+    19% {
+        transform: scale(1.29);
+        filter: blur(0.01em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 5%, 100%);
+    }
+    51% {
+        transform: scale(1.27);
+        filter: blur(0.02em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 5%, 100%);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0.03em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 5%, 100%);
+    }
+}
+.xme--led-light--style-1.zhuang-tai--light-is-flashing.zhuang-tai--color-is-gray .shi-ti--led-light-outer-glow {
+    animation-name: xme--led-light--style-1--gray--keyframes--flashing;
+}
+@keyframes xme--led-light--style-1--gray--keyframes--flashing {
+    0% {
+        box-shadow: 0 0 0.08em 0.04em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 0.15);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, var(--xme--led-light--lighting-brightness, 56%), 0.51);
+    }
+    19% {
+        box-shadow: 0 0 0.16em 0.08em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 0.319);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, var(--xme--led-light--lighting-brightness, 56%), 1);
+    }
+    50% {
+        box-shadow: 0 0 0.08em 0.04em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 0.219);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, var(--xme--led-light--lighting-brightness, 56%), 0.75);
+    }
+    100% {
+        box-shadow: 0 0 0.08em 0.04em hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 0.15);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, var(--xme--led-light--lighting-brightness, 56%), 0.51);
+    }
+}
+.xme--led-light--style-1.zhuang-tai--light-is-flashing.zhuang-tai--color-is-gray .shi-ti--led-light-bulb::after {
+    animation-name: xme--led-light--style-1--gray--keyframes--flashing-light-spot;
+}
+@keyframes xme--led-light--style-1--gray--keyframes--flashing-light-spot {
+    0% {
+        filter: blur(0.08em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 0.45);
+    }
+    19% {
+        filter: blur(0.04em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 0.88);
+    }
+    50% {
+        filter: blur(0.05em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 0.75);
+    }
+    100% {
+        filter: blur(0.08em);
+        background-color: hsl(var(--xme--led-light--color-hue, 90), 0%, 100%, 0.45);
+    }
+}
