@@ -1,263 +1,263 @@
 .acrylic.default-acrylic {
-  border-style: solid;
-  border-width: 1px 1px 1.2px 1px;
-  background-color: rgba(0,47,92,0.1);
-  border-left-color: rgba(49,157,255,0.3);
-  border-right-color: rgba(49,157,255,0.6);
-  border-top-color: rgba(49,157,255,0.3);
-  border-bottom-color: rgba(49,157,255,0.6);
+    border-style: solid;
+    border-width: 1px 1px 1.2px 1px;
+    background-color: rgba(0,47,92,0.1);
+    border-left-color: rgba(49,157,255,0.3);
+    border-right-color: rgba(49,157,255,0.6);
+    border-top-color: rgba(49,157,255,0.3);
+    border-bottom-color: rgba(49,157,255,0.6);
 }
 .acrylic.default-acrylic,
 .acrylic.default-acrylic::before,
 .acrylic.default-acrylic::after {
-  transition-property: color, background-color, border-color, opacity, transform, left, right, top, bottom, margin, border-width;
-  transition-duration: 2s;
+    transition-property: color, background-color, border-color, opacity, transform, left, right, top, bottom, margin, border-width;
+    transition-duration: 2s;
 }
 .acrylic.default-acrylic::before,
 .acrylic.default-acrylic::after {
-  content: '';
-  position: absolute;
-  border-width: 0 !important;
-  left: 0;
-  right: 0;
-  opacity: 1;
+    content: '';
+    position: absolute;
+    border-width: 0 !important;
+    left: 0;
+    right: 0;
+    opacity: 1;
 }
 .acrylic.default-acrylic::before {
-  top: -1px;
-  height: 1px;
+    top: -1px;
+    height: 1px;
 }
 .acrylic.default-acrylic::after {
-  bottom: -1.2px;
-  height: 1.8px;
+    bottom: -1.2px;
+    height: 1.8px;
 }
 @supports (backdrop-filter: blur(12px)) {
-  .acrylic.default-acrylic {
-    backdrop-filter: blur(12px);
-  }
+    .acrylic.default-acrylic {
+        backdrop-filter: blur(12px);
+    }
 }
 @supports (not (backdrop-filter: blur(12px))) and (-webkit-backdrop-filter: blur(12px)) {
-  .acrylic.default-acrylic {
-    -webkit-backdrop-filter: blur(12px);
-  }
+    .acrylic.default-acrylic {
+        -webkit-backdrop-filter: blur(12px);
+    }
 }
 .acrylic.default-acrylic .etch-text {
-  transition: all 0.3s ease-out;
-  opacity: 0.5;
+    transition: all 0.3s ease-out;
+    opacity: 0.5;
 }
 .acrylic.default-acrylic .etch-text:hover,
 .acrylic.default-acrylic .etch-text.active {
-  opacity: 1;
+    opacity: 1;
 }
 .acrylic.default-acrylic::before,
 .acrylic.default-acrylic::after {
-  margin: 0 6px;
+    margin: 0 6px;
 }
 .acrylic.default-acrylic::before {
-  background-image: linear-gradient(to right, transparent 0%, rgba(49,157,255,0.3) 5%, #99ceff 16%, rgba(49,157,255,0.3) 51%, #99ceff 79%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(49,157,255,0.3) 5%, #99ceff 16%, rgba(49,157,255,0.3) 51%, #99ceff 79%, transparent 100%);
 }
 .acrylic.default-acrylic::after {
-  background-image: linear-gradient(to right, transparent 0%, rgba(49,157,255,0.3) 10%, rgba(49,157,255,0.6) 19%, #99ceff 45%, rgba(49,157,255,0.3) 60%, #99ceff 87%, #99ceff 90%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(49,157,255,0.3) 10%, rgba(49,157,255,0.6) 19%, #99ceff 45%, rgba(49,157,255,0.3) 60%, #99ceff 87%, #99ceff 90%, transparent 100%);
 }
 .acrylic.default-acrylic,
 .acrylic.default-acrylic .etch-text.active {
-  color: #000;
+    color: #000;
 }
 .acrylic.default-acrylic .etch-text {
-  color: rgba(73,92,109,0.75);
-  text-shadow: 0 -1px 1px rgba(49,157,255,0.75), 0 1px 1px #319dff;
+    color: rgba(73,92,109,0.75);
+    text-shadow: 0 -1px 1px rgba(49,157,255,0.75), 0 1px 1px #319dff;
 }
 .acrylic.default-acrylic .etch-text.active {
-  text-shadow: 0 -1px 0 rgba(49,157,255,0.75), 0 1px 0 #319dff, 0 2px 3px transparent;
+    text-shadow: 0 -1px 0 rgba(49,157,255,0.75), 0 1px 0 #319dff, 0 2px 3px transparent;
 }
 .acrylic.default-acrylic .etch-text.active:hover {
-  text-shadow: 0 -1px 0 rgba(49,157,255,0.75), 0 1px 0 #319dff, 0 2px 10px rgba(49,157,255,0.6);
+    text-shadow: 0 -1px 0 rgba(49,157,255,0.75), 0 1px 0 #319dff, 0 2px 10px rgba(49,157,255,0.6);
 }
 .acrylic.default-acrylic.gray {
-  background-color: rgba(112,112,112,0.1);
-  border-left-color: rgba(187,187,187,0.3);
-  border-right-color: rgba(187,187,187,0.6);
-  border-top-color: rgba(187,187,187,0.3);
-  border-bottom-color: rgba(187,187,187,0.6);
+    background-color: rgba(112,112,112,0.1);
+    border-left-color: rgba(187,187,187,0.3);
+    border-right-color: rgba(187,187,187,0.6);
+    border-top-color: rgba(187,187,187,0.3);
+    border-bottom-color: rgba(187,187,187,0.6);
 }
 .acrylic.default-acrylic.gray::before {
-  background-image: linear-gradient(to right, transparent 0%, rgba(187,187,187,0.3) 5%, #fff 16%, rgba(187,187,187,0.3) 51%, #fff 79%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(187,187,187,0.3) 5%, #fff 16%, rgba(187,187,187,0.3) 51%, #fff 79%, transparent 100%);
 }
 .acrylic.default-acrylic.gray::after {
-  background-image: linear-gradient(to right, transparent 0%, rgba(187,187,187,0.3) 10%, rgba(187,187,187,0.6) 19%, #fff 45%, rgba(187,187,187,0.3) 60%, #fff 87%, #fff 90%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(187,187,187,0.3) 10%, rgba(187,187,187,0.6) 19%, #fff 45%, rgba(187,187,187,0.3) 60%, #fff 87%, #fff 90%, transparent 100%);
 }
 .acrylic.default-acrylic.gray,
 .acrylic.default-acrylic.gray .etch-text.active {
-  color: #000;
+    color: #000;
 }
 .acrylic.default-acrylic.gray .etch-text {
-  color: rgba(85,85,85,0.75);
-  text-shadow: 0 -1px 1px rgba(187,187,187,0.75), 0 1px 1px #bbb;
+    color: rgba(85,85,85,0.75);
+    text-shadow: 0 -1px 1px rgba(187,187,187,0.75), 0 1px 1px #bbb;
 }
 .acrylic.default-acrylic.gray .etch-text.active {
-  text-shadow: 0 -1px 0 rgba(187,187,187,0.75), 0 1px 0 #bbb, 0 2px 3px transparent;
+    text-shadow: 0 -1px 0 rgba(187,187,187,0.75), 0 1px 0 #bbb, 0 2px 3px transparent;
 }
 .acrylic.default-acrylic.gray .etch-text.active:hover {
-  text-shadow: 0 -1px 0 rgba(187,187,187,0.75), 0 1px 0 #bbb, 0 2px 10px rgba(187,187,187,0.6);
+    text-shadow: 0 -1px 0 rgba(187,187,187,0.75), 0 1px 0 #bbb, 0 2px 10px rgba(187,187,187,0.6);
 }
 .acrylic.default-acrylic.red {
-  background-color: rgba(97,0,0,0.1);
-  border-left-color: rgba(255,68,68,0.3);
-  border-right-color: rgba(255,68,68,0.6);
-  border-top-color: rgba(255,68,68,0.3);
-  border-bottom-color: rgba(255,68,68,0.6);
+    background-color: rgba(97,0,0,0.1);
+    border-left-color: rgba(255,68,68,0.3);
+    border-right-color: rgba(255,68,68,0.6);
+    border-top-color: rgba(255,68,68,0.3);
+    border-bottom-color: rgba(255,68,68,0.6);
 }
 .acrylic.default-acrylic.red::before {
-  background-image: linear-gradient(to right, transparent 0%, rgba(255,68,68,0.3) 5%, #f99 16%, rgba(255,68,68,0.3) 51%, #f99 79%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(255,68,68,0.3) 5%, #f99 16%, rgba(255,68,68,0.3) 51%, #f99 79%, transparent 100%);
 }
 .acrylic.default-acrylic.red::after {
-  background-image: linear-gradient(to right, transparent 0%, rgba(255,68,68,0.3) 10%, rgba(255,68,68,0.6) 19%, #f99 45%, rgba(255,68,68,0.3) 60%, #f99 87%, #f99 90%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(255,68,68,0.3) 10%, rgba(255,68,68,0.6) 19%, #f99 45%, rgba(255,68,68,0.3) 60%, #f99 87%, #f99 90%, transparent 100%);
 }
 .acrylic.default-acrylic.red,
 .acrylic.default-acrylic.red .etch-text.active {
-  color: #000;
+    color: #000;
 }
 .acrylic.default-acrylic.red .etch-text {
-  color: rgba(116,78,78,0.75);
-  text-shadow: 0 -1px 1px rgba(255,68,68,0.75), 0 1px 1px #f44;
+    color: rgba(116,78,78,0.75);
+    text-shadow: 0 -1px 1px rgba(255,68,68,0.75), 0 1px 1px #f44;
 }
 .acrylic.default-acrylic.red .etch-text.active {
-  text-shadow: 0 -1px 0 rgba(255,68,68,0.75), 0 1px 0 #f44, 0 2px 3px transparent;
+    text-shadow: 0 -1px 0 rgba(255,68,68,0.75), 0 1px 0 #f44, 0 2px 3px transparent;
 }
 .acrylic.default-acrylic.red .etch-text.active:hover {
-  text-shadow: 0 -1px 0 rgba(255,68,68,0.75), 0 1px 0 #f44, 0 2px 10px rgba(255,68,68,0.6);
+    text-shadow: 0 -1px 0 rgba(255,68,68,0.75), 0 1px 0 #f44, 0 2px 10px rgba(255,68,68,0.6);
 }
 .acrylic.default-acrylic.orange {
-  background-color: rgba(77,41,0,0.1);
-  border-left-color: rgba(255,136,0,0.3);
-  border-right-color: rgba(255,136,0,0.6);
-  border-top-color: rgba(255,136,0,0.3);
-  border-bottom-color: rgba(255,136,0,0.6);
+    background-color: rgba(77,41,0,0.1);
+    border-left-color: rgba(255,136,0,0.3);
+    border-right-color: rgba(255,136,0,0.6);
+    border-top-color: rgba(255,136,0,0.3);
+    border-bottom-color: rgba(255,136,0,0.6);
 }
 .acrylic.default-acrylic.orange::before {
-  background-image: linear-gradient(to right, transparent 0%, rgba(255,136,0,0.3) 5%, #ffcf99 16%, rgba(255,136,0,0.3) 51%, #ffcf99 79%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(255,136,0,0.3) 5%, #ffcf99 16%, rgba(255,136,0,0.3) 51%, #ffcf99 79%, transparent 100%);
 }
 .acrylic.default-acrylic.orange::after {
-  background-image: linear-gradient(to right, transparent 0%, rgba(255,136,0,0.3) 10%, rgba(255,136,0,0.6) 19%, #ffcf99 45%, rgba(255,136,0,0.3) 60%, #ffcf99 87%, #ffcf99 90%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(255,136,0,0.3) 10%, rgba(255,136,0,0.6) 19%, #ffcf99 45%, rgba(255,136,0,0.3) 60%, #ffcf99 87%, #ffcf99 90%, transparent 100%);
 }
 .acrylic.default-acrylic.orange,
 .acrylic.default-acrylic.orange .etch-text.active {
-  color: #000;
+    color: #000;
 }
 .acrylic.default-acrylic.orange .etch-text {
-  color: rgba(92,78,61,0.75);
-  text-shadow: 0 -1px 1px rgba(255,136,0,0.75), 0 1px 1px #f80;
+    color: rgba(92,78,61,0.75);
+    text-shadow: 0 -1px 1px rgba(255,136,0,0.75), 0 1px 1px #f80;
 }
 .acrylic.default-acrylic.orange .etch-text.active {
-  text-shadow: 0 -1px 0 rgba(255,136,0,0.75), 0 1px 0 #f80, 0 2px 3px transparent;
+    text-shadow: 0 -1px 0 rgba(255,136,0,0.75), 0 1px 0 #f80, 0 2px 3px transparent;
 }
 .acrylic.default-acrylic.orange .etch-text.active:hover {
-  text-shadow: 0 -1px 0 rgba(255,136,0,0.75), 0 1px 0 #f80, 0 2px 10px rgba(255,136,0,0.6);
+    text-shadow: 0 -1px 0 rgba(255,136,0,0.75), 0 1px 0 #f80, 0 2px 10px rgba(255,136,0,0.6);
 }
 .acrylic.default-acrylic.yellow {
-  background-color: rgba(118,82,0,0.1);
-  border-left-color: rgba(255,221,136,0.3);
-  border-right-color: rgba(255,221,136,0.6);
-  border-top-color: rgba(255,221,136,0.3);
-  border-bottom-color: rgba(255,221,136,0.6);
+    background-color: rgba(118,82,0,0.1);
+    border-left-color: rgba(255,221,136,0.3);
+    border-right-color: rgba(255,221,136,0.6);
+    border-top-color: rgba(255,221,136,0.3);
+    border-bottom-color: rgba(255,221,136,0.6);
 }
 .acrylic.default-acrylic.yellow::before {
-  background-image: linear-gradient(to right, transparent 0%, rgba(255,221,136,0.3) 5%, #ffe299 16%, rgba(255,221,136,0.3) 51%, #ffe299 79%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(255,221,136,0.3) 5%, #ffe299 16%, rgba(255,221,136,0.3) 51%, #ffe299 79%, transparent 100%);
 }
 .acrylic.default-acrylic.yellow::after {
-  background-image: linear-gradient(to right, transparent 0%, rgba(255,221,136,0.3) 10%, rgba(255,221,136,0.6) 19%, #ffe299 45%, rgba(255,221,136,0.3) 60%, #ffe299 87%, #ffe299 90%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(255,221,136,0.3) 10%, rgba(255,221,136,0.6) 19%, #ffe299 45%, rgba(255,221,136,0.3) 60%, #ffe299 87%, #ffe299 90%, transparent 100%);
 }
 .acrylic.default-acrylic.yellow,
 .acrylic.default-acrylic.yellow .etch-text.active {
-  color: #000;
+    color: #000;
 }
 .acrylic.default-acrylic.yellow .etch-text {
-  color: rgba(141,128,94,0.75);
-  text-shadow: 0 -1px 1px rgba(255,221,136,0.75), 0 1px 1px #fd8;
+    color: rgba(141,128,94,0.75);
+    text-shadow: 0 -1px 1px rgba(255,221,136,0.75), 0 1px 1px #fd8;
 }
 .acrylic.default-acrylic.yellow .etch-text.active {
-  text-shadow: 0 -1px 0 rgba(255,221,136,0.75), 0 1px 0 #fd8, 0 2px 3px transparent;
+    text-shadow: 0 -1px 0 rgba(255,221,136,0.75), 0 1px 0 #fd8, 0 2px 3px transparent;
 }
 .acrylic.default-acrylic.yellow .etch-text.active:hover {
-  text-shadow: 0 -1px 0 rgba(255,221,136,0.75), 0 1px 0 #fd8, 0 2px 10px rgba(255,221,136,0.6);
+    text-shadow: 0 -1px 0 rgba(255,221,136,0.75), 0 1px 0 #fd8, 0 2px 10px rgba(255,221,136,0.6);
 }
 .acrylic.default-acrylic.green {
-  background-color: rgba(24,92,0,0.1);
-  border-left-color: rgba(102,255,51,0.3);
-  border-right-color: rgba(102,255,51,0.6);
-  border-top-color: rgba(102,255,51,0.3);
-  border-bottom-color: rgba(102,255,51,0.6);
+    background-color: rgba(24,92,0,0.1);
+    border-left-color: rgba(102,255,51,0.3);
+    border-right-color: rgba(102,255,51,0.6);
+    border-top-color: rgba(102,255,51,0.3);
+    border-bottom-color: rgba(102,255,51,0.6);
 }
 .acrylic.default-acrylic.green::before {
-  background-image: linear-gradient(to right, transparent 0%, rgba(102,255,51,0.3) 5%, #b3ff99 16%, rgba(102,255,51,0.3) 51%, #b3ff99 79%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(102,255,51,0.3) 5%, #b3ff99 16%, rgba(102,255,51,0.3) 51%, #b3ff99 79%, transparent 100%);
 }
 .acrylic.default-acrylic.green::after {
-  background-image: linear-gradient(to right, transparent 0%, rgba(102,255,51,0.3) 10%, rgba(102,255,51,0.6) 19%, #b3ff99 45%, rgba(102,255,51,0.3) 60%, #b3ff99 87%, #b3ff99 90%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(102,255,51,0.3) 10%, rgba(102,255,51,0.6) 19%, #b3ff99 45%, rgba(102,255,51,0.3) 60%, #b3ff99 87%, #b3ff99 90%, transparent 100%);
 }
 .acrylic.default-acrylic.green,
 .acrylic.default-acrylic.green .etch-text.active {
-  color: #000;
+    color: #000;
 }
 .acrylic.default-acrylic.green .etch-text {
-  color: rgba(83,110,74,0.75);
-  text-shadow: 0 -1px 1px rgba(102,255,51,0.75), 0 1px 1px #6f3;
+    color: rgba(83,110,74,0.75);
+    text-shadow: 0 -1px 1px rgba(102,255,51,0.75), 0 1px 1px #6f3;
 }
 .acrylic.default-acrylic.green .etch-text.active {
-  text-shadow: 0 -1px 0 rgba(102,255,51,0.75), 0 1px 0 #6f3, 0 2px 3px transparent;
+    text-shadow: 0 -1px 0 rgba(102,255,51,0.75), 0 1px 0 #6f3, 0 2px 3px transparent;
 }
 .acrylic.default-acrylic.green .etch-text.active:hover {
-  text-shadow: 0 -1px 0 rgba(102,255,51,0.75), 0 1px 0 #6f3, 0 2px 10px rgba(102,255,51,0.6);
+    text-shadow: 0 -1px 0 rgba(102,255,51,0.75), 0 1px 0 #6f3, 0 2px 10px rgba(102,255,51,0.6);
 }
 .acrylic.default-acrylic.cyan {
-  background-color: rgba(0,61,92,0.1);
-  border-left-color: rgba(51,187,255,0.3);
-  border-right-color: rgba(51,187,255,0.6);
-  border-top-color: rgba(51,187,255,0.3);
-  border-bottom-color: rgba(51,187,255,0.6);
+    background-color: rgba(0,61,92,0.1);
+    border-left-color: rgba(51,187,255,0.3);
+    border-right-color: rgba(51,187,255,0.6);
+    border-top-color: rgba(51,187,255,0.3);
+    border-bottom-color: rgba(51,187,255,0.6);
 }
 .acrylic.default-acrylic.cyan::before {
-  background-image: linear-gradient(to right, transparent 0%, rgba(51,187,255,0.3) 5%, #9df 16%, rgba(51,187,255,0.3) 51%, #9df 79%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(51,187,255,0.3) 5%, #9df 16%, rgba(51,187,255,0.3) 51%, #9df 79%, transparent 100%);
 }
 .acrylic.default-acrylic.cyan::after {
-  background-image: linear-gradient(to right, transparent 0%, rgba(51,187,255,0.3) 10%, rgba(51,187,255,0.6) 19%, #9df 45%, rgba(51,187,255,0.3) 60%, #9df 87%, #9df 90%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(51,187,255,0.3) 10%, rgba(51,187,255,0.6) 19%, #9df 45%, rgba(51,187,255,0.3) 60%, #9df 87%, #9df 90%, transparent 100%);
 }
 .acrylic.default-acrylic.cyan,
 .acrylic.default-acrylic.cyan .etch-text.active {
-  color: #000;
+    color: #000;
 }
 .acrylic.default-acrylic.cyan .etch-text {
-  color: rgba(74,98,110,0.75);
-  text-shadow: 0 -1px 1px rgba(51,187,255,0.75), 0 1px 1px #3bf;
+    color: rgba(74,98,110,0.75);
+    text-shadow: 0 -1px 1px rgba(51,187,255,0.75), 0 1px 1px #3bf;
 }
 .acrylic.default-acrylic.cyan .etch-text.active {
-  text-shadow: 0 -1px 0 rgba(51,187,255,0.75), 0 1px 0 #3bf, 0 2px 3px transparent;
+    text-shadow: 0 -1px 0 rgba(51,187,255,0.75), 0 1px 0 #3bf, 0 2px 3px transparent;
 }
 .acrylic.default-acrylic.cyan .etch-text.active:hover {
-  text-shadow: 0 -1px 0 rgba(51,187,255,0.75), 0 1px 0 #3bf, 0 2px 10px rgba(51,187,255,0.6);
+    text-shadow: 0 -1px 0 rgba(51,187,255,0.75), 0 1px 0 #3bf, 0 2px 10px rgba(51,187,255,0.6);
 }
 .acrylic.default-acrylic.purple {
-  background-color: rgba(24,0,92,0.1);
-  border-left-color: rgba(102,51,255,0.3);
-  border-right-color: rgba(102,51,255,0.6);
-  border-top-color: rgba(102,51,255,0.3);
-  border-bottom-color: rgba(102,51,255,0.6);
+    background-color: rgba(24,0,92,0.1);
+    border-left-color: rgba(102,51,255,0.3);
+    border-right-color: rgba(102,51,255,0.6);
+    border-top-color: rgba(102,51,255,0.3);
+    border-bottom-color: rgba(102,51,255,0.6);
 }
 .acrylic.default-acrylic.purple::before {
-  background-image: linear-gradient(to right, transparent 0%, rgba(102,51,255,0.3) 5%, #b399ff 16%, rgba(102,51,255,0.3) 51%, #b399ff 79%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(102,51,255,0.3) 5%, #b399ff 16%, rgba(102,51,255,0.3) 51%, #b399ff 79%, transparent 100%);
 }
 .acrylic.default-acrylic.purple::after {
-  background-image: linear-gradient(to right, transparent 0%, rgba(102,51,255,0.3) 10%, rgba(102,51,255,0.6) 19%, #b399ff 45%, rgba(102,51,255,0.3) 60%, #b399ff 87%, #b399ff 90%, transparent 100%);
+    background-image: linear-gradient(to right, transparent 0%, rgba(102,51,255,0.3) 10%, rgba(102,51,255,0.6) 19%, #b399ff 45%, rgba(102,51,255,0.3) 60%, #b399ff 87%, #b399ff 90%, transparent 100%);
 }
 .acrylic.default-acrylic.purple,
 .acrylic.default-acrylic.purple .etch-text.active {
-  color: #000;
+    color: #000;
 }
 .acrylic.default-acrylic.purple .etch-text {
-  color: rgba(83,74,110,0.75);
-  text-shadow: 0 -1px 1px rgba(102,51,255,0.75), 0 1px 1px #63f;
+    color: rgba(83,74,110,0.75);
+    text-shadow: 0 -1px 1px rgba(102,51,255,0.75), 0 1px 1px #63f;
 }
 .acrylic.default-acrylic.purple .etch-text.active {
-  text-shadow: 0 -1px 0 rgba(102,51,255,0.75), 0 1px 0 #63f, 0 2px 3px transparent;
+    text-shadow: 0 -1px 0 rgba(102,51,255,0.75), 0 1px 0 #63f, 0 2px 3px transparent;
 }
 .acrylic.default-acrylic.purple .etch-text.active:hover {
-  text-shadow: 0 -1px 0 rgba(102,51,255,0.75), 0 1px 0 #63f, 0 2px 10px rgba(102,51,255,0.6);
+    text-shadow: 0 -1px 0 rgba(102,51,255,0.75), 0 1px 0 #63f, 0 2px 10px rgba(102,51,255,0.6);
 }

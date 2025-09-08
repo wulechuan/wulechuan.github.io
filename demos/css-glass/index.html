@@ -1,57 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>吴乐川的纯 CSS 实现的玻璃面板效果</title>
+    <title>吴乐川用纯 CSS（Stylus）实现的玻璃面板效果</title>
 
     <link rel="stylesheet" href="css/glass.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
     <div class="app">
-        <div class="bg"></div>
+        <h1>吴乐川用纯 CSS（Stylus）实现的玻璃面板效果</h1>
 
-        <div class="board narrow      acrylic default-acrylic gray" id="test-board-1">
-            <div class="tab etch-text">父亲</div>
-            <div class="tab etch-text active">淙渊</div>
-            <div class="tab etch-text">乐川</div>
-        </div>
-        <div class="board narrow      acrylic default-acrylic red" id="test-board-2">
-            <div class="tab etch-text active">选项甲</div>
-            <div class="tab etch-text">选项乙</div>
-        </div>
-        <div class="board narrow      acrylic default-acrylic  orange" id="test-board-3">
-            <div class="tab etch-text">父亲</div>
-            <div class="tab etch-text">淙渊</div>
-            <div class="tab etch-text active">乐川</div>
-        </div>
-        <div class="board narrow      acrylic default-acrylic  yellow" id="test-board-4">
-            <div class="tab etch-text">父亲</div>
-            <div class="tab etch-text active">淙渊</div>
-            <div class="tab etch-text">乐川</div>
-        </div>
-        <div class="board narrow      acrylic default-acrylic  green" id="test-board-5">
-            <div class="tab etch-text">父亲</div>
-            <div class="tab etch-text active">淙渊</div>
-            <div class="tab etch-text">乐川</div>
-        </div>
-        <div class="board narrow      acrylic default-acrylic  light-blue" id="test-board-6">
-            <div class="tab etch-text">父亲</div>
-            <div class="tab etch-text active">淙渊</div>
-            <div class="tab etch-text">乐川</div>
-        </div>
+        <main>
+            <div class="bg"></div>
 
-        <div class="board narrow      acrylic default-acrylic"           id="test-board-7">
-            <div class="tab etch-text">父亲</div>
-            <div class="tab etch-text active">淙渊</div>
-            <div class="tab etch-text">乐川</div>
-        </div>
+            <div class="candidates-board acrylic default-acrylic gray">
+                <div class="candidate etch-text">父亲</div>
+                <div class="candidate etch-text active">淙渊</div>
+                <div class="candidate etch-text">乐川</div>
+            </div>
+            <div class="candidates-board acrylic default-acrylic red">
+                <div class="candidate etch-text active">选项甲</div>
+                <div class="candidate etch-text">选项乙</div>
+            </div>
+            <div class="candidates-board acrylic default-acrylic  orange">
+                <div class="candidate etch-text">父亲</div>
+                <div class="candidate etch-text">淙渊</div>
+                <div class="candidate etch-text active">乐川</div>
+            </div>
+            <div class="candidates-board acrylic default-acrylic  yellow">
+                <div class="candidate etch-text">父亲</div>
+                <div class="candidate etch-text active">淙渊</div>
+                <div class="candidate etch-text">乐川</div>
+            </div>
+            <div class="candidates-board acrylic default-acrylic  green">
+                <div class="candidate etch-text">父亲</div>
+                <div class="candidate etch-text active">淙渊</div>
+                <div class="candidate etch-text">乐川</div>
+            </div>
+            <div class="candidates-board acrylic default-acrylic  light-blue">
+                <div class="candidate etch-text">父亲</div>
+                <div class="candidate etch-text active">淙渊</div>
+                <div class="candidate etch-text">乐川</div>
+            </div>
 
-        <div class="board narrow      acrylic default-acrylic  purple" id="test-board-8">
-            <div class="tab etch-text active">zh-CN</div>
-            <div class="tab etch-text">en-US</div>
-        </div>
+            <div class="candidates-board acrylic default-acrylic">
+                <div class="candidate etch-text">父亲</div>
+                <div class="candidate etch-text active">淙渊</div>
+                <div class="candidate etch-text">乐川</div>
+            </div>
+
+            <div class="candidates-board acrylic default-acrylic  purple">
+                <div class="candidate etch-text active">zh-CN</div>
+                <div class="candidate etch-text">en-US</div>
+            </div>
+        </main>
     </div>
 </body>
 </html>

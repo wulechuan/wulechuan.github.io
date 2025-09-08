@@ -1,0 +1,92 @@
+:root {
+    font-size: 20px;
+}
+body {
+    margin: 0;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    background-color: #333;
+    width:      100vw;
+    min-height: 100vh;
+}
+.app h1 {
+    margin: 0.5em auto;
+    padding: 0.25em 1em;
+}
+.app section {
+    margin: 0.25rem 1rem;
+    align-self: stretch;
+    box-sizing: border-box;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: #222;
+    box-shadow: inset 0 0 0.5rem rgb(0, 0, 0, 0.51);
+}
+.app article {
+    padding: 1rem 2rem;
+    max-width: 51rem;
+    margin: auto;
+}
+.app p {
+    margin: 0.2em 0;
+}
+.app main {
+    box-sizing: border-box;
+    flex: 0 0 51rem;
+    margin: 0;
+    padding: 0.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app .operations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 2rem;
+    padding: 0.5rem;
+    margin: 0 0 -0.2rem;
+    border-radius: 0.45rem 0.45rem 0 0;
+    background-color: black;
+}
+
+.app .operations button {
+    display: block;
+    height: 1.75rem;
+    padding: 0 1rem;
+    margin: 0;
+    border-radius: 0.35rem;
+    cursor: pointer;
+}
+
+.app .operations .info {
+    color: white;
+    margin: 0 0.5rem 0 1rem;
+}
+
+.app .my-fabric-canvas-container {
+    flex: 1 1 100%;
+    width: 50rem;
+    margin: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.app .inner-container-of-fixed-aspect-ratio {
+    box-sizing: border-box;
+    border: 0.25rem solid #000;
+    background-color: #444;
+    margin: auto;
+}
+
+.app .inner-container-of-fixed-aspect-ratio canvas {
+    box-sizing: border-box;
+}

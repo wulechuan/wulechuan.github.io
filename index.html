@@ -48,7 +48,7 @@
 
             .app {
                 font-family: 'HarmonyOS Sans', 'Inter', sans-serif;
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
         }
 
@@ -138,7 +138,9 @@
                 color: hsl(var(--theme-color-tone), 66%, 90%);
             }
 
-            .app h4 {
+            .app h4,
+            .app h5,
+            .app h6 {
                 color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), 84%);
             }
 
@@ -367,12 +369,12 @@
             }
 
             .app article ol {
-                padding-left: 1rem;
+                padding-left: 1.5ic;
             }
 
             .app article ul {
                 list-style-type: disc;
-                padding-left: 1rem;
+                padding-left: 1.5ic;
             }
 
             .app article ol > li,
@@ -385,9 +387,17 @@
                 margin-bottom: 0;
             }
 
-            .app article p ~ ol,
-            .app article p ~ ul {
-                padding-left: 2.75rem;
+            .app article h2 + ol,
+            .app article h3 + ol,
+            .app article h4 + ol,
+            .app article h5 + ol,
+            .app article p  + ol,
+            .app article h2 + ul,
+            .app article h3 + ul,
+            .app article h4 + ul,
+            .app article h5 + ul,
+            .app article p  + ul {
+                padding-left: 2ic;
             }
         }
     </style>
@@ -514,15 +524,20 @@
             }
 
             .app h3.card-content-title {
-                font-size: 0.95rem;
+                font-size: 1.1rem;
                 letter-spacing: 0.05em;
                 font-weight: 500;
                 margin-bottom: 0.5rem;
             }
 
             .app h4 {
-                font-size: 0.75rem;
+                font-size: 0.85rem;
                 font-weight: 400;
+            }
+
+            .app h5 {
+                font-size: 0.75rem;
+                font-weight: 500;
             }
 
             .app .card > hr {
@@ -531,6 +546,14 @@
 
             .app .card-body {
                 padding: 0 0.15rem;
+            }
+
+            .app .card-content-section-level1 {
+                margin-bottom: 1.25rem;
+            }
+
+            .app .card-content-section-level1:last-child {
+                margin-bottom: 0rem;
             }
         }
 
@@ -1148,8 +1171,12 @@
 
                                     <article class="project-description">
                                         <template v-for="(某自然段, 循环序号_1级) in 某项目.项目简述">
-                                            <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
-                                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h3>
+                                            <section
+                                                v-if="某自然段 && typeof 某自然段 === 'object'"
+                                                :key="`${循环序号_1级}-带列表的自然段`"
+                                                class="card-content-section-level1"
+                                            >
+                                                <h5 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h5>
                                                 <p  v-if="某自然段.文" v-html="某自然段.文"></p>
                                                 <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
                                                     <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
