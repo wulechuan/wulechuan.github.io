@@ -225,7 +225,8 @@ const resumeRawData = {
                     列: [
                         {
                             链前文: '效果图：',
-                            链: './demos/led-light/assets/led-lights-demo.png',
+                            // 链: './demos/led-light/assets/led-lights-demo.png',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/led-light/assets/led-lights-demo.png',
                             链后文: '。',
                         },
                         {
@@ -312,12 +313,14 @@ const resumeRawData = {
                         },
                         {
                             链前文: '例图1：',
-                            链: './demos/progject-management/assets/software-evolving-history-doc/001.jpg',
+                            // 链: './demos/progject-management/assets/software-evolving-history-doc/001.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/progject-management/assets/software-evolving-history-doc/001.jpg',
                             链后文: '。',
                         },
                         {
                             链前文: '例图2：',
-                            链: './demos/progject-management/assets/software-evolving-history-doc/002.jpg',
+                            // 链: './demos/progject-management/assets/software-evolving-history-doc/002.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/progject-management/assets/software-evolving-history-doc/002.jpg',
                             链后文: '。',
                         },
                     ],
@@ -348,27 +351,32 @@ const resumeRawData = {
                         },
                         {
                             链前文: '例图1：',
-                            链: './demos/progject-management/assets/software-editions-automation/002.jpg',
+                            // 链: './demos/progject-management/assets/software-editions-automation/002.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/progject-management/assets/software-editions-automation/002.jpg',
                             链后文: '。',
                         },
                         {
                             链前文: '例图2：',
-                            链: './demos/progject-management/assets/software-editions-automation/003.jpg',
+                            // 链: './demos/progject-management/assets/software-editions-automation/003.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/progject-management/assets/software-editions-automation/002.jpg',
                             链后文: '。',
                         },
                         {
                             链前文: '例图3：',
-                            链: './demos/progject-management/assets/software-editions-automation/004.jpg',
+                            // 链: './demos/progject-management/assets/software-editions-automation/004.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/progject-management/assets/software-editions-automation/002.jpg',
                             链后文: '。',
                         },
                         {
                             链前文: '例图4：',
-                            链: './demos/progject-management/assets/software-editions-automation/006.jpg',
+                            // 链: './demos/progject-management/assets/software-editions-automation/006.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/progject-management/assets/software-editions-automation/002.jpg',
                             链后文: '。',
                         },
                         {
                             链前文: '例图5：',
-                            链: './demos/progject-management/assets/software-editions-automation/007.jpg',
+                            // 链: './demos/progject-management/assets/software-editions-automation/007.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/progject-management/assets/software-editions-automation/002.jpg',
                             链后文: '。',
                         },
                     ],
