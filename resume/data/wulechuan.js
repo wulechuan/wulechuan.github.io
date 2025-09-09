@@ -147,7 +147,7 @@ const resumeRawData = {
             文: '独自设计了大大小小数十款实用工具，多半已发布于 npm 仓库。',
             作品组: [
                 {
-                    题: '最新的工具（未发布）：',
+                    题: '最新的工具（未发布）',
                     应强调: true,
                     列: [
                         {
@@ -163,7 +163,7 @@ const resumeRawData = {
                 },
 
                 {
-                    题: '较新的工具（已发布）：',
+                    题: '较新的工具（已发布）',
                     应强调: true,
                     列: [
                         {
@@ -174,7 +174,7 @@ const resumeRawData = {
                 },
 
                 {
-                    题: '老旧的工具（已发布）：',
+                    题: '老旧的工具（已发布）',
                     应强调: false,
                     列: [
                         {
@@ -190,7 +190,7 @@ const resumeRawData = {
             组题: '有特色或代表性的工具或项目',
             作品组: [
                 {
-                    题: '泛用控制器《多表逐项协同机》：',
+                    题: '泛用控制器《多表逐项协同机》',
                     应强调: true,
                     列: [
                         {
@@ -209,7 +209,7 @@ const resumeRawData = {
                 },
 
                 {
-                    题: 'VSCode 插件《Markdown 文件预览（ HTML ）之配色方案》：',
+                    题: 'VSCode 插件《Markdown 文件预览（ HTML ）之配色方案》',
                     应强调: false,
                     列: [
                         {
@@ -220,17 +220,17 @@ const resumeRawData = {
                 },
 
                 {
-                    题: 'Vuejs 组件《仿真的 LED 灯珠》：',
+                    题: 'Vuejs 组件《仿真的 LED 灯珠》',
                     应强调: true,
                     列: [
                         {
                             链前文: '效果图：',
-                            链: '/demos/led-light/assets/led-lights-demo.png',
+                            链: './demos/led-light/assets/led-lights-demo.png',
                             链后文: '。',
                         },
                         {
                             链前文: '运行效果：',
-                            链: '/demos/led-light/index.html',
+                            链: './demos/led-light/index.html',
                             链后文: '。',
                         },
                         {
@@ -242,12 +242,12 @@ const resumeRawData = {
                 },
 
                 {
-                    题: 'JavaScript 工具《Fabricjs 5.x 实用多边形》：',
+                    题: 'JavaScript 工具《Fabricjs 5.x 实用多边形》',
                     应强调: true,
                     列: [
                         {
                             链前文: '此处：',
-                            链: '/demos/fabric-polygon/index.html',
+                            链: './demos/fabric-polygon/index.html',
                         },
                         {
                             链前文: '或此处：',
@@ -258,12 +258,12 @@ const resumeRawData = {
                 },
 
                 {
-                    题: 'CSS 工具《以纯 CSS 实现拟真的玻璃板效果》：',
+                    题: 'CSS 工具《以纯 CSS 实现拟真的玻璃板效果》',
                     应强调: true,
                     列: [
                         {
                             链前文: '此处：',
-                            链: '/demos/css-glass/index.html',
+                            链: './demos/css-glass/index.html',
                             链后文: '。',
                         },
                         {
@@ -275,7 +275,7 @@ const resumeRawData = {
                 },
 
                 {
-                    题: '老旧的 CSS 工具《CSS 动画花瓣》：',
+                    题: '老旧的 CSS 工具《CSS 动画花瓣》',
                     应强调: false,
                     列: [
                         {
@@ -286,11 +286,89 @@ const resumeRawData = {
                 },
 
                 {
-                    题: '为我犬子设计的网页小游戏《端端的超级勇士》：',
+                    题: '为我犬子设计的网页小游戏《端端的超级勇士》',
                     应强调: false,
                     列: [
                         {
                             链: 'https://gitee.com/nanchang-wulechuan/wulechuan-webapp-duan-duan-chao-ji-yong-shi',
+                            链后文: '。',
+                        },
+                    ],
+                },
+            ],
+        },
+        
+        
+
+        {
+            组题: '项目管理与工程自动化',
+            作品组: [
+                {
+                    题: '《某软件项目演进记录》',
+                    列: [
+                        {
+                            应强调: true,
+                            文: '本人长期维护软件演进历史。勘误、变更、改良，一并志之。与团队分享，且随时备查。',
+                        },
+                        {
+                            链前文: '例图1：',
+                            链: './demos/progject-management/assets/software-evolving-history-doc/001.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            链前文: '例图2：',
+                            链: './demos/progject-management/assets/software-evolving-history-doc/002.jpg',
+                            链后文: '。',
+                        },
+                    ],
+                },
+
+                {
+                    题: '《某软件项目多发行版自动化打包与管理工具》',
+                    列: [
+                        {
+                            应强调: true,
+                            文: '自动成批构建发行版（可无人值守）。构建过程给出摘要，以便监察。',
+                        },
+                        {
+                            应强调: true,
+                            文: '不同品牌、型族、亚型等的排列组合，可依据某组合对应的构建信号文件，来裁定是否参与本批次之构建。',
+                        },
+                        {
+                            应强调: true,
+                            文: '自动依照预先配置，分OEM品牌打出发行版汇总包。',
+                        },
+                        {
+                            应强调: true,
+                            文: '自动依照不同品牌、型号、亚型的发行版各自打包。',
+                        },
+                        {
+                            应强调: true,
+                            文: '自动撰写完整的发版通知。',
+                        },
+                        {
+                            链前文: '例图1：',
+                            链: './demos/progject-management/assets/software-editions-automation/002.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            链前文: '例图2：',
+                            链: './demos/progject-management/assets/software-editions-automation/003.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            链前文: '例图3：',
+                            链: './demos/progject-management/assets/software-editions-automation/004.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            链前文: '例图4：',
+                            链: './demos/progject-management/assets/software-editions-automation/006.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            链前文: '例图5：',
+                            链: './demos/progject-management/assets/software-editions-automation/007.jpg',
                             链后文: '。',
                         },
                     ],
@@ -598,6 +676,56 @@ const resumeRawData = {
                         {
                             应强调: false,
                             文: '在技术探究性的代码分支上，实现了在网页中实现实时的视频流画面处理，并实时产出全新的视频流（MediaStream）。后因公司技术路线调整，未令该成果并入主分支。',
+                        },
+                    ],
+                },
+                {
+                    题: '成果展示（我接手前，软件老旧的模样）',
+                    列: [
+                        {
+                            应强调: false,
+                            链: './demos/software-1/old-look/001.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: false,
+                            链: './demos/software-1/old-look/002.jpg',
+                            链后文: '。',
+                        },
+                    ],
+                },
+                {
+                    题: '成果展示（我接手后两年有余，软件如今的模样）',
+                    列: [
+                        {
+                            应强调: true,
+                            链: './demos/software-1/new-look/001.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/software-1/new-look/002.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/software-1/new-look/003.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/software-1/new-look/004.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/software-1/new-look/005.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/software-1/new-look/006.jpg',
+                            链后文: '。',
                         },
                     ],
                 },
