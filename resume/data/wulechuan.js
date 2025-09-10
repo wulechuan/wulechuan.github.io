@@ -298,8 +298,8 @@ const resumeRawData = {
                 },
             ],
         },
-        
-        
+
+
 
         {
             组题: '项目管理与工程自动化',
@@ -492,7 +492,7 @@ const resumeRawData = {
                             应强调: true,
                             文: '紧密围绕公司业务，研发或预研专项技术。例如：在网页中借助独立线程的计算，实时稳定的呈现三维点云。又如：在确保高帧率、高分辨率的前提下，在网页中实现快速的图像变换。还有：在网页中实现实时的视频流画面处理，并实时产出全新的视频流（MediaStream）。',
                         },
-                 
+
                         {
                             应强调: false,
                             文: '从零开始负责公司官网。含美术设计、交互设计、编码实现。本人还确保官网排版可自适应几乎一切尺寸的屏幕。不过，第一稿如今已被替换，不再面世。',
@@ -692,16 +692,43 @@ const resumeRawData = {
                     列: [
                         {
                             应强调: false,
-                            链: './demos/xmecamg1-web-ui/old-look/001.jpg',
+                            // 链: './demos/xmecamg1-web-ui/old-look/001.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/xmecamg1-web-ui/old-look/001.jpg',
                             链后文: '。',
                         },
                         {
                             应强调: false,
-                            链: './demos/xmecamg1-web-ui/old-look/002.jpg',
+                            // 链: './demos/xmecamg1-web-ui/old-look/002.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/xmecamg1-web-ui/old-look/002.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: false,
+                            // 链: './demos/xmecamg1-web-ui/old-look/003.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/xmecamg1-web-ui/old-look/003.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: false,
+                            // 链: './demos/xmecamg1-web-ui/old-look/004.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/xmecamg1-web-ui/old-look/004.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: false,
+                            // 链: './demos/xmecamg1-web-ui/old-look/005.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/xmecamg1-web-ui/old-look/005.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: false,
+                            // 链: './demos/xmecamg1-web-ui/old-look/006.jpg',
+                            链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/xmecamg1-web-ui/old-look/006.jpg',
                             链后文: '。',
                         },
                     ],
                 },
+
                 {
                     题: '成果展示（我接手后两年有余，软件如今的模样）',
                     列: [
