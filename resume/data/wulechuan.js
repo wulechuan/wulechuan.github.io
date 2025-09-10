@@ -692,12 +692,12 @@ const resumeRawData = {
                     列: [
                         {
                             应强调: false,
-                            链: './demos/software-1/old-look/001.jpg',
+                            链: './demos/xmecamg1-web-ui/old-look/001.jpg',
                             链后文: '。',
                         },
                         {
                             应强调: false,
-                            链: './demos/software-1/old-look/002.jpg',
+                            链: './demos/xmecamg1-web-ui/old-look/002.jpg',
                             链后文: '。',
                         },
                     ],
@@ -707,32 +707,82 @@ const resumeRawData = {
                     列: [
                         {
                             应强调: true,
-                            链: './demos/software-1/new-look/001.jpg',
+                            链: './demos/xmecamg1-web-ui/new-look/1-001.jpg',
                             链后文: '。',
                         },
                         {
                             应强调: true,
-                            链: './demos/software-1/new-look/002.jpg',
+                            链: './demos/xmecamg1-web-ui/new-look/1-002.jpg',
                             链后文: '。',
                         },
                         {
                             应强调: true,
-                            链: './demos/software-1/new-look/003.jpg',
+                            链: './demos/xmecamg1-web-ui/new-look/1-003.jpg',
                             链后文: '。',
                         },
                         {
                             应强调: true,
-                            链: './demos/software-1/new-look/004.jpg',
+                            链: './demos/xmecamg1-web-ui/new-look/1-004.jpg',
                             链后文: '。',
                         },
                         {
                             应强调: true,
-                            链: './demos/software-1/new-look/005.jpg',
+                            链: './demos/xmecamg1-web-ui/new-look/1-005.jpg',
                             链后文: '。',
                         },
                         {
                             应强调: true,
-                            链: './demos/software-1/new-look/006.jpg',
+                            链: './demos/xmecamg1-web-ui/new-look/1-006.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/1-007.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/1-008.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/1-009.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/1-010.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/1-011.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/2-001.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/2-002.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/2-003.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/2-004.jpg',
+                            链后文: '。',
+                        },
+                        {
+                            应强调: true,
+                            链: './demos/xmecamg1-web-ui/new-look/2-005.jpg',
                             链后文: '。',
                         },
                     ],
