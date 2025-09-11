@@ -12,7 +12,7 @@
     <div class="app">
         <h1>吴乐川借助 Fabric.js 5.x 实现的实用多边形</h1>
 
-        <section>
+        <section class="introduction">
             <article>
                 <p>每个多边形顶点均可拖动。其中，方形顶点代表“起始顶点”。任何变换过程，多边形会变色以作视觉强调。</p>
             </article>
@@ -21,10 +21,12 @@
         <main>
             <div class="operations">
                 <p class="info">
-                    <span>画布尺寸：</span>
-                    <span class="value-slot--my-fabric-canvas-width"></span>
-                    <span>×</span>
-                    <span class="value-slot--my-fabric-canvas-height"></span>
+                    <span class="value-label">画布尺寸：</span>
+                    <span class="full-value"
+                        ><span class="value-slot value-slot--my-fabric-canvas-width"></span
+                        ><span class="sign">×</span
+                        ><span class="value-slot value-slot--my-fabric-canvas-height"></span
+                    ></span>
                 </p>
 
                 <button onclick="addToScene_SinglePoly()">添加单个多边形</button>
