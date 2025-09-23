@@ -553,11 +553,11 @@
                 padding: 0 0.15rem;
             }
 
-            .app .card-content-section-level1 {
+            .app .timeline-node-content-section-level1 {
                 margin-bottom: 1.25rem;
             }
 
-            .app .card-content-section-level1:last-child {
+            .app .timeline-node-content-section-level1:last-child {
                 margin-bottom: 0rem;
             }
         }
@@ -934,30 +934,13 @@
                 <hr>
                 <div class="card-body">
                     <article>
-                        <template v-for="(某自然段, 循环序号_1级) in resume.data.个人信息摘要.个人简介">
-                            <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
-                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="card-content-title"></h3>
-                                <p  v-if="某自然段.文" v-html="某自然段.文"></p>
-                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
-                                    <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
-                                        <li
-                                            v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
-                                            :class="{ '应强调': 某项_2级.应强调 }"
-                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
-                                            某项_2级.链前文
-                                        }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
-                                            某项_2级.链
-                                        }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
-
-                                        <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
-                                    </template>
-                                </ul>
-                            </section>
-
-                            <hr v-else-if="某自然段 === '分隔线'" :key="`${循环序号_1级}-分隔线`">
-
-                            <p v-else v-html="某自然段" :key="`${循环序号_1级}-html片段`"></p>
-                        </template>
+                        <wlc-article-single-section
+                            v-for="(某自然段, 循环序号_1级) in resume.data.个人信息摘要.个人简介"
+                            :key="`自然段-${循环序号_1级}`"
+                            :该自然段="某自然段"
+                            小标题的标签代号="h3"
+                            小标题的样式类名表="card-content-title"
+                        ></wlc-article-single-section>
                     </article>
                 </div>
             </section>
@@ -1046,81 +1029,6 @@
                 </div>
             </section>
 
-            <section class="card jobs revealable reveals-by-sliding-upwards">
-                <h2 class="card-main-title">工作经历</h2>
-                <hr>
-                <div class="card-body">
-                    <div class="timeline">
-                        <div
-                            v-for="(某职位, loopIndex) in resume.data.从业经历"
-                            :key="loopIndex"
-                            class="timeline-node revealable reveals-by-sliding-upwards"
-                        >
-                            <div class="timeline-node-content">
-                                <div class="timeline-node-content-header">
-                                    <h3 class="card-content-title">{{ 某职位.企业名称 }}</h3>
-
-                                    <div class="period-and-subtitle">
-                                        <span class="the-period">
-                                            <span class="period-date-1">
-                                                <span class="date-year">{{ 某职位.时间段[0][0] }}</span>
-                                                年
-                                                <span class="date-year">{{ 某职位.时间段[0][1] }}</span>
-                                                月
-                                            </span>
-                                            <span class="duratin-punc"> ~ </span>
-                                            <span
-                                                v-if="某职位.时间段[1]"
-                                                class="period-date-2"
-                                            >
-                                                <span class="date-year">{{ 某职位.时间段[1][0] }}</span>
-                                                年
-                                                <span class="date-year">{{ 某职位.时间段[1][1] }}</span>
-                                                月
-                                            </span>
-                                            <span v-else>今</span>
-                                        </span>
-
-                                        <span class="time-related-factor">{{ 某职位.职位名称 }}</span>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-node-content-body">
-                                    <h4 class="card-content-title">岗位职责</h4>
-
-                                    <article class="responsibilities">
-                                        <template v-for="(某自然段, 循环序号_1级) in 某职位.岗位职责">
-                                            <section v-if="某自然段 && typeof 某自然段 === 'object'" :key="`${循环序号_1级}-带列表的自然段`">
-                                                <h3 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h3>
-                                                <p  v-if="某自然段.文" v-html="某自然段.文"></p>
-                                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
-                                                    <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
-                                                        <li
-                                                            v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
-                                                            :class="{ '应强调': 某项_2级.应强调 }"
-                                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
-                                                            某项_2级.链前文
-                                                        }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
-                                                            某项_2级.链
-                                                        }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
-
-                                                        <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
-                                                    </template>
-                                                </ul>
-                                            </section>
-
-                                            <hr v-else-if="某自然段 === '分隔线'" :key="`${循环序号_1级}-分隔线`">
-
-                                            <p v-else v-html="某自然段" :key="`${循环序号_1级}-html片段`"></p>
-                                        </template>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section class="card projects revealable reveals-by-sliding-upwards">
                 <h2 class="card-main-title">项目经历</h2>
                 <hr>
@@ -1136,25 +1044,7 @@
                                     <h3 class="card-content-title">{{ 某项目.项目名称 }}</h3>
 
                                     <span class="period-and-subtitle">
-                                        <span class="the-period">
-                                            <span class="period-date-1">
-                                                <span class="date-year">{{ 某项目.时间段[0][0] }}</span>
-                                                年
-                                                <span class="date-year">{{ 某项目.时间段[0][1] }}</span>
-                                                月
-                                            </span>
-                                            <span class="duratin-punc"> ~ </span>
-                                            <span
-                                                v-if="某项目.时间段[1]"
-                                                class="period-date-2"
-                                            >
-                                                <span class="date-year">{{ 某项目.时间段[1][0] }}</span>
-                                                年
-                                                <span class="date-year">{{ 某项目.时间段[1][1] }}</span>
-                                                月
-                                            </span>
-                                            <span v-else>今</span>
-                                        </span>
+                                        <single-period-of-time :时段="某项目.时段"></single-period-of-time>
 
                                         <template v-if="某项目.项目成果地址">
                                             <a
@@ -1176,34 +1066,12 @@
                                     <h4 class="card-content-title">项目简介</h4>
 
                                     <article class="project-description">
-                                        <template v-for="(某自然段, 循环序号_1级) in 某项目.项目简述">
-                                            <section
-                                                v-if="某自然段 && typeof 某自然段 === 'object'"
-                                                :key="`${循环序号_1级}-带列表的自然段`"
-                                                class="card-content-section-level1"
-                                            >
-                                                <h5 v-if="某自然段.题" v-html="某自然段.题" class="section-content-title"></h5>
-                                                <p  v-if="某自然段.文" v-html="某自然段.文"></p>
-                                                <ul v-if="Array.isArray(某自然段.列) && 某自然段.列.length > 0">
-                                                    <template v-for="(某项_2级, 循环序号_2级) in 某自然段.列">
-                                                        <li
-                                                            v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
-                                                            :class="{ '应强调': 某项_2级.应强调 }"
-                                                        ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
-                                                            某项_2级.链前文
-                                                        }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
-                                                            某项_2级.链
-                                                        }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
-
-                                                        <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
-                                                    </template>
-                                                </ul>
-                                            </section>
-
-                                            <hr v-else-if="某自然段 === '分隔线'" :key="`${循环序号_1级}-分隔线`">
-
-                                            <p v-else v-html="某自然段" :key="`${循环序号_1级}-html片段`"></p>
-                                        </template>
+                                        <wlc-article-single-section
+                                            v-for="(某自然段, 循环序号_1级) in 某项目.项目简述"
+                                            :key="`自然段-${循环序号_1级}`"
+                                            :该自然段="某自然段"
+                                            class="timeline-node-content-section-level1"
+                                        ></wlc-article-single-section>
                                     </article>
 
                                     <div class="project-tech-stack">
@@ -1226,6 +1094,44 @@
                 </div>
             </section>
 
+            <section class="card jobs revealable reveals-by-sliding-upwards">
+                <h2 class="card-main-title">任职经历</h2>
+                <hr>
+                <div class="card-body">
+                    <div class="timeline">
+                        <div
+                            v-for="(某职位, loopIndex) in resume.data.从业经历"
+                            :key="loopIndex"
+                            class="timeline-node revealable reveals-by-sliding-upwards"
+                        >
+                            <div class="timeline-node-content">
+                                <div class="timeline-node-content-header">
+                                    <h3 class="card-content-title">{{ 某职位.企业名称 }}</h3>
+
+                                    <div class="period-and-subtitle">
+                                        <single-period-of-time :时段="某职位.时段"></single-period-of-time>
+                                        <span class="time-related-factor">{{ 某职位.职位名称 }}</span>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-node-content-body">
+                                    <h4 class="card-content-title">岗位职责</h4>
+
+                                    <article class="responsibilities">
+                                        <wlc-article-single-section
+                                            v-for="(某自然段, 循环序号_1级) in 某职位.岗位职责"
+                                            :key="`自然段-${循环序号_1级}`"
+                                            :该自然段="某自然段"
+                                            class="timeline-node-content-section-level1"
+                                        ></wlc-article-single-section>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="card education revealable reveals-by-sliding-upwards">
                 <h2 class="card-main-title">教育背景</h2>
                 <hr>
@@ -1241,26 +1147,7 @@
                                     <h3 class="card-content-title">{{ 某段受教育经历.教育机构 }}</h3>
 
                                     <span class="period-and-subtitle">
-                                        <span class="the-period">
-                                            <span class="period-date-1">
-                                                <span class="date-year">{{ 某段受教育经历.时间段[0][0] }}</span>
-                                                年
-                                                <span class="date-year">{{ 某段受教育经历.时间段[0][1] }}</span>
-                                                月
-                                            </span>
-                                            <span class="duratin-punc"> ~ </span>
-                                            <span
-                                                v-if="某段受教育经历.时间段[1]"
-                                                class="period-date-2"
-                                            >
-                                                <span class="date-year">{{ 某段受教育经历.时间段[1][0] }}</span>
-                                                年
-                                                <span class="date-year">{{ 某段受教育经历.时间段[1][1] }}</span>
-                                                月
-                                            </span>
-                                            <span v-else>今</span>
-                                        </span>
-
+                                        <single-period-of-time :时段="某段受教育经历.时段"></single-period-of-time>
                                         <span class="time-related-factor">{{ 某段受教育经历.主修专业 }}</span>
                                     </span>
                                 </div>
@@ -1276,12 +1163,72 @@
         </footer>
     </div>
 
+
+
     <script src="./resume/data/wulechuan.js"></script>
 
-    <script>
-        const { createApp, reactive, nextTick, onMounted } = Vue;
 
-        createApp({
+
+    <template id="vue-compound-template--wlc-article-single-section">
+        <section v-if="该自然段 && typeof 该自然段 === 'object'">
+            <component
+                :is="小标题的标签代号"
+                v-if="该自然段.题"
+                :class="小标题的样式类名表"
+                v-html="该自然段.题"
+            ></component>
+            <p  v-if="该自然段.文" v-html="该自然段.文"></p>
+            <ul v-if="Array.isArray(该自然段.列) && 该自然段.列.length > 0">
+                <template v-for="(某项_2级, 循环序号_2级) in 该自然段.列">
+                    <li
+                        v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
+                        :class="{ '应强调': 某项_2级.应强调 }"
+                    ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
+                        某项_2级.链前文
+                    }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
+                        某项_2级.链
+                    }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
+
+                    <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
+                </template>
+            </ul>
+        </section>
+
+        <hr v-else-if="该自然段 === '分隔线'">
+
+        <p v-else v-html="该自然段"></p>
+    </template>
+
+
+
+    <template id="vue-compound-template--single-period-of-time">
+        <span class="the-period">
+            <span class="period-date-1">
+                <span class="date-year">{{ 时段[0][0] }}</span>
+                年
+                <span class="date-year">{{ 时段[0][1] }}</span>
+                月
+            </span>
+            <span class="duratin-punc"> ~ </span>
+            <span
+                v-if="时段[1]"
+                class="period-date-2"
+            >
+                <span class="date-year">{{ 时段[1][0] }}</span>
+                年
+                <span class="date-year">{{ 时段[1][1] }}</span>
+                月
+            </span>
+            <span v-else>今</span>
+        </span>
+    </template>
+
+
+
+    <script>
+        const { createApp, defineComponent, reactive, nextTick, onMounted } = Vue;
+
+        const vueApp = createApp({
             setup() {
                 const resume = reactive({
                     data: {
@@ -1342,7 +1289,32 @@
                     resume,
                 }
             }
-        }).mount('#app')
+        })
+
+        vueApp.component('wlc-article-single-section', defineComponent({
+            template: document.querySelector('#vue-compound-template--wlc-article-single-section')?.innerHTML,
+            props: {
+                '该自然段': {
+                    type: [ String, Object ],
+                    default: null,
+                },
+                '小标题的标签代号': {
+                    type: [ String ],
+                    default: 'h5',
+                },
+                '小标题的样式类名表': {
+                    type: [ String, Array ],
+                    default: null,
+                },
+            },
+        }))
+
+        vueApp.component('single-period-of-time', defineComponent({
+            template: document.querySelector('#vue-compound-template--single-period-of-time')?.innerHTML,
+            props: [ '时段' ],
+        }))
+
+        vueApp.mount('#app')
     </script>
 </body>
 </html>
