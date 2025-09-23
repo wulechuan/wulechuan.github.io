@@ -458,11 +458,6 @@
                 padding: 1.5rem 0 0 1.25rem;
             }
 
-            .app .timeline-node:last-child .timeline-node-content {
-                border-left-color: transparent;
-                /* padding-bottom: 1rem; */
-            }
-
             .app .timeline-node-content {
                 position: relative;
                 padding: 0.5rem 0.5rem 3rem 1.5rem;
@@ -482,6 +477,24 @@
                 border-width: 0.1rem;
                 border-style: solid;
                 border-radius: 50%;
+            }
+
+            .app .timeline-node:last-child .timeline-node-content {
+                /* border-left-color: transparent; */
+                padding-bottom: 0.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .app .timeline-node:last-child .timeline-node-content::after {
+                content: '';
+                position: absolute;
+                left: -0.45rem;
+                bottom:  0rem;
+                width:  0.8rem;
+                height: 0rem;
+                border-color: hsl(var(--theme-color-tone), var(--theme-strokes-colors-vivid), var(--theme-strokes-colors-lightness));
+                border-width: 0.1rem;
+                border-style: solid;
             }
 
             .app .timeline-node-content-header {
