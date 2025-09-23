@@ -972,30 +972,17 @@
                         class="works-single-group"
                     >
                         <h3 v-if="某组作品.组题" v-html="某组作品.组题" class="section-content-title"></h3>
+
                         <p  v-if="某组作品.文" v-html="某组作品.文"></p>
-                        <section
+
+                        <wlc-article-single-section
                             v-for="(某作品, 循环序号_1级) in 某组作品.作品组"
-                            :key="`${循环序号_1级}-带列表的自然段`"
+                            :key="`作品-${循环序号_1级}`"
                             class="single-work"
                             :class="{ '应弱化': !某作品.应强调 }"
-                        >
-                            <h4 v-if="某作品.题" v-html="某作品.题"></h4>
-                            <p  v-if="某作品.文" v-html="某作品.文"></p>
-                            <ul v-if="Array.isArray(某作品.列) && 某作品.列.length > 0">
-                                <template v-for="(某项_2级, 循环序号_2级) in 某作品.列">
-                                    <li
-                                        v-if="某项_2级 && typeof 某项_2级 === 'object'" :key="`${循环序号_2级}-带链接的配置对象`"
-                                        :class="{ '应强调': 某项_2级.应强调 }"
-                                    ><component :is="某项_2级.应强调 ? 'em' : 'span'"><span v-if="某项_2级.文" v-html="某项_2级.文"></span><span v-if="某项_2级.链前文">{{
-                                        某项_2级.链前文
-                                    }}</span><a v-if="某项_2级.链" :href="encodeURI(某项_2级.链)" target="_blank" rel="noopener noreferrer">{{
-                                        某项_2级.链
-                                    }}</a><span v-if="某项_2级.链后文">{{ 某项_2级.链后文 }}</span></component></li>
-
-                                    <li v-else v-html="某项_2级" :key="`${循环序号_2级}-html片段`"></li>
-                                </template>
-                            </ul>
-                        </section>
+                            :该自然段="某作品"
+                            小标题的标签代号="h4"
+                        ></wlc-article-single-section>
                     </section>
                 </article>
             </wlc-single-card>
