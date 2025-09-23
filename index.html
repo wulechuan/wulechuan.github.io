@@ -1034,62 +1034,62 @@
                 <hr>
                 <div class="card-body">
                     <div class="timeline">
-                        <div
-                            v-for="(某项目, loopIndex) in resume.data.项目经验"
-                            :key="loopIndex"
-                            class="timeline-node revealable reveals-by-sliding-upwards"
+                        <wlc-timeline-single-node
+                            v-for="(某项目, 循环序号) in resume.data.项目经验"
+                            :key="循环序号"
+                            class="revealable reveals-by-sliding-upwards"
                         >
-                            <div class="timeline-node-content">
-                                <div class="timeline-node-content-header">
-                                    <h3 class="card-content-title">{{ 某项目.项目名称 }}</h3>
+                            <template v-slot:title>
+                                <h3 class="card-content-title">{{ 某项目.项目名称 }}</h3>
+                            </template>
 
-                                    <span class="period-and-subtitle">
-                                        <wlc-single-period-of-time :时段="某项目.时段"></wlc-single-period-of-time>
+                            <template v-slot:period-and-subtitle>
+                                <span class="period-and-subtitle">
+                                    <wlc-single-period-of-time :时段="某项目.时段"></wlc-single-period-of-time>
 
-                                        <template v-if="某项目.项目成果地址">
-                                            <a
-                                                :href="某项目.项目成果地址"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                class="project-link media-screen-only"
-                                            >查看项目 <svg class="icon"><use href="#lucide-icon-arrow-up-right"></use></svg></a>
+                                    <template v-if="某项目.项目成果地址">
+                                        <a
+                                            :href="某项目.项目成果地址"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="project-link media-screen-only"
+                                        >查看项目 <svg class="icon"><use href="#lucide-icon-arrow-up-right"></use></svg></a>
 
-                                            <p class="media-print-only">
-                                                <span>项目地址：</span>
-                                                <a :href="某项目.项目成果地址">{{ 某项目.项目成果地址 }}</a>
-                                            </p>
-                                        </template>
-                                    </span>
-                                </div>
+                                        <p class="media-print-only">
+                                            <span>项目地址：</span>
+                                            <a :href="某项目.项目成果地址">{{ 某项目.项目成果地址 }}</a>
+                                        </p>
+                                    </template>
+                                </span>
+                            </template>
 
-                                <div class="timeline-node-content-body">
-                                    <h4 class="card-content-title">项目简介</h4>
+                            <template v-slot:default>
+                                <h4 class="card-content-title">项目简介</h4>
 
-                                    <article class="project-description">
-                                        <wlc-article-single-section
-                                            v-for="(某自然段, 循环序号_1级) in 某项目.项目简述"
-                                            :key="`自然段-${循环序号_1级}`"
-                                            :该自然段="某自然段"
-                                            class="timeline-node-content-section-level1"
-                                        ></wlc-article-single-section>
-                                    </article>
+                                <article class="project-description">
+                                    <wlc-article-single-section
+                                        v-for="(某自然段, 循环序号_1级) in 某项目.项目简述"
+                                        :key="`自然段-${循环序号_1级}`"
+                                        :该自然段="某自然段"
+                                        class="timeline-node-content-section-level1"
+                                    ></wlc-article-single-section>
+                                </article>
 
-                                    <div class="project-tech-stack">
-                                        <div class="capsules-single-list">
-                                            <h4 class="card-content-title capsules-list-title">技术栈</h4>
-                                            <ul class="the-list">
-                                                <li
-                                                    v-for="某种技术 in 某项目.所用技术栈"
-                                                    :key="某种技术"
-                                                    class="capsule"
-                                                    :class="{ '应强调': 某种技术[1] === '应强调' }"
-                                                ><component :is="某种技术[1] === '应强调' ? 'em' : 'span'">{{ 某种技术[0] }}</component></li>
-                                            </ul>
-                                        </div>
+                                <div class="project-tech-stack">
+                                    <div class="capsules-single-list">
+                                        <h4 class="card-content-title capsules-list-title">技术栈</h4>
+                                        <ul class="the-list">
+                                            <li
+                                                v-for="某种技术 in 某项目.所用技术栈"
+                                                :key="某种技术"
+                                                class="capsule"
+                                                :class="{ '应强调': 某种技术[1] === '应强调' }"
+                                            ><component :is="某种技术[1] === '应强调' ? 'em' : 'span'">{{ 某种技术[0] }}</component></li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </template>
+                        </wlc-timeline-single-node>
                     </div>
                 </div>
             </section>
@@ -1099,35 +1099,35 @@
                 <hr>
                 <div class="card-body">
                     <div class="timeline">
-                        <div
-                            v-for="(某职位, loopIndex) in resume.data.从业经历"
-                            :key="loopIndex"
-                            class="timeline-node revealable reveals-by-sliding-upwards"
+                        <wlc-timeline-single-node
+                            v-for="(某职位, 循环序号) in resume.data.任职经历"
+                            :key="循环序号"
+                            class="revealable reveals-by-sliding-upwards"
                         >
-                            <div class="timeline-node-content">
-                                <div class="timeline-node-content-header">
-                                    <h3 class="card-content-title">{{ 某职位.企业名称 }}</h3>
+                            <template v-slot:title>
+                                <h3 class="card-content-title">{{ 某职位.企业名称 }}</h3>
+                            </template>
 
-                                    <div class="period-and-subtitle">
-                                        <wlc-single-period-of-time :时段="某职位.时段"></wlc-single-period-of-time>
-                                        <span class="time-related-factor">{{ 某职位.职位名称 }}</span>
-                                    </div>
+                            <template v-slot:period-and-subtitle>
+                                <div class="period-and-subtitle">
+                                    <wlc-single-period-of-time :时段="某职位.时段"></wlc-single-period-of-time>
+                                    <span class="time-related-factor">{{ 某职位.职位名称 }}</span>
                                 </div>
+                            </template>
 
-                                <div class="timeline-node-content-body">
-                                    <h4 class="card-content-title">岗位职责</h4>
+                            <template v-slot:default>
+                                <h4 class="card-content-title">岗位职责</h4>
 
-                                    <article class="responsibilities">
-                                        <wlc-article-single-section
-                                            v-for="(某自然段, 循环序号_1级) in 某职位.岗位职责"
-                                            :key="`自然段-${循环序号_1级}`"
-                                            :该自然段="某自然段"
-                                            class="timeline-node-content-section-level1"
-                                        ></wlc-article-single-section>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
+                                <article class="responsibilities">
+                                    <wlc-article-single-section
+                                        v-for="(某自然段, 循环序号_1级) in 某职位.岗位职责"
+                                        :key="`自然段-${循环序号_1级}`"
+                                        :该自然段="某自然段"
+                                        class="timeline-node-content-section-level1"
+                                    ></wlc-article-single-section>
+                                </article>
+                            </template>
+                        </wlc-timeline-single-node>
                     </div>
                 </div>
             </section>
@@ -1137,22 +1137,24 @@
                 <hr>
                 <div class="card-body">
                     <div class="timeline">
-                        <div
-                            v-for="(某段受教育经历, loopIndex) in resume.data.受教育经历"
-                            :key="loopIndex"
-                            class="timeline-node revealable reveals-by-sliding-upwards"
+                        <wlc-timeline-single-node
+                            v-for="(某段受教育经历, 循环序号) in resume.data.受教育经历"
+                            :key="循环序号"
+                            class="revealable reveals-by-sliding-upwards"
                         >
-                            <div class="timeline-node-content">
-                                <div class="timeline-node-content-header">
-                                    <h3 class="card-content-title">{{ 某段受教育经历.教育机构 }}</h3>
+                            <template v-slot:title>
+                                <h3 class="card-content-title">{{ 某段受教育经历.教育机构名称 }}</h3>
+                            </template>
 
-                                    <span class="period-and-subtitle">
-                                        <wlc-single-period-of-time :时段="某段受教育经历.时段"></wlc-single-period-of-time>
-                                        <span class="time-related-factor">{{ 某段受教育经历.主修专业 }}</span>
-                                    </span>
+                            <template v-slot:period-and-subtitle>
+                                <div class="period-and-subtitle">
+                                    <wlc-single-period-of-time :时段="某段受教育经历.时段"></wlc-single-period-of-time>
+                                    <span class="time-related-factor">{{ 某段受教育经历.主修专业 }}</span>
                                 </div>
-                            </div>
-                        </div>
+                            </template>
+
+                            <template v-slot:default></template>
+                        </wlc-timeline-single-node>
                     </div>
                 </div>
             </section>
@@ -1225,6 +1227,22 @@
 
 
 
+    <template id="vue-compound-template--wlc-timeline-single-node">
+        <div class="timeline-node">
+            <div class="timeline-node-content">
+                <div class="timeline-node-content-header">
+                    <slot name="title"></slot>
+                    <slot name="period-and-subtitle"></slot>
+                </div>
+                <div class="timeline-node-content-body">
+                    <slot></slot>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+
     <script>
         const { createApp, defineComponent, reactive, nextTick, onMounted } = Vue;
 
@@ -1236,7 +1254,7 @@
                         个人简介: {},
                         作品集: [],
                         技能集: {},
-                        从业经历: [],
+                        任职经历: [],
                         项目经验: [],
                         受教育经历: [],
                     },
@@ -1312,6 +1330,10 @@
         vueApp.component('wlc-single-period-of-time', defineComponent({
             template: document.querySelector('#vue-compound-template--wlc-single-period-of-time')?.innerHTML,
             props: [ '时段' ],
+        }))
+
+        vueApp.component('wlc-timeline-single-node', defineComponent({
+            template: document.querySelector('#vue-compound-template--wlc-timeline-single-node')?.innerHTML,
         }))
 
         vueApp.mount('#app')
