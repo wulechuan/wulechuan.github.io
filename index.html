@@ -1044,7 +1044,7 @@
                                     <h3 class="card-content-title">{{ 某项目.项目名称 }}</h3>
 
                                     <span class="period-and-subtitle">
-                                        <single-period-of-time :时段="某项目.时段"></single-period-of-time>
+                                        <wlc-single-period-of-time :时段="某项目.时段"></wlc-single-period-of-time>
 
                                         <template v-if="某项目.项目成果地址">
                                             <a
@@ -1109,7 +1109,7 @@
                                     <h3 class="card-content-title">{{ 某职位.企业名称 }}</h3>
 
                                     <div class="period-and-subtitle">
-                                        <single-period-of-time :时段="某职位.时段"></single-period-of-time>
+                                        <wlc-single-period-of-time :时段="某职位.时段"></wlc-single-period-of-time>
                                         <span class="time-related-factor">{{ 某职位.职位名称 }}</span>
                                     </div>
                                 </div>
@@ -1147,7 +1147,7 @@
                                     <h3 class="card-content-title">{{ 某段受教育经历.教育机构 }}</h3>
 
                                     <span class="period-and-subtitle">
-                                        <single-period-of-time :时段="某段受教育经历.时段"></single-period-of-time>
+                                        <wlc-single-period-of-time :时段="某段受教育经历.时段"></wlc-single-period-of-time>
                                         <span class="time-related-factor">{{ 某段受教育经历.主修专业 }}</span>
                                     </span>
                                 </div>
@@ -1201,7 +1201,7 @@
 
 
 
-    <template id="vue-compound-template--single-period-of-time">
+    <template id="vue-compound-template--wlc-single-period-of-time">
         <span class="the-period">
             <span class="period-date-1">
                 <span class="date-year">{{ 时段[0][0] }}</span>
@@ -1309,8 +1309,8 @@
             },
         }))
 
-        vueApp.component('single-period-of-time', defineComponent({
-            template: document.querySelector('#vue-compound-template--single-period-of-time')?.innerHTML,
+        vueApp.component('wlc-single-period-of-time', defineComponent({
+            template: document.querySelector('#vue-compound-template--wlc-single-period-of-time')?.innerHTML,
             props: [ '时段' ],
         }))
 
