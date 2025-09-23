@@ -80,7 +80,7 @@ export type 简历_范_数据全集 = {
             手机号: string;
             微信号: string;
             电子邮箱: string;
-            代码仓库: string;
+            代码仓库集地址: string;
         };
         个人简介: 简历_范_单篇短文;
     };

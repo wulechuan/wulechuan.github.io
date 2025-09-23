@@ -37,7 +37,7 @@ const resumeRawData = {
             手机号: '180-1787-0319',
             微信号: '180-1787-0319',
             电子邮箱: 'wulechuan@live.com',
-            代码仓库: 'https://gitee.com/nanchang-wulechuan',
+            代码仓库集地址: 'https://gitee.com/nanchang-wulechuan',
         },
 
 
@@ -48,7 +48,7 @@ const resumeRawData = {
                 列: [
                     {
                         应强调: true,
-                        文: '勤奋。务实。乐观。幽默。',
+                        文: '正值。勤奋。务实。乐观。',
                     },
                 ],
             },
