@@ -602,6 +602,28 @@
 
     <style id="styles--app-header">
         @media print {
+            .app .app-header .people-name {
+                letter-spacing: 0.5rem;
+            }
+
+            .app .app-header .people-name rt {
+                letter-spacing: 0;
+                margin-right: 0.5rem;
+            }
+
+            .app .app-header .people-name ruby > span:first-of-type {
+                letter-spacing: 0.95rem;
+            }
+
+            .app .app-header .people-name ruby > rt:first-of-type {
+                margin-right: 0.95rem;
+            }
+
+            .app .app-header .people-profession-title {
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+
             .app .app-header .people-contacts a {
                 text-decoration: none;
                 display: flex;
@@ -656,14 +678,22 @@
                 font-size: 1.5rem;
                 font-weight: 400;
                 margin-top: -0.4rem;
-                letter-spacing: 0.2em;
+                letter-spacing: 0.2rem;
             }
 
             .app .app-header .people-name rt {
                 opacity: 0.75;
                 letter-spacing: 0;
-                margin-right: 0.2em;
+                margin-right: 0.2rem;
                 color: hsl(var(--theme-color-tone), var(--theme-primary-colors-vivid), var(--theme-primary-colors-lightness));
+            }
+
+            .app .app-header .people-name ruby > span:first-of-type {
+                letter-spacing: 0.5rem;
+            }
+
+            .app .app-header .people-name ruby > rt:first-of-type {
+                margin-right: 0.5rem;
             }
 
             .app .app-header .people-profession-title {
@@ -979,7 +1009,7 @@
         <section class="media-print-only">
             <hr>
             <article>
-                <blockquote>本文件等效的网页为 <a
+                <blockquote>注： 与本文件内容等价的网页为 <a
                     href="https://wulechuan.github.io/"
                     target="_blank"
                     rel="noopener noreferrer"
