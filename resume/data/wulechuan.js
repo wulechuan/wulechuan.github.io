@@ -56,10 +56,77 @@ const resumeRawData = {
 
 
             {
-                题: '职业素养',
+                题: '主攻领域（早年）',
+                列: [
+                    {
+                        应强调: false,
+                        文: '曾拥有 10 余年的三维动画与影视制作行业经验。担任过三维动画技术总监。开发过中等复杂度的动画流程工具和动画插件。',
+                    },
+                    {
+                        应强调: false,
+                        文: '后转型为网页程序开发工程师（见下文）。',
+                    },
+                ],
+            },
+
+
+
+            {
+                题: '主攻领域（当下）',
                 列: [
                     {
                         应强调: true,
+                        文: '逾 12 年网页程序开发经验。有丰富的“工业级”【富客户端】编写经验。',
+                        链前文: '例：',
+                        链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/xmecamg1-web-ui/new-look/1-001.jpg',
+                        链后文: '。',
+                    },
+                    {
+                        应强调: true,
+                        文: '精通 TypeScript 语言（含所谓“类型体操”）。精通 JavaScript 语言。',
+                    },
+                    {
+                        应强调: false,
+                        文: '推崇模块化开发理念并全力实践。理解并推崇 RESTful 开发。',
+                    },
+                    {
+                        应强调: true,
+                        文: '有非常丰富的 WebSocket 双端（客户端与服务端）编程经验。熟悉 Socket.IO 客户端编程。',
+                    },
+                    {
+                        应强调: false,
+                        文: '有丰富的程序化图表绘制经验（例如 ECharts ）。有丰富的网页图形交互编程经验（例如 FabricJS 、KonvaJS ）。有较丰富的网页流媒体编程经验。',
+                    },
+                    {
+                        应强调: false,
+                        文: '有网页三维编程经验（例如 ThreeJS 、 BabylonJS ）。',
+                    },
+                ],
+            },
+
+
+
+            {
+                题: '涉猎',
+                列: [
+                    {
+                        应强调: true,
+                        文: '掌握基本且实用的服务端编程技术，含双工通信（ WebSocket ）服务编程。惯用 KoaJS 、 ExpressJS  。',
+                    },
+                    {
+                        应强调: false,
+                        文: '自幼爱好美术。',
+                    },
+                ],
+            },
+
+
+
+            {
+                题: '职业素养',
+                列: [
+                    {
+                        应强调: false,
                         文: '积极利用《深度求索（DeepSeek）》、阿里巴巴《Qoder》 、阿里巴巴《千问》等人工智能体辅助编程。擅长预先拆解复杂的业务，以利交付于人工智能体。擅长撰写条理清晰、措辞精准、切中要害的需求文档，以引导和规范人工智能体之产出。',
                     },
                     {
@@ -91,67 +158,8 @@ const resumeRawData = {
                         文: '对技术充满热情。积极拥抱新兴技术。',
                     },
                     {
-                        应强调: false,
-                        文: '英语听说读写流利。',
-                    },
-                ],
-            },
-
-
-
-            {
-                题: '主攻领域（早年）',
-                列: [
-                    {
-                        应强调: false,
-                        文: '曾拥有 10 余年的三维动画与影视制作行业经验。担任过三维动画技术总监。开发过中等复杂度的动画流程工具和动画插件。',
-                    },
-                    {
-                        应强调: false,
-                        文: '后转型为网页程序开发工程师（见下文）。',
-                    },
-                ],
-            },
-
-
-
-            {
-                题: '主攻领域（当下）',
-                列: [
-                    {
                         应强调: true,
-                        文: '逾 12 年网页程序开发经验。有丰富的“工业级”【富客户端】编写经验。',
-                        链前文: '例：',
-                        链: 'https://gitee.com/nanchang-wulechuan/wulechuan-resume/raw/main/demos/xmecamg1-web-ui/new-look/1-001.jpg',
-                        链后文: '。',
-                    },
-                    {
-                        应强调: false,
-                        文: '推崇模块化开发理念并全力实践。理解并推崇 RESTful 开发。',
-                    },
-                    {
-                        应强调: false,
-                        文: '有丰富的程序化图表绘制经验（例如 ECharts ）。有丰富的网页图形交互编程经验（例如 Fabricjs 、Konvajs ）。有较丰富的网页流媒体编程经验。',
-                    },
-                    {
-                        应强调: false,
-                        文: '有网页三维编程经验（例如 Threejs 、 Babylonjs ）。',
-                    },
-                ],
-            },
-
-
-
-            {
-                题: '涉猎',
-                列: [
-                    {
-                        应强调: true,
-                        文: '掌握基本且实用的服务端编程技术，含双工通信（ WebSocket ）服务编程。惯用 KoaJS 、 ExpressJS  。',
-                    },
-                    {
-                        应强调: false,
-                        文: '自幼爱好美术。',
+                        文: '英语阅读、听力佳。英语说、写流利。',
                     },
                 ],
             },
@@ -421,7 +429,8 @@ const resumeRawData = {
 
     技能集: {
         开发语言: [
-            [ 'TypeScript',                '精通' ],
+            [ 'TypeScript 原版（含所谓“类型体操”）', '精通' ],
+            [ 'TypeScript 变种（华为 ArkTS）' ],
             [ 'JavaScript (ES5)',          '精通' ],
             [ 'JavaScript (ES6 ~ ES2025)', '精通' ],
             [ 'JSX / TSX',                 '精通' ],
@@ -433,28 +442,28 @@ const resumeRawData = {
         ],
 
         技术框架技术子领域与专门工具库: [
-            [ 'Vuejs 2',         '精通' ],
-            [ 'Vuejs 3',         '精通' ],
-            [ 'VueX',            '精通' ],
-            [ 'Piniajs',         '精通' ],
-            [ 'Vue Router',      '精通' ],
-            [ 'VueUse',          '精通' ],
-            [ 'jQuery',          '精通' ],
-            [ 'Django (Client)', '精通' ],
-            [ 'Threejs',         '精通' ],
-            [ 'Konvajs',         '精通' ],
-            [ 'Fabricjs',        '精通' ],
-            [ 'ECharts',         '精通' ],
+            [ 'VueJS 2',          '精通' ],
+            [ 'VueJS 3',          '精通' ],
+            [ 'VueX',             '精通' ],
+            [ 'PiniaJS',          '精通' ],
+            [ 'Vue Router',       '精通' ],
+            [ 'VueUse',           '精通' ],
+            [ 'ThreeJS',          '精通' ],
+            [ 'KonvaJS',          '精通' ],
+            [ 'FabricJS',         '精通' ],
+            [ 'ECharts',          '精通' ],
             [ 'HighCharts' ],
-            [ 'Element Plus',    '精通' ],
-            [ 'Ant Design Vue',  '精通' ],
+            [ 'Element Plus',     '精通' ],
+            [ 'Ant Design Vue',   '精通' ],
+            [ 'jQuery',           '精通' ],
+            [ 'Django (Client)',  '精通' ],
             [ 'Web API: MediaStream' ],
-            [ 'Web API: Workers' ],
+            [ 'Web API: Workers', '精通' ],
             [ 'NuxtJS' ],
             [ 'ReactJS' ],
             [ 'MeteorJS' ],
             [ 'NodeJS' ],
-            [ 'KoaJS',           '精通' ],
+            [ 'KoaJS',            '精通' ],
             [ 'ExpressJS' ],
             [ 'MongoDB' ],
         ],

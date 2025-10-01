@@ -1040,6 +1040,33 @@
 
 
             <wlc-single-card
+                标题文字="专业技能"
+                class="skills revealable reveals-by-sliding-upwards"
+            >
+                <div class="skills-multi-lists">
+                    <wlc-single-list-of-skill-capsules
+                        class="revealable reveals-by-sliding-upwards"
+                        技能表标题文字="开发语言"
+                        :技能条目表="resume.data.技能集.开发语言"
+                    ></wlc-single-list-of-skill-capsules>
+
+                    <wlc-single-list-of-skill-capsules
+                        class="revealable reveals-by-sliding-upwards"
+                        技能表标题文字="技术框架、技术子领域与专门工具库"
+                        :技能条目表="resume.data.技能集.技术框架技术子领域与专门工具库"
+                    ></wlc-single-list-of-skill-capsules>
+
+                    <wlc-single-list-of-skill-capsules
+                        class="revealable reveals-by-sliding-upwards"
+                        技能表标题文字="泛用工具与平台"
+                        :技能条目表="resume.data.技能集.泛用工具与平台"
+                    ></wlc-single-list-of-skill-capsules>
+                </div>
+            </wlc-single-card>
+
+
+
+            <wlc-single-card
                 v-if="resume.data.作品集 && resume.data.作品集.length > 0"
                 标题文字="作品集"
                 class="portfolio revealable reveals-by-sliding-upwards"
@@ -1064,33 +1091,6 @@
                         ></wlc-article-single-section>
                     </section>
                 </article>
-            </wlc-single-card>
-
-
-
-            <wlc-single-card
-                标题文字="专业技能"
-                class="skills revealable reveals-by-sliding-upwards"
-            >
-                <div class="skills-multi-lists">
-                    <wlc-single-list-of-skill-capsules
-                        class="revealable reveals-by-sliding-upwards"
-                        技能表标题文字="开发语言"
-                        :技能条目表="resume.data.技能集.开发语言"
-                    ></wlc-single-list-of-skill-capsules>
-
-                    <wlc-single-list-of-skill-capsules
-                        class="revealable reveals-by-sliding-upwards"
-                        技能表标题文字="技术框架、技术子领域与专门工具库"
-                        :技能条目表="resume.data.技能集.技术框架技术子领域与专门工具库"
-                    ></wlc-single-list-of-skill-capsules>
-
-                    <wlc-single-list-of-skill-capsules
-                        class="revealable reveals-by-sliding-upwards"
-                        技能表标题文字="泛用工具与平台"
-                        :技能条目表="resume.data.技能集.泛用工具与平台"
-                    ></wlc-single-list-of-skill-capsules>
-                </div>
             </wlc-single-card>
 
 
