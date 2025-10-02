@@ -260,7 +260,7 @@ const resumeRawData = {
                 },
 
                 {
-                    题: 'Vuejs 组件《仿真的 LED 灯珠》',
+                    题: 'VueJS 组件《仿真的 LED 灯珠》',
                     应强调: true,
                     列: [
                         {
@@ -283,7 +283,7 @@ const resumeRawData = {
                 },
 
                 {
-                    题: 'JavaScript 工具《Fabricjs 5.x 实用多边形》',
+                    题: 'JavaScript 工具《FabricJS 5.x 实用多边形》',
                     应强调: true,
                     列: [
                         {
@@ -445,7 +445,7 @@ const resumeRawData = {
             [ 'VueJS 2',          '精通' ],
             [ 'VueJS 3',          '精通' ],
             [ 'VueX',             '精通' ],
-            [ 'PiniaJS',          '精通' ],
+            [ 'Pinia',            '精通' ],
             [ 'Vue Router',       '精通' ],
             [ 'VueUse',           '精通' ],
             [ 'ThreeJS',          '精通' ],
@@ -616,7 +616,7 @@ const resumeRawData = {
                 {
                     列: [
                         '参与核心产品研发，使用 React/Redux 重构旧模块，并深度定制 Ant Design 构建自有组件库。',
-                        '开发基于 Nuxt.js 的公司内部 Kubernetes 管理平台。',
+                        '开发基于 NuxtJS 的公司内部 Kubernetes 管理平台。',
                         '撰写 Bash 脚本优化工作流，将故障还原周期从 2 天缩短至 2 小时。',
                         '为一线工程师提供技术支持，分析日志、定位故障、提出性能优化方案。',
                     ],
@@ -861,9 +861,9 @@ const resumeRawData = {
             ],
             所用技术栈: [
                 [ 'JsDocs', '应强调' ],
-                [ 'Vuejs 2' ],
+                [ 'VueJS 2' ],
                 [ 'VueX' ],
-                [ 'Fabricjs', '应强调' ],
+                [ 'FabricJS', '应强调' ],
                 [ 'AntDesignForVue' ],
                 [ 'TypeScript' ],
                 [ 'Sass' ],
@@ -902,17 +902,17 @@ const resumeRawData = {
             ],
             所用技术栈: [
                 [ 'TypeScript' ],
-                [ 'Vuejs 3' ],
+                [ 'VueJS 3' ],
                 [ 'Pinia' ],
                 [ '自研 npm 组件', '应强调' ],
-                [ 'Konvajs', '应强调' ],
-                [ 'Threejs', '应强调' ],
+                [ 'KonvaJS', '应强调' ],
+                [ 'ThreeJS', '应强调' ],
                 [ 'ElementPlus' ],
                 [ 'ECharts' ],
                 [ 'Sass' ],
                 [ 'PowerShellCore', '应强调' ],
                 [ 'Bash' ],
-                [ 'Vite' ],
+                [ 'ViteJS' ],
                 [ 'NodeJS', '应强调' ],
             ],
         },
@@ -954,7 +954,7 @@ const resumeRawData = {
                         },
                         {
                             应强调: false,
-                            文: '进行了大量的前端性能优化工作。例如：在呈现数千条拥有复杂的信息卡片时，仅动态构建滚动窗口可见的若干卡片，以此极大程度的消除了 Vuejs 组件构建、销毁时开销过大带来的负面影像。',
+                            文: '进行了大量的前端性能优化工作。例如：在呈现数千条拥有复杂的信息卡片时，仅动态构建滚动窗口可见的若干卡片，以此极大程度的消除了 VueJS 组件构建、销毁时开销过大带来的负面影像。',
                         },
                     ],
                 },
@@ -1006,14 +1006,14 @@ const resumeRawData = {
             项目简述: [
                 {
                     列: [
-                        '利用 Nuxt.js 技术栈开发的公司内部项目。',
+                        '利用 NuxtJS 技术栈开发的公司内部项目。',
                         '兼任界面设计师，负责项目的视觉与交互设计。',
                     ],
                 },
             ],
             所用技术栈: [
-                [ 'Nuxt.js', '应强调' ],
-                [ 'Vuejs 2' ],
+                [ 'NuxtJS', '应强调' ],
+                [ 'VueJS 2' ],
                 [ 'ExpressJS' ],
             ],
             项目成果地址: '',
